@@ -92,9 +92,10 @@
 
 p {
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 100;
   line-height: 24px;
 }
+
 h1 {
   font-weight: 600;
   line-height: 72px;
@@ -109,3 +110,6 @@ h1 {
    <h6 class="text-lg">Heading 6</h6>
     */
 
+.link {
+  color:rgb(78, 143, 241);
+}
