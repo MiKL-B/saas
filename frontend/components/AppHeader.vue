@@ -13,6 +13,7 @@ header {
   top: 0;
   background: white;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+  z-index: 3;
 }
 nav {
   display: flex;

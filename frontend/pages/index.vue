@@ -1,104 +1,76 @@
 <template>
   <section class="py-16 px-4">
-    <h1 class="text-6xl mb-2 lg:text-center">Connect YouTubers and sponsors, effortlessly</h1>
+    <h1 class="text-6xl mb-2 lg:text-center">Management software</h1>
     <p class="mb-4 lg:text-center">
-      Discover sponsors for your videos or find the perfect youtube channels for
-      your brand
+      Optimize your invoice management and strengthen your customer
+      relationships with our intuitive SaaS solution: simplify your daily life
+      and boost your growth in one click!
     </p>
     <Button class="lg:flex lg:m-auto">Begin now</Button>
   </section>
 
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">Potential Brand Experiences</h2>
-    <p class="mb-4 lg:text-center">
-      Discover what you could say about Saas after a few months of using it
-    </p>
-    <div class="flex justify-center flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="i in 3">
-        <CardHeader>
-          <CardTitle>Maybe you</CardTitle>
-          <CardDescription
-            >Marketing Director at a Tech Company</CardDescription
-          >
-        </CardHeader>
-        <CardContent>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-            voluptates assumenda architecto blanditiis autem aliquid asperiores,
-            accusamus explicabo animi vitae magnam quis nesciunt magni commodi
-            ipsam, cumque placeat doloribus delectus. Vero reprehenderit alias
-            optio necessitatibus, libero exercitationem repellendus laboriosam.
-            Similique eius ratione facere itaque ea quis ipsa tempora sunt nisi?
-          </p>
-        </CardContent>
-      </Card>
-    </div>
-  </section>
-  <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">
-      One simple platform to kow everything about influence on Youtube
+    <h2 class="text-4xl mb-4 lg:text-center">
+      We are attentive to our customers!
     </h2>
+    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Card v-for="testimonial in testimonials">
+        <CardHeader>
+          <CardTitle>{{ testimonial.person }}</CardTitle>
+          <CardDescription>{{ testimonial.job }}</CardDescription>
+        </CardHeader>
+        <CardContent>{{ testimonial.text }}</CardContent>
+      </Card>
+    </div>
+  </section>
+  <section class="py-16 px-4">
+    <h2 class="text-4xl mb-2 lg:text-center">An all-in-one platform.</h2>
     <p class="mb-4 lg:text-center">
-      Youtubers who want to maximize their revenue by getting sponsored Brands
-      looking for Youtubers
+      Simplify your invoice management and optimize your customer relationships
+      with our integrated CRM, to manage your business in complete serenity!
     </p>
-    <div class="flex justify-center flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="i in 2">
+    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Card v-for="keyfigure in keyfigures">
         <CardHeader>
-          <CardTitle>2000</CardTitle>
-          <CardDescription>Sponsors</CardDescription>
+          <CardTitle>{{ keyfigure.figure }}</CardTitle>
+          <CardDescription>{{ keyfigure.person }}</CardDescription>
         </CardHeader>
-        <CardContent>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-            voluptates assumenda architecto blanditiis autem aliquid asperiores,
-            accusamus explicabo animi vitae magnam quis nesciunt magni commodi
-            ipsam, cumque placeat doloribus delectus. Vero reprehenderit alias
-            optio necessitatibus, libero exercitationem repellendus laboriosam.
-            Similique eius ratione facere itaque ea quis ipsa tempora sunt nisi?
-          </p>
-        </CardContent>
+        <CardContent>{{ keyfigure.text }}</CardContent>
       </Card>
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4 lg:text-center">How to start discovering ?</h2>
-    <div class="flex justify-center flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="i in 4">
+    <h2 class="text-4xl mb-4 lg:text-center">How to start</h2>
+    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Card v-for="step in steps">
         <CardHeader>
-          <CardTitle>{{ i }} Step</CardTitle>
+          <CardTitle>{{ step.index }} {{ step.title }}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi
-            voluptates assumenda architecto blanditiis autem aliquid asperiores,
-            accusamus explicabo animi vitae magnam quis nesciunt magni commodi
-          </p>
-        </CardContent>
+        <CardContent>{{ step.text }}</CardContent>
       </Card>
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4 lg:text-center">To get access to the platform</h2>
-    <div class="flex justify-center flex-wrap gap-4">
-      <Card v-for="i in 2">
+    <h2 class="text-4xl mb-4 lg:text-center">
+      Optimize your business management: invoices and CRM in one tool!
+    </h2>
+    <div
+      class="flex flex-wrap justify-center lg:justify-between gap-4 lg:max-w-7xl lg:mx-auto"
+    >
+      <Card v-for="pricing in pricings">
         <CardHeader>
-          <CardTitle>Creator</CardTitle>
-          <CardDescription
-            >For YouTubers looking for more sponsors in their
-            niche</CardDescription
-          >
+          <CardTitle>{{ pricing.title }}</CardTitle>
+          <CardDescription>{{ pricing.description }}</CardDescription>
         </CardHeader>
         <CardContent>
           <p class="mb-4">
-            <span class="font-semibold text-4xl">99€</span>/month
+            <span class="font-semibold text-4xl">{{ pricing.price }}€</span
+            >/month
           </p>
           <ul>
-            <li><Icon name="uil:check" style="color: black" /> List of sponsors</li>
-            <li><Icon name="uil:check" style="color: black" /> List of sponsors</li>
-            <li><Icon name="uil:check" style="color: black" /> List of sponsors</li>
-            <li><Icon name="uil:check" style="color: black" /> List of sponsors</li>
-            <li><Icon name="uil:check" style="color: black" /> List of sponsors</li>
+            <li v-for="feature in pricing.features">
+              <Icon name="uil:check" style="color: black" />{{ feature }}
+            </li>
           </ul>
         </CardContent>
         <CardFooter>
@@ -106,36 +78,244 @@
         </CardFooter>
       </Card>
     </div>
+    <p class="link underline cursor-pointer my-4 text-center">
+      Start your 14-day free trial today!
+    </p>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">Creator of Saas</h2>
+    <h2 class="text-4xl mb-2 lg:text-center">About the creator of the Saas</h2>
     <p class="mb-4 lg:text-center">Mika, Coder</p>
+    <p class="lg:max-w-7xl lg:mx-auto mb-2">
+      As a pioneering SaaS developer, we specialize in creating innovative
+      solutions that streamline business operations, particularly in the realms
+      of invoice management and customer relationship management (CRM). Our
+      platform is designed to empower businesses of all sizes to enhance their
+      financial processes, improve client interactions, and drive growth.
+    </p>
+    <p class="lg:max-w-7xl lg:mx-auto mb-2">
+      We understand the challenges companies face when managing invoices,
+      tracking payments, and maintaining customer relationships. That's why our
+      development team utilizes cutting-edge technology to build a user-friendly
+      interface that simplifies these tasks. Features like automated invoicing,
+      real-time payment tracking, and customizable CRM tools allow our users to
+      save time and enhance their efficiency.
+    </p>
+    <p class="lg:max-w-7xl lg:mx-auto mb-2">
+      Our commitment to scalability ensures that as our clients grow, our
+      software evolves with them. By integrating advanced analytics and
+      reporting features, we provide businesses with insights that help them
+      make informed decisions. Also, with robust security measures in place, our
+      users can rest easy knowing their financial data and customer information
+      are protected.
+    </p>
+    <p class="lg:max-w-7xl lg:mx-auto mb-2">
+      At the heart of our development process is a passion for customer
+      satisfaction. We actively gather feedback and continuously improve our
+      platform to meet the changing needs of our users. With our innovative SaaS
+      solution, managing invoices and nurturing customer relationships has never
+      been easier.
+    </p>
     <p class="lg:max-w-7xl lg:mx-auto">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed numquam atque
-      ipsam porro reprehenderit labore repellendus sapiente reiciendis officiis
-      voluptates. Illo minus suscipit, nulla cupiditate velit id, maxime
-      repellat cum reiciendis quod recusandae dolor eveniet dignissimos magnam
-      cumque? Corrupti vero consequuntur quisquam facere non similique quasi
-      veniam iure eaque impedit.
+      Partner with us today to leverage technology that transforms your
+      financial operations and CRM strategies into a seamless experience!
     </p>
   </section>
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-4 lg:text-center">Common Questions</h2>
     <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="i in 4">
-        <CardHeader>
-          <CardTitle class="flex justify-between">{{ i }} Questions 1 <Icon name="streamline:interface-arrows-button-right-arrow-right-keyboard"/></CardTitle>
-        </CardHeader>
-      </Card>
+      <Accordion
+        type="single"
+        class="w-full"
+        collapsible
+        :default-value="defaultValue"
+      >
+        <AccordionItem
+          v-for="question in questions"
+          :key="question.value"
+          :value="question.value"
+        >
+          <AccordionTrigger>{{ question.title }}</AccordionTrigger>
+          <AccordionContent>
+            {{ question.content }}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4 lg:text-center">
-      Ready to find the perfect sponsors or influencers on Youtube ?
-    </h2>
+    <h2 class="text-4xl mb-2 lg:text-center">Ready to start ?</h2>
+    <p class="mb-4 lg:text-center">
+      Sign up and discover how our solution can make your billing and customer
+      relationship management easier!
+    </p>
     <Button class="flex lg:m-auto">Join Saas</Button>
   </section>
 </template>
-
-<style>
-</style>
+<script>
+export default {
+  name: "Index",
+  data() {
+    return {
+      testimonials: [
+        {
+          index: 0,
+          person: "John",
+          job: "Director",
+          text: "This platform has revolutionized the way we work. The synchronization between invoice management and our CRM has really improved our efficiency.",
+        },
+        {
+          index: 1,
+          person: "Josh",
+          job: "Manager",
+          text: "With this solution, managing my invoices has become a breeze. I can finally focus on what really matters: my customers!",
+        },
+        {
+          index: 2,
+          person: "Marina",
+          job: "Manager",
+          text: "I have saved valuable time and my customer relationships have improved significantly since I use this SaaS. I can’t do without it!",
+        },
+        {
+          index: 3,
+          person: "Polo",
+          job: "Manager",
+          text: "The simplicity of use and the power of the features allowed me to manage my business more serenely. A real help in everyday life!",
+        },
+      ],
+      keyfigures: [
+        {
+          index: 0,
+          figure: "1500",
+          person: "Customers",
+          text: "Satisfied customers who are boosting their performance through our platform.",
+        },
+        {
+          index: 1,
+          figure: "2000",
+          person: "Users",
+          text: "Users are active each month on our SaaS solution.",
+        },
+        {
+          index: 2,
+          figure: "200",
+          person: "Companies",
+          text: "Companies that have reduced their operational costs by 30% with our tool.",
+        },
+      ],
+      steps: [
+        {
+          index: 1,
+          title: "Registration and choice of plan",
+          text: "Create an account by registering on our site and choose the plan that suits you.",
+        },
+        {
+          index: 2,
+          title: "Setting up your account",
+          text: "Complete your company profile by adding your information and customize the billing settings.",
+        },
+        {
+          index: 3,
+          title: "Adding contacts and creating invoices",
+          text: "Import your customer contacts and create your first invoice using our customizable templates.",
+        },
+        {
+          index: 4,
+          title: "Monitoring and management",
+          text: "Use our dashboard to track payments, manage customer interactions and access analytics.",
+        },
+      ],
+      pricings: [
+        {
+          index: 0,
+          title: "Basic Plan - 'Essential'",
+          price: 19,
+          description: "Perfect for freelancers and small businesses.",
+          features: [
+            "Unlimited creation of invoices",
+            "Payment tracking",
+            "Management of customer contacts",
+            "Email support",
+          ],
+        },
+        {
+          index: 1,
+          title: "Standard plan - 'Professional'",
+          price: 39,
+          description: "Ideal for SMEs with advanced needs.",
+          features: [
+            "All features of the Essential plan",
+            "Management of quotations and reports",
+            "Integration with accounting tools",
+            "Live chat support",
+          ],
+        },
+        {
+          index: 2,
+          title: "Advanced Plan - 'Enterprise'",
+          price: 79,
+          description: "Designed for growing businesses.",
+          features: [
+            "All the features of the Professional plan",
+            "Automation of payment reminders",
+            "Project management and custom API",
+            "Dedicated support by phone and email",
+          ],
+        },
+      ],
+      questions: [
+        {
+          value: "1",
+          title: "How can I access my invoices?",
+          content: "You can access your invoices by logging into your account and navigating to the 'Billing' section. All your past invoices will be listed there for download.",
+        },
+        {
+          value: "2",
+          title: "What should I do if I find a discrepancy in my invoice?",
+          content: "If you notice any discrepancies, please contact our support team within 30 days of the invoice date. Include your invoice number and details of the discrepancy to expedite resolution.",
+        },
+        {
+          value: "3",
+          title: "What payment methods do you accept for invoices?",
+          content: "We accept various payment methods including credit/debit cards, PayPal, and bank transfers. You can choose your preferred method during the checkout process.",
+        },
+        {
+          value: "4",
+          title: "How do I access the CRM system?",
+          content: "You can access the CRM by logging into your account and clicking on the 'CRM' tab on the dashboard. Ensure you have the required permissions to view this section.",
+        },
+        {
+          value: "5",
+          title: "How can I import my client data into the CRM?",
+          content: "You can import client data by navigating to the 'Import' section in the CRM. We support CSV file formats for easy uploading of your contacts.",
+        },
+        {
+          value:"6",
+          title:"Can I customize user roles in the CRM?",
+          content:"Yes, you can customize user roles and permissions in the settings area. This allows you to control who has access to various features of the CRM.",
+        },
+        {
+          value:"7",
+          title:"How can I track which invoices are paid or unpaid?",
+          content:"In the 'Billing' section, you can view all your invoices along with their payment status. Unpaid invoices will be marked clearly, making it easy to follow up.",
+        },
+        {
+          value:"8",
+          title:"Does your CRM integrate with other tools?",
+          content:"Yes, our CRM supports integrations with several popular tools like email platforms, project management software, and marketing automation tools. Check the integrations page for a full list.",
+        },
+        {
+          value:"9",
+          title:"What should I do if I forget my password?",
+          content:"If you forget your password, click on the 'Forgot Password?' link on the login page. Follow the instructions to reset your password via the email associated with your account.",
+        },
+        {
+          value:"10",
+          title:"What support options are available for billing and CRM issues?",
+          content:"We provide support through email, live chat, and a comprehensive knowledge base. Our support team is available during business hours and will assist you with any issues.",
+        },
+      ],
+    };
+  },
+};
+</script>
+<style></style>
