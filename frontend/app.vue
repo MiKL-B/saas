@@ -1,6 +1,8 @@
 <template>
   <AppHeader />
-  <NuxtPage />
+  <main>
+    <NuxtPage />
+  </main>
   <AppFooter/>
 </template>
 
@@ -9,3 +11,6 @@ export default {
   name: "App",
 };
 </script>
+<style>
+
+</style>

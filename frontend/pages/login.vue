@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 px-4 flex flex-col xl:max-w-lg xl:mx-auto">
+  <section class="py-16 px-4 flex flex-col lg:max-w-lg lg:mx-auto">
     <Card>
       <CardHeader>
         <CardTitle>{{
