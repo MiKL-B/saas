@@ -1,19 +1,19 @@
 <template>
   <section class="py-16 px-4">
-    <h1 class="text-6xl mb-2">Connect YouTubers and sponsors, effortlessly</h1>
-    <p class="mb-4">
+    <h1 class="text-6xl mb-2 xl:text-center">Connect YouTubers and sponsors, effortlessly</h1>
+    <p class="mb-4 xl:text-center">
       Discover sponsors for your videos or find the perfect youtube channels for
       your brand
     </p>
-    <Button>Begin now</Button>
+    <Button class="xl:flex xl:m-auto">Begin now</Button>
   </section>
 
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2">Potential Brand Experiences</h2>
-    <p class="text-sm mb-4">
+    <h2 class="text-4xl mb-2 xl:text-center">Potential Brand Experiences</h2>
+    <p class="mb-4 xl:text-center">
       Discover what you could say about Saas after a few months of using it
     </p>
-    <div class="flex justify-center flex-wrap gap-4">
+    <div class="flex justify-center flex-wrap gap-4 xl:max-w-7xl xl:mx-auto">
       <Card v-for="i in 3">
         <CardHeader>
           <CardTitle>Maybe you</CardTitle>
@@ -35,14 +35,14 @@
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2">
+    <h2 class="text-4xl mb-2 xl:text-center">
       One simple platform to kow everything about influence on Youtube
     </h2>
-    <p class="mb-4">
+    <p class="mb-4 xl:text-center">
       Youtubers who want to maximize their revenue by getting sponsored Brands
       looking for Youtubers
     </p>
-    <div class="flex justify-center flex-wrap gap-4">
+    <div class="flex justify-center flex-wrap gap-4 xl:max-w-7xl xl:mx-auto">
       <Card v-for="i in 2">
         <CardHeader>
           <CardTitle>2000</CardTitle>
@@ -62,8 +62,8 @@
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4">How to start discovering ?</h2>
-    <div class="flex justify-center flex-wrap gap-4">
+    <h2 class="text-4xl mb-4 xl:text-center">How to start discovering ?</h2>
+    <div class="flex justify-center flex-wrap gap-4 xl:max-w-7xl xl:mx-auto">
       <Card v-for="i in 4">
         <CardHeader>
           <CardTitle>{{ i }} Step</CardTitle>
@@ -79,7 +79,7 @@
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4">To get access to the platform</h2>
+    <h2 class="text-4xl mb-4 xl:text-center">To get access to the platform</h2>
     <div class="flex justify-center flex-wrap gap-4">
       <Card v-for="i in 2">
         <CardHeader>
@@ -108,9 +108,9 @@
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2">Creator of Saas</h2>
-    <p class="mb-4">Mika, Coder</p>
-    <p>
+    <h2 class="text-4xl mb-2 xl:text-center">Creator of Saas</h2>
+    <p class="mb-4 xl:text-center">Mika, Coder</p>
+    <p class="xl:max-w-7xl xl:mx-auto">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed numquam atque
       ipsam porro reprehenderit labore repellendus sapiente reiciendis officiis
       voluptates. Illo minus suscipit, nulla cupiditate velit id, maxime
@@ -120,8 +120,8 @@
     </p>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4">Common Questions</h2>
-    <div class="flex flex-col flex-wrap gap-4">
+    <h2 class="text-4xl mb-4 xl:text-center">Common Questions</h2>
+    <div class="flex flex-col flex-wrap gap-4 xl:max-w-7xl xl:mx-auto">
       <Card v-for="i in 4">
         <CardHeader>
           <CardTitle class="flex justify-between">{{ i }} Questions 1 <Icon name="streamline:interface-arrows-button-right-arrow-right-keyboard"/></CardTitle>
@@ -130,10 +130,10 @@
     </div>
   </section>
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4">
+    <h2 class="text-4xl mb-4 xl:text-center">
       Ready to find the perfect sponsors or influencers on Youtube ?
     </h2>
-    <Button class="flex w-full">Join Saas</Button>
+    <Button class="flex xl:m-auto">Join Saas</Button>
   </section>
 </template>
 

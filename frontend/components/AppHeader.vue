@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav>
+    <nav class="xl:max-w-7xl xl:mx-auto">
       <NuxtLink to="/">Saas</NuxtLink>
       <NuxtLink to="/login"><Button>Login</Button></NuxtLink>
     </nav>
