@@ -82,13 +82,6 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* .inter-<uniquifier> {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: <weight>;
-    font-style: normal;
-  } */
-
 p,span,a {
   font-size: 16px;
   font-weight: 300;
@@ -100,16 +93,6 @@ h1 {
   line-height: 72px;
 }
 
-
-
-/* 
-   <h1 class="text-6xl">Heading 1</h1>
-   <h2 class="text-4xl">Heading 2</h2>
-   <h3 class="text-3xl">Heading 3</h3>
-   <h4 class="text-2xl">Heading 4</h4>
-   <h5 class="text-xl">Heading 5</h5>
-   <h6 class="text-lg">Heading 6</h6>
-    */
 
 .link {
   color:rgb(78, 143, 241);

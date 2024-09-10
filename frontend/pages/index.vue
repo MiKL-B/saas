@@ -1,5 +1,8 @@
 <template>
-  <section class="py-16 px-4">
+  <div class="background">
+    <div></div>
+  </div>
+  <section class="py-40 px-4">
     <h1 class="text-6xl mb-2 lg:text-center">Management software</h1>
     <p class="mb-4 lg:text-center">
       Optimize your invoice management and strengthen your customer
@@ -8,21 +11,23 @@
     </p>
     <Button class="lg:flex lg:m-auto">Begin now</Button>
   </section>
-
+  <!-- begin features -->
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4 lg:text-center">
-      We are attentive to our customers!
-    </h2>
-    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="testimonial in testimonials">
+    <h2 class="text-4xl mb-2 lg:text-center">Features</h2>
+    <p class="mb-4 lg:text-center">Description</p>
+    <div class="flex flex-col lg:grid lg:grid-rows-3 grid-flow-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Card v-for="i in 6">
         <CardHeader>
-          <CardTitle>{{ testimonial.person }}</CardTitle>
-          <CardDescription>{{ testimonial.job }}</CardDescription>
+          <CardTitle>Title {{ i }}</CardTitle>
+          <CardDescription>Description {{ i }}</CardDescription>
         </CardHeader>
-        <CardContent>{{ testimonial.text }}</CardContent>
+        <CardContent>Content {{ i }}</CardContent>
       </Card>
+
     </div>
   </section>
+  <!-- end features -->
+  <!-- begin keyfigures -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-2 lg:text-center">An all-in-one platform.</h2>
     <p class="mb-4 lg:text-center">
@@ -39,6 +44,8 @@
       </Card>
     </div>
   </section>
+  <!-- end keyfigures -->
+  <!-- begin steps -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-4 lg:text-center">How to start</h2>
     <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
@@ -50,6 +57,8 @@
       </Card>
     </div>
   </section>
+  <!-- end steps -->
+  <!-- begin pricing -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-4 lg:text-center">
       Optimize your business management: invoices and CRM in one tool!
@@ -82,6 +91,48 @@
       Start your 14-day free trial today!
     </p>
   </section>
+  <!-- end pricing -->
+  <!-- begin testimonials -->
+  <section class="py-16 px-4">
+    <h2 class="text-4xl mb-4 lg:text-center">
+      We are attentive to our customers!
+    </h2>
+    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Card v-for="testimonial in testimonials">
+        <CardHeader>
+          <CardTitle>{{ testimonial.person }}</CardTitle>
+          <CardDescription>{{ testimonial.job }}</CardDescription>
+        </CardHeader>
+        <CardContent>{{ testimonial.text }}</CardContent>
+      </Card>
+    </div>
+  </section>
+  <!-- end testimonials -->
+  <!-- begin common questions -->
+  <section class="py-16 px-4">
+    <h2 class="text-4xl mb-4 lg:text-center">Common Questions</h2>
+    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+      <Accordion
+        type="single"
+        class="w-full"
+        collapsible
+        :default-value="defaultValue"
+      >
+        <AccordionItem
+          v-for="question in questions"
+          :key="question.value"
+          :value="question.value"
+        >
+          <AccordionTrigger>{{ question.title }}</AccordionTrigger>
+          <AccordionContent>
+            {{ question.content }}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    </div>
+  </section>
+  <!-- end common questions -->
+  <!-- begin creator -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-2 lg:text-center">About the creator of the Saas</h2>
     <p class="mb-4 lg:text-center">Mika, Coder</p>
@@ -120,28 +171,20 @@
       financial operations and CRM strategies into a seamless experience!
     </p>
   </section>
+  <!-- end creator -->
+  <!-- begin newsletter -->
   <section class="py-16 px-4">
-    <h2 class="text-4xl mb-4 lg:text-center">Common Questions</h2>
-    <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Accordion
-        type="single"
-        class="w-full"
-        collapsible
-        :default-value="defaultValue"
-      >
-        <AccordionItem
-          v-for="question in questions"
-          :key="question.value"
-          :value="question.value"
-        >
-          <AccordionTrigger>{{ question.title }}</AccordionTrigger>
-          <AccordionContent>
-            {{ question.content }}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+    <h2 class="text-4xl mb-2 lg:text-center">The newsletter</h2>
+    <p class="mb-4 lg:text-center">
+      Sign up for tips about working in Saas, news about our apps, and more.
+    </p>
+    <div class="flex flex-wrap gap-4 lg:justify-center">
+      <Input type="email" placeholder="Your email address" class="w-96" />
+      <Button>Subscribe</Button>
     </div>
   </section>
+  <!-- end newsletter -->
+  <!-- begin CTA -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-2 lg:text-center">Ready to start ?</h2>
     <p class="mb-4 lg:text-center">
@@ -150,6 +193,7 @@
     </p>
     <Button class="flex lg:m-auto">Join Saas</Button>
   </section>
+  <!-- end CTA -->
 </template>
 <script>
 export default {
@@ -266,56 +310,97 @@ export default {
         {
           value: "1",
           title: "How can I access my invoices?",
-          content: "You can access your invoices by logging into your account and navigating to the 'Billing' section. All your past invoices will be listed there for download.",
+          content:
+            "You can access your invoices by logging into your account and navigating to the 'Billing' section. All your past invoices will be listed there for download.",
         },
         {
           value: "2",
           title: "What should I do if I find a discrepancy in my invoice?",
-          content: "If you notice any discrepancies, please contact our support team within 30 days of the invoice date. Include your invoice number and details of the discrepancy to expedite resolution.",
+          content:
+            "If you notice any discrepancies, please contact our support team within 30 days of the invoice date. Include your invoice number and details of the discrepancy to expedite resolution.",
         },
         {
           value: "3",
           title: "What payment methods do you accept for invoices?",
-          content: "We accept various payment methods including credit/debit cards, PayPal, and bank transfers. You can choose your preferred method during the checkout process.",
+          content:
+            "We accept various payment methods including credit/debit cards, PayPal, and bank transfers. You can choose your preferred method during the checkout process.",
         },
         {
           value: "4",
           title: "How do I access the CRM system?",
-          content: "You can access the CRM by logging into your account and clicking on the 'CRM' tab on the dashboard. Ensure you have the required permissions to view this section.",
+          content:
+            "You can access the CRM by logging into your account and clicking on the 'CRM' tab on the dashboard. Ensure you have the required permissions to view this section.",
         },
         {
           value: "5",
           title: "How can I import my client data into the CRM?",
-          content: "You can import client data by navigating to the 'Import' section in the CRM. We support CSV file formats for easy uploading of your contacts.",
+          content:
+            "You can import client data by navigating to the 'Import' section in the CRM. We support CSV file formats for easy uploading of your contacts.",
         },
         {
-          value:"6",
-          title:"Can I customize user roles in the CRM?",
-          content:"Yes, you can customize user roles and permissions in the settings area. This allows you to control who has access to various features of the CRM.",
+          value: "6",
+          title: "Can I customize user roles in the CRM?",
+          content:
+            "Yes, you can customize user roles and permissions in the settings area. This allows you to control who has access to various features of the CRM.",
         },
         {
-          value:"7",
-          title:"How can I track which invoices are paid or unpaid?",
-          content:"In the 'Billing' section, you can view all your invoices along with their payment status. Unpaid invoices will be marked clearly, making it easy to follow up.",
+          value: "7",
+          title: "How can I track which invoices are paid or unpaid?",
+          content:
+            "In the 'Billing' section, you can view all your invoices along with their payment status. Unpaid invoices will be marked clearly, making it easy to follow up.",
         },
         {
-          value:"8",
-          title:"Does your CRM integrate with other tools?",
-          content:"Yes, our CRM supports integrations with several popular tools like email platforms, project management software, and marketing automation tools. Check the integrations page for a full list.",
+          value: "8",
+          title: "Does your CRM integrate with other tools?",
+          content:
+            "Yes, our CRM supports integrations with several popular tools like email platforms, project management software, and marketing automation tools. Check the integrations page for a full list.",
         },
         {
-          value:"9",
-          title:"What should I do if I forget my password?",
-          content:"If you forget your password, click on the 'Forgot Password?' link on the login page. Follow the instructions to reset your password via the email associated with your account.",
+          value: "9",
+          title: "What should I do if I forget my password?",
+          content:
+            "If you forget your password, click on the 'Forgot Password?' link on the login page. Follow the instructions to reset your password via the email associated with your account.",
         },
         {
-          value:"10",
-          title:"What support options are available for billing and CRM issues?",
-          content:"We provide support through email, live chat, and a comprehensive knowledge base. Our support team is available during business hours and will assist you with any issues.",
+          value: "10",
+          title:
+            "What support options are available for billing and CRM issues?",
+          content:
+            "We provide support through email, live chat, and a comprehensive knowledge base. Our support team is available during business hours and will assist you with any issues.",
         },
       ],
     };
   },
 };
 </script>
-<style></style>
+<style>
+.background {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  display: flex;
+  flex-grow: 1;
+  z-index: -1;
+}
+
+.background div {
+  position: absolute;
+  border-radius: 100%;
+  height: 0;
+  filter: blur(240vw);
+  opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+  background: linear-gradient(132deg, #5676e4 0%, #375ee1 100%);
+  width: 42%;
+  padding-top: 42%;
+  left: 85%;
+  top: 54%;
+  transform: translateX(-50%) translateY(-50%);
+}
+</style>
