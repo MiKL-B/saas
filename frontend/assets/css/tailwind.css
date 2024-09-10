@@ -81,7 +81,9 @@
 *{
   font-family: "Roboto", sans-serif;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 p,span,a {
   font-size: 16px;
   font-weight: 300;

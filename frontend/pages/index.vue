@@ -12,18 +12,28 @@
     <Button class="lg:flex lg:m-auto">Begin now</Button>
   </section>
   <!-- begin features -->
-  <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">Features</h2>
-    <p class="mb-4 lg:text-center">Description</p>
-    <div class="flex flex-col lg:grid lg:grid-rows-3 grid-flow-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
-      <Card v-for="i in 6">
+  <section id="features" class="py-16 px-4">
+    <h2 class="text-4xl mb-2 lg:text-center">
+      Simplify invoicing and elevate customer relationships with our all-in-one
+      SaaS!
+    </h2>
+    <p class="lg:text-center">
+      Revolutionize your invoicing and customer management with our all-in-one
+      SaaS solution.
+    </p>
+    <p class="mb-4 lg:text-center">
+      Effortlessly create invoices, track payments, and enhance client
+      relationships to drive your business forward!
+    </p>
+    <div
+      class="flex flex-col lg:grid lg:grid-rows-3 grid-flow-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto"
+    >
+      <Card v-for="feature in features">
         <CardHeader>
-          <CardTitle>Title {{ i }}</CardTitle>
-          <CardDescription>Description {{ i }}</CardDescription>
+          <CardTitle>{{ feature.title }}</CardTitle>
+          <CardDescription>{{ feature.description }}</CardDescription>
         </CardHeader>
-        <CardContent>Content {{ i }}</CardContent>
       </Card>
-
     </div>
   </section>
   <!-- end features -->
@@ -59,14 +69,14 @@
   </section>
   <!-- end steps -->
   <!-- begin pricing -->
-  <section class="py-16 px-4">
+  <section id="pricing" class="py-16 px-4">
     <h2 class="text-4xl mb-4 lg:text-center">
       Optimize your business management: invoices and CRM in one tool!
     </h2>
     <div
       class="flex flex-wrap justify-center lg:justify-between gap-4 lg:max-w-7xl lg:mx-auto"
     >
-      <Card v-for="pricing in pricings">
+      <Card v-for="pricing in pricings" class="w-96">
         <CardHeader>
           <CardTitle>{{ pricing.title }}</CardTitle>
           <CardDescription>{{ pricing.description }}</CardDescription>
@@ -132,6 +142,28 @@
     </div>
   </section>
   <!-- end common questions -->
+  <!-- begin newsletter -->
+  <section class="py-16 px-4">
+    <h2 class="text-4xl mb-2 lg:text-center">The newsletter</h2>
+    <p class="mb-4 lg:text-center">
+      Sign up for tips about working in Saas, news about our apps, and more.
+    </p>
+    <div class="flex flex-wrap gap-4 lg:justify-center">
+      <Input type="email" placeholder="Your email address" class="w-96" />
+      <Button>Subscribe</Button>
+    </div>
+  </section>
+  <!-- end newsletter -->
+  <!-- begin CTA -->
+  <section class="py-16 px-4">
+    <h2 class="text-4xl mb-2 lg:text-center">Ready to start ?</h2>
+    <p class="mb-4 lg:text-center">
+      Sign up and discover how our solution can make your billing and customer
+      relationship management easier!
+    </p>
+    <Button class="flex lg:m-auto">Join Saas</Button>
+  </section>
+  <!-- end CTA -->
   <!-- begin creator -->
   <section class="py-16 px-4">
     <h2 class="text-4xl mb-2 lg:text-center">About the creator of the Saas</h2>
@@ -172,28 +204,6 @@
     </p>
   </section>
   <!-- end creator -->
-  <!-- begin newsletter -->
-  <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">The newsletter</h2>
-    <p class="mb-4 lg:text-center">
-      Sign up for tips about working in Saas, news about our apps, and more.
-    </p>
-    <div class="flex flex-wrap gap-4 lg:justify-center">
-      <Input type="email" placeholder="Your email address" class="w-96" />
-      <Button>Subscribe</Button>
-    </div>
-  </section>
-  <!-- end newsletter -->
-  <!-- begin CTA -->
-  <section class="py-16 px-4">
-    <h2 class="text-4xl mb-2 lg:text-center">Ready to start ?</h2>
-    <p class="mb-4 lg:text-center">
-      Sign up and discover how our solution can make your billing and customer
-      relationship management easier!
-    </p>
-    <Button class="flex lg:m-auto">Join Saas</Button>
-  </section>
-  <!-- end CTA -->
 </template>
 <script>
 export default {
@@ -367,6 +377,38 @@ export default {
             "What support options are available for billing and CRM issues?",
           content:
             "We provide support through email, live chat, and a comprehensive knowledge base. Our support team is available during business hours and will assist you with any issues.",
+        },
+      ],
+      features: [
+        {
+          title: "Custom Invoice Creation",
+          description:
+            "Create professional invoices in just a few clicks. Choose from a variety of customizable templates, add your logo, include your contact information, and modify colors to reflect your brand identity. Save time and ensure every invoice aligns with your company's image.",
+        },
+        {
+          title: "Automated Payment Tracking",
+          description:
+            "Never lose track of your payments with our automated tracking system. Receive notifications when your clients open invoices and generate automatic reminders for overdue payments. Stay in control of your cash flow while simplifying your follow-up process.",
+        },
+        {
+          title: "Comprehensive CRM Integration",
+          description:
+            "Manage your clients and opportunities directly within our platform. With comprehensive CRM integration, track interaction history, manage contacts, and segment your clientele for targeted marketing campaigns. Strengthen your client relationships and boost your sales.",
+        },
+        {
+          title: "Advanced Reporting and Analytics",
+          description:
+            "Access interactive dashboards and detailed reports on your financial performance. Analyze billing trends, track customer behavior, and identify areas for improvement. Make informed decisions to optimize your business strategy.",
+        },
+        {
+          title: "Subscription Management",
+          description:
+            "Simplify the management of your subscriptions with our dedicated feature. Easily create, track, and manage your clients' subscriptions with automated billing cycles. Give your customers the flexibility of self-service options to modify, renew, or cancel their subscriptions.",
+        },
+        {
+          title: "Multi-User Access with Custom Permissions",
+          description:
+            "Collaborate securely with your team through multi-user access. Assign roles and custom permissions to each team member to ensure efficient and secure management of invoices and customer data. Work together while protecting sensitive information.",
         },
       ],
     };
