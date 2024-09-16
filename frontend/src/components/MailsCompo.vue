@@ -2,7 +2,7 @@
   <div class="content">
     <!-- content 1 -->
     <div
-      class="flex flex-col gap-4 p-4 border-r-grey h-full max-h-full-vh div1"
+      class="flex flex-col gap-4 p-4 border-r-grey h-full max-h-full-vh"
     >
       <input type="text" class="uk-input" placeholder="Search..." />
       <select class="uk-select">

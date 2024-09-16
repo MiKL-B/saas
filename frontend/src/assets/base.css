@@ -27,6 +27,9 @@ html {
 .pr-2 {
   padding-right: 0.5rem;
 }
+.pb-2{
+  padding-bottom: 0.5rem;
+}
 .p-4 {
   padding: 1rem;
 }
@@ -40,6 +43,9 @@ html {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pb-4{
+  padding-bottom:1rem;
 }
 .py-16 {
   padding-top: 4rem; /* 64px */
@@ -89,6 +95,18 @@ html {
   flex-wrap: wrap;
 }
 
+
+/* grid */
+.grid{
+  display: grid;
+}
+.grid-rows-2{
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 /* justify-content */
 .justify-center {
   justify-content: center;
@@ -110,6 +128,9 @@ html {
 /* width */
 .w-96 {
   width: 24rem; /* 384px */
+}
+.w-75{
+  width:75%;
 }
 .w-full {
   width: 100%;
