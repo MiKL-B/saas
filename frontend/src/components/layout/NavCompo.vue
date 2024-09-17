@@ -24,3 +24,9 @@ export default {
   name: "NavCompo",
 };
 </script>
+
+<style scoped>
+nav{
+  z-index: 3;
+}
+</style>

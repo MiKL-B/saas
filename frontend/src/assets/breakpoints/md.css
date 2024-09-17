@@ -1,0 +1,36 @@
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .md\:text-center {
+    text-align: center;
+  }
+  .md\:grid {
+    display: grid;
+  }
+  .md\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+  .md\:grid-flow-col {
+    grid-auto-flow: column;
+  }
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  .md\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .md\:m-auto {
+    margin: auto;
+  }
+  .md\:max-w-7xl {
+    max-width: 80rem; /* 1280px */
+  }
+  .md\:justify-between {
+    justify-content: space-between;
+  }
+  .md\:justify-center {
+    justify-content: center;
+  }
+}

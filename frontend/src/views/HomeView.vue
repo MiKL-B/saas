@@ -1,6 +1,7 @@
 <template>
-  <div class="desktop">
-    <div class="nav-desktop border-r-grey">
+  <div class="container">
+    <!-- nav -->
+    <div class="nav-desktop block border-r-grey">
       <ul
         class="flex flex-col justify-between h-full uk-nav uk-nav-primary py-4"
         uk-nav
@@ -56,19 +57,15 @@
         </div>
       </ul>
     </div>
-
-    <div>
-      <component v-bind:is="currentComponent"></component>
-    </div>
+    <!-- content -->
+    <component v-bind:is="currentComponent"></component>
   </div>
 </template>
 
 <script>
 import DashboardCompo from "@/components/DashboardCompo.vue";
 import MailsCompo from "@/components/MailsCompo.vue";
-import KanbanCompo from "@/components/KanbanCompo.vue";
 import FinancialCompo from "@/components/FinancialCompo.vue";
-import NotesCompo from "@/components/NotesCompo.vue";
 import ScheduleCompo from "@/components/ScheduleCompo.vue";
 import SettingsCompo from "@/components/SettingsCompo.vue";
 import StatisticsCompo from "@/components/StatisticsCompo.vue";
@@ -90,10 +87,8 @@ import {
   Contact,
   ChartSpline,
   Folder,
-  Kanban,
   CalendarCheck,
   ListTodo,
-  StickyNote,
   FileText,
   Settings,
   CircleHelp,
@@ -117,19 +112,15 @@ export default {
     Contact,
     ChartSpline,
     Folder,
-    Kanban,
     CalendarCheck,
     ListTodo,
-    StickyNote,
     FileText,
     Settings,
     CircleHelp,
     AvatarCompo,
     DashboardCompo,
     MailsCompo,
-    KanbanCompo,
     FinancialCompo,
-    NotesCompo,
     ScheduleCompo,
     SettingsCompo,
     StatisticsCompo,
@@ -161,11 +152,6 @@ export default {
           component: "TasksCompo",
         },
         {
-          label: "Notes",
-          icon: StickyNote,
-          component: "NotesCompo",
-        },
-        {
           label: "Contacts",
           icon: Contact,
           component: "ContactsCompo",
@@ -192,24 +178,12 @@ export default {
 </script>
 <style>
 .nav-desktop {
-  display: block;
   background: #f9fbfd;
 }
-.desktop {
+.container {
   display: grid;
-  grid-template-columns: 0.2fr 0.3fr;
+  grid-template-columns: 0.2fr 1fr;
   height: 100vh;
 }
 
-@media screen and (min-width: 768px) {
-  .nav-desktop {
-    display: block;
-    background: #f9fbfd;
-  }
-  .desktop {
-    display: grid;
-    grid-template-columns: 0.15fr 1fr;
-    height: 100vh;
-  }
-}
 </style>

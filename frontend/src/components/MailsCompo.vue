@@ -1,9 +1,7 @@
 <template>
   <div class="content">
     <!-- content 1 -->
-    <div
-      class="flex flex-col gap-4 p-4 border-r-grey h-full max-h-full-vh"
-    >
+    <div class="flex flex-col gap-4 p-4 border-r-grey h-full max-h-full-vh">
       <input type="text" class="uk-input" placeholder="Search..." />
       <select class="uk-select">
         <option value="">Inbox</option>
@@ -22,10 +20,9 @@
       </div>
     </div>
     <!-- content 2 -->
-    <div class="mails p-4 flex flex-col">
-      <div
-        class="mails-top flex justify-between items-center gap-4 border-b-grey py-2"
-      >
+    <div class="p-4 flex flex-col">
+      <!--  -->
+      <div class="flex justify-between items-center gap-4 border-b-grey py-2">
         <div>
           <p class="flex items-center gap-2">
             <AvatarCompo>
@@ -38,8 +35,9 @@
         </div>
         <span class="text-muted-foreground"> Oct 22, 2023, 9:00:00 AM </span>
       </div>
+      <!--  -->
       <div class="mails-bottom pt-4 flex flex-col h-full">
-        <p class="border-b-grey py-2 h-full">
+        <p class=" py-2 h-full">
           Subject: Important Update Regarding Your Account<br /><br />
           From: support@fakemagnet.com<br />
           To: user@example.com<br /><br />
@@ -90,4 +88,5 @@ export default {
   display: grid;
   grid-template-columns: 0.3fr 1fr;
 }
+
 </style>

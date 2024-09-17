@@ -4,8 +4,8 @@
     <main>
       <SectionCompo>
         <template v-slot:content>
-          <h1 class="uk-h1 lg:text-center">Management software</h1>
-          <p class="uk-paragraph lg:text-center">
+          <h1 class="uk-h1 md:text-center">Management software</h1>
+          <p class="uk-paragraph md:text-center">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
             Aspernatur, iste.
           </p>
@@ -15,20 +15,20 @@
       <!-- to modify -->
       <!-- begin features -->
       <section id="features" class="py-16 px-4">
-        <h2 class="text-4xl mb-2 lg:text-center">
+        <h2 class="text-4xl mb-2 md:text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="lg:text-center">
+        <p class="md:text-center">
           Revolutionize your invoicing and customer management with our
           all-in-one SaaS solution.
         </p>
-        <p class="mb-4 lg:text-center">
+        <p class="mb-4 md:text-center">
           Effortlessly create invoices, track payments, and enhance client
           relationships to drive your business forward!
         </p>
         <div
-          class="flex flex-col lg:grid lg:grid-rows-3 lg:grid-flow-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto"
+          class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col flex-wrap gap-4 md:max-w-7xl md:mx-auto"
         >
           <div class="uk-card" v-for="feature in features">
             <div class="uk-card-header">
@@ -45,13 +45,13 @@
       <!-- end features -->
       <!-- begin keyfigures -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-2 lg:text-center">An all-in-one platform.</h2>
-        <p class="mb-4 lg:text-center">
+        <h2 class="text-4xl mb-2 md:text-center">An all-in-one platform.</h2>
+        <p class="mb-4 md:text-center">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
         </p>
-        <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <div class="uk-card" v-for="keyfigure in keyfigures">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ keyfigure.figure }}</h3>
@@ -68,8 +68,8 @@
       <!-- end keyfigures -->
       <!-- begin steps -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-4 lg:text-center">How to start</h2>
-        <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+        <h2 class="text-4xl mb-4 md:text-center">How to start</h2>
+        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <div class="uk-card" v-for="step in steps">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
@@ -81,11 +81,11 @@
       <!-- end steps -->
       <!-- begin pricing -->
       <section id="pricing" class="py-16 px-4">
-        <h2 class="text-4xl mb-4 lg:text-center">
+        <h2 class="text-4xl mb-4 md:text-center">
           Optimize your business management: invoices and CRM in one tool!
         </h2>
         <div
-          class="flex flex-wrap justify-center lg:justify-between gap-4 lg:max-w-7xl lg:mx-auto"
+          class="flex flex-wrap justify-center md:justify-between gap-4 md:max-w-7xl md:mx-auto"
         >
           <div class="uk-card" v-for="pricing in pricings">
             <div class="uk-card-header">
@@ -107,8 +107,8 @@
               </ul>
             </div>
             <div class="uk-card-footer">
-              <Button class="w-full uk-button uk-button-primary"
-                >Buy now</Button
+              <button class="w-full uk-button uk-button-primary"
+                >Buy now</button
               >
             </div>
           </div>
@@ -120,10 +120,10 @@
       <!-- end pricing -->
       <!-- begin testimonials -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-4 lg:text-center">
+        <h2 class="text-4xl mb-4 md:text-center">
           We are attentive to our customers!
         </h2>
-        <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <div class="uk-card" v-for="testimonial in testimonials">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ testimonial.person }}</h3>
@@ -140,8 +140,8 @@
       <!-- end testimonials -->
       <!-- begin common questions -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-4 lg:text-center">Common Questions</h2>
-        <div class="flex flex-col flex-wrap gap-4 lg:max-w-7xl lg:mx-auto">
+        <h2 class="text-4xl mb-4 md:text-center">Common Questions</h2>
+        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <ul uk-accordion>
             <li
               v-for="question in questions"
@@ -151,7 +151,7 @@
               <a class="uk-accordion-title" href>
                 <span>{{ question.title }}</span>
                 <span class="size-4 uk-accordion-icon">
-                  <uk-icon icon="chevron-down"></uk-icon>
+                  chevron
                 </span>
               </a>
               <div class="uk-accordion-content">
@@ -164,11 +164,11 @@
       <!-- end common questions -->
       <!-- begin newsletter -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-2 lg:text-center">The newsletter</h2>
-        <p class="mb-4 lg:text-center">
+        <h2 class="text-4xl mb-2 md:text-center">The newsletter</h2>
+        <p class="mb-4 md:text-center">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
-        <div class="flex flex-wrap gap-4 lg:justify-center">
+        <div class="flex flex-wrap gap-4 md:justify-center">
           <input
             type="email"
             placeholder="Your email address"
@@ -180,23 +180,23 @@
       <!-- end newsletter -->
       <!-- begin CTA -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-2 lg:text-center">Ready to start ?</h2>
-        <p class="mb-4 lg:text-center">
+        <h2 class="text-4xl mb-2 md:text-center">Ready to start ?</h2>
+        <p class="mb-4 md:text-center">
           Sign up and discover how our solution can make your billing and
           customer relationship management easier!
         </p>
-        <button class="flex lg:m-auto uk-button uk-button-primary">
+        <button class="flex md:m-auto uk-button uk-button-primary">
           Join Saas
         </button>
       </section>
       <!-- end CTA -->
       <!-- begin creator -->
       <section class="py-16 px-4">
-        <h2 class="text-4xl mb-2 lg:text-center">
+        <h2 class="text-4xl mb-2 md:text-center">
           About the creator of the Saas
         </h2>
-        <p class="mb-4 lg:text-center">Mika, Coder</p>
-        <p class="lg:max-w-7xl lg:mx-auto mb-2">
+        <p class="mb-4 md:text-center">Mika, Coder</p>
+        <p class="md:max-w-7xl md:mx-auto mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
           realms of invoice management and customer relationship management
@@ -204,7 +204,7 @@
           enhance their financial processes, improve client interactions, and
           drive growth.
         </p>
-        <p class="lg:max-w-7xl lg:mx-auto mb-2">
+        <p class="md:max-w-7xl md:mx-auto mb-2">
           We understand the challenges companies face when managing invoices,
           tracking payments, and maintaining customer relationships. That's why
           our development team utilizes cutting-edge technology to build a
@@ -212,7 +212,7 @@
           automated invoicing, real-time payment tracking, and customizable CRM
           tools allow our users to save time and enhance their efficiency.
         </p>
-        <p class="lg:max-w-7xl lg:mx-auto mb-2">
+        <p class="md:max-w-7xl md:mx-auto mb-2">
           Our commitment to scalability ensures that as our clients grow, our
           software evolves with them. By integrating advanced analytics and
           reporting features, we provide businesses with insights that help them
@@ -220,14 +220,14 @@
           our users can rest easy knowing their financial data and customer
           information are protected.
         </p>
-        <p class="lg:max-w-7xl lg:mx-auto mb-2">
+        <p class="md:max-w-7xl md:mx-auto mb-2">
           At the heart of our development process is a passion for customer
           satisfaction. We actively gather feedback and continuously improve our
           platform to meet the changing needs of our users. With our innovative
           SaaS solution, managing invoices and nurturing customer relationships
           has never been easier.
         </p>
-        <p class="lg:max-w-7xl lg:mx-auto">
+        <p class="md:max-w-7xl md:mx-auto">
           Partner with us today to leverage technology that transforms your
           financial operations and CRM strategies into a seamless experience!
         </p>

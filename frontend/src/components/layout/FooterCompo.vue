@@ -1,6 +1,6 @@
 <template>
     <footer>
-      <section class="py-16 px-4 mt-auto flex justify-around gap-4 flex-col lg:flex-row">
+      <section class="py-16 px-4 mt-auto flex justify-around gap-4 flex-col md:flex-row">
         <ul>
           <li><h2 class="mb-2">Saas</h2></li>
           <li><a href="#features" class="link">Features</a></li>

@@ -1,0 +1,7 @@
+/* @media screen and (min-width: 340px) {
+  
+} */
+
+.flex-col {
+  flex-direction: column;
+}
