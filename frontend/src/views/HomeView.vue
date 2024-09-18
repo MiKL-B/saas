@@ -68,7 +68,6 @@ import MailsCompo from "@/components/MailsCompo.vue";
 import FinancialCompo from "@/components/FinancialCompo.vue";
 import ScheduleCompo from "@/components/ScheduleCompo.vue";
 import SettingsCompo from "@/components/SettingsCompo.vue";
-import StatisticsCompo from "@/components/StatisticsCompo.vue";
 import TasksCompo from "@/components/TasksCompo.vue";
 import ContactsCompo from "@/components/ContactsCompo.vue";
 import {
@@ -123,7 +122,6 @@ export default {
     FinancialCompo,
     ScheduleCompo,
     SettingsCompo,
-    StatisticsCompo,
     TasksCompo,
     ContactsCompo,
   },
@@ -160,11 +158,6 @@ export default {
           label: "Financial",
           icon: FileText,
           component: "FinancialCompo",
-        },
-        {
-          label: "Statistics",
-          icon: ChartSpline,
-          component: "StatisticsCompo",
         },
         {
           label: "Settings",
