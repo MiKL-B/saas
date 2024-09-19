@@ -169,7 +169,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .nav-desktop {
   background: #f9fbfd;
 }

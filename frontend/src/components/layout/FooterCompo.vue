@@ -1,6 +1,5 @@
 <template>
-    <footer>
-      <section class="py-16 px-4 mt-auto flex justify-around gap-4 flex-col md:flex-row">
+    <footer class="flex flex-col gap-2">
         <ul>
           <li><h2 class="mb-2">Saas</h2></li>
           <li><a href="#features" class="link">Features</a></li>
@@ -28,8 +27,6 @@
           <li><a href="#" class="link">About us</a></li>
           <li><a href="#" class="link">Affiliation</a></li>
         </ul>
-      </section>
-      <h2 class="py-16 text-center">Saas © 2024</h2>
     </footer>
   </template>
   

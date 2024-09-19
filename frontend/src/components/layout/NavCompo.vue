@@ -1,22 +1,17 @@
 <template>
-  <nav class="uk-navbar-container flex sticky-top">
-    <div class="uk-navbar-left">
-      <ul class="uk-navbar-nav">
-        <li><RouterLink to="/">Saas</RouterLink></li>
-      </ul>
-    </div>
-    <div class="uk-navbar-right">
-      <ul class="uk-navbar-nav">
+  <header
+    class="flex justify-between p-4 items-center sticky-top border-b-grey"
+  >
+    <h1>Saas</h1>
+    <nav>
+      <ul class="flex gap-2 items-center">
+        <li><RouterLink to="/">Home</RouterLink></li>
         <li>
-          <RouterLink to="/login"
-            ><button class="uk-button uk-button-primary">
-              Login
-            </button></RouterLink
-          >
+          <RouterLink to="/login" class="uk-button uk-button-primary">Login</RouterLink>
         </li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -25,8 +20,9 @@ export default {
 };
 </script>
 
-<style scoped>
-nav{
+<style>
+header {
   z-index: 3;
+  background: white;
 }
 </style>

@@ -1,5 +1,4 @@
 <template>
-  <div class="uk-container">
     <NavCompo />
     <main>
       <form class="uk-width-1-2@m uk-card m-auto">
@@ -47,7 +46,9 @@
             </div>
             <!-- Confirm password -->
             <div class="uk-form-controls" v-if="!isLoginForm">
-              <label class="uk-form-label" for="password">Confirm password</label>
+              <label class="uk-form-label" for="password"
+                >Confirm password</label
+              >
               <input
                 class="uk-input mb-4"
                 id="confirm"
@@ -95,7 +96,6 @@
       </form>
     </main>
     <FooterCompo />
-  </div>
 </template>
 
 <script>

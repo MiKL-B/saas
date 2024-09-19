@@ -1,20 +1,19 @@
 <template>
-  <div class="uk-container">
-    <NavCompo />
-    <main>
-      <SectionCompo>
-        <template v-slot:content>
-          <h1 class="uk-h1 md:text-center">Management software</h1>
-          <p class="uk-paragraph md:text-center">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Aspernatur, iste.
-          </p>
-        </template>
-      </SectionCompo>
+  <NavCompo />
+  <main>
+    <SectionCompo>
+      <template v-slot:content>
+        <h1 class="uk-h1 md:text-center">Management software</h1>
+        <p class="md:text-center">
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur,
+          iste.
+        </p>
+      </template>
+    </SectionCompo>
 
-      <!-- to modify -->
-      <!-- begin features -->
-      <section id="features" class="py-16 px-4">
+    <!-- begin features -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-2 md:text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
@@ -41,10 +40,12 @@
             </div>
           </div>
         </div>
-      </section>
-      <!-- end features -->
-      <!-- begin keyfigures -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+    <!-- end features -->
+    <!-- begin keyfigures -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-2 md:text-center">An all-in-one platform.</h2>
         <p class="mb-4 md:text-center">
           Simplify your invoice management and optimize your customer
@@ -64,10 +65,12 @@
             <div class="uk-card-body">{{ keyfigure.text }}</div>
           </div>
         </div>
-      </section>
-      <!-- end keyfigures -->
-      <!-- begin steps -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+    <!-- end keyfigures -->
+    <!-- begin steps -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-4 md:text-center">How to start</h2>
         <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <div class="uk-card" v-for="step in steps">
@@ -77,10 +80,12 @@
             <div class="uk-card-body">{{ step.text }}</div>
           </div>
         </div>
-      </section>
-      <!-- end steps -->
-      <!-- begin pricing -->
-      <section id="pricing" class="py-16 px-4">
+      </template>
+    </SectionCompo>
+    <!-- end steps -->
+    <!-- begin pricing -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-4 md:text-center">
           Optimize your business management: invoices and CRM in one tool!
         </h2>
@@ -107,19 +112,22 @@
               </ul>
             </div>
             <div class="uk-card-footer">
-              <button class="w-full uk-button uk-button-primary"
-                >Buy now</button
-              >
+              <button class="w-full uk-button uk-button-primary">
+                Buy now
+              </button>
             </div>
           </div>
         </div>
         <p class="link underline cursor-pointer my-4 text-center">
           Start your 14-day free trial today!
         </p>
-      </section>
-      <!-- end pricing -->
-      <!-- begin testimonials -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+
+    <!-- end pricing -->
+    <!-- begin testimonials -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-4 md:text-center">
           We are attentive to our customers!
         </h2>
@@ -136,10 +144,13 @@
             <div class="uk-card-body">{{ testimonial.text }}</div>
           </div>
         </div>
-      </section>
-      <!-- end testimonials -->
-      <!-- begin common questions -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+
+    <!-- end testimonials -->
+    <!-- begin common questions -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-4 md:text-center">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
           <ul uk-accordion>
@@ -150,9 +161,7 @@
             >
               <a class="uk-accordion-title" href>
                 <span>{{ question.title }}</span>
-                <span class="size-4 uk-accordion-icon">
-                  chevron
-                </span>
+                <span class="size-4 uk-accordion-icon"> chevron </span>
               </a>
               <div class="uk-accordion-content">
                 {{ question.content }}
@@ -160,10 +169,13 @@
             </li>
           </ul>
         </div>
-      </section>
-      <!-- end common questions -->
-      <!-- begin newsletter -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+
+    <!-- end common questions -->
+    <!-- begin newsletter -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-2 md:text-center">The newsletter</h2>
         <p class="mb-4 md:text-center">
           Sign up for tips about working in Saas, news about our apps, and more.
@@ -176,10 +188,13 @@
           />
           <button class="uk-button uk-button-primary">Subscribe</button>
         </div>
-      </section>
-      <!-- end newsletter -->
-      <!-- begin CTA -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+
+    <!-- end newsletter -->
+    <!-- begin CTA -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-2 md:text-center">Ready to start ?</h2>
         <p class="mb-4 md:text-center">
           Sign up and discover how our solution can make your billing and
@@ -188,10 +203,13 @@
         <button class="flex md:m-auto uk-button uk-button-primary">
           Join Saas
         </button>
-      </section>
-      <!-- end CTA -->
-      <!-- begin creator -->
-      <section class="py-16 px-4">
+      </template>
+    </SectionCompo>
+
+    <!-- end CTA -->
+    <!-- begin creator -->
+    <SectionCompo>
+      <template v-slot:content>
         <h2 class="text-4xl mb-2 md:text-center">
           About the creator of the Saas
         </h2>
@@ -231,15 +249,15 @@
           Partner with us today to leverage technology that transforms your
           financial operations and CRM strategies into a seamless experience!
         </p>
-      </section>
-      <!-- end creator -->
-    </main>
-    <FooterCompo />
-  </div>
+      </template>
+    </SectionCompo>
+    <!-- end creator -->
+  </main>
+  <FooterCompo />
 </template>
 <script>
 import NavCompo from "@/components/layout/NavCompo.vue";
-import SectionCompo from "@/components/SectionCompo.vue";
+import SectionCompo from "@/components/layout/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
 import { Check } from "lucide-vue-next";
 export default {
