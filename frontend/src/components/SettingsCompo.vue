@@ -1,6 +1,6 @@
 <template>
-  <div class="flex justify-between gap-4 p-4">
-    <div class="w-96">
+  <div class="flex flex-col lg:flex-row justify-between gap-4 p-4">
+    <div class="lg:w-96">
       <ul
         class="flex flex-col justify-between uk-nav uk-nav-primary"
         uk-nav
@@ -42,7 +42,7 @@
         </li>
       </ul>
     </div>
-    <form class="w-full">
+    <form class="lg:w-full">
       <fieldset class="uk-fieldset">
         <div>
           <h3 class="uk-card-title">Settings</h3>
@@ -50,7 +50,7 @@
             Manage your account settings and set e-mail preferences.
           </p>
         </div>
-        <div class="flex flex-col gap-4 w-96">
+        <div class="flex flex-col gap-4 lg:w-96">
           <!-- Name -->
           <div class="uk-form-controls">
             <label class="uk-form-label" for="email">Name</label>

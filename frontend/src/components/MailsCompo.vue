@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <!-- content 1 -->
-    <div class="flex flex-col gap-4 p-4 border-r-grey h-full max-h-full-vh">
+    <div class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh">
       <input type="text" class="uk-input" placeholder="Search..." />
       <select class="uk-select">
         <option value="">Inbox</option>
@@ -10,7 +10,7 @@
         <option value="">Junk</option>
         <option value="">Trash</option>
       </select>
-      <div class="flex flex-col gap-4 overflow-scroll">
+      <div class="flex flex-col h-20rem lg:h-full gap-4 overflow-scroll">
         <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
           <h3 class="uk-card-title">Default</h3>
           <p class="uk-margin">
@@ -37,7 +37,7 @@
       </div>
       <!--  -->
       <div class="mails-bottom pt-4 flex flex-col h-full">
-        <p class=" py-2 h-full">
+        <p class="py-2 h-full">
           Subject: Important Update Regarding Your Account<br /><br />
           From: support@fakemagnet.com<br />
           To: user@example.com<br /><br />
@@ -85,8 +85,13 @@ export default {
 
 <style scoped>
 .content {
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
-
+@media screen and (min-width: 1024px) {
+  .content {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+  }
+}
 </style>

@@ -8,8 +8,8 @@
     <div class="uk-switcher">
       <!-- Tasks -->
       <div class="h-full">
-        <div class="flex gap-2 pt-4">
-          <input type="text" class="uk-input w-96" placeholder="Search..." />
+        <div class="flex flex-col lg:flex-row gap-2 pt-4">
+          <input type="text" class="uk-input lg:w-96" placeholder="Search..." />
           <button class="uk-button uk-button-default">Status</button>
           <button class="uk-button uk-button-default">Priority</button>
         </div>
@@ -24,8 +24,8 @@
                 />
               </th>
               <th class="uk-table-shrink">Task</th>
-              <th class="uk-table-expand">Title</th>
-              <th class="uk-table-expand">Status</th>
+              <th class="uk-table-shrink">Title</th>
+              <th class="uk-table-shrink">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -37,8 +37,7 @@
                   aria-label="Checkbox"
                 />
               </td>
-
-              <td class="">
+              <td>
                 <a class="uk-link-reset" href="#">#{{ i }}</a>
               </td>
               <td class="uk-text-truncate">
@@ -78,7 +77,7 @@
             <input type="text" class="uk-input" placeholder="Search..." />
             <div class="flex flex-col gap-2 h-48rem overflow-scroll">
               <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
-                <h3 class="uk-card-title">Default {{i}}</h3>
+                <h3 class="uk-card-title">Default {{ i }}</h3>
                 <p class="uk-margin">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                 </p>
@@ -127,18 +126,27 @@ export default {
 
 <style scoped>
 .content {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
 }
-.notes {
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
+.notes{
+  display: flex;
+  flex-direction: column;
 }
-
-nav {
+/* nav {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 1rem;
+} */
+@media screen and (min-width: 1024px) {
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+  .notes {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+  }
 }
 </style>

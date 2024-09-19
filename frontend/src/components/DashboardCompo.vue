@@ -9,7 +9,7 @@
       <!-- Overview -->
       <div class="h-full flex flex-col gap-4">
         <!-- content 1 -->
-        <div class="flex gap-4 justify-between pt-4">
+        <div class="flex flex-col lg:flex-row gap-4 justify-between pt-4">
           <div class="uk-card w-full" v-for="i in 4">
             <div class="uk-card-header">
               <h3 class="uk-card-title">Total revenue</h3>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <!-- content 2 -->
-        <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col lg:flex-row gap-4">
           <div class="uk-card w-full">
             <div class="uk-card-header">
               <h3 class="uk-card-title">Chart</h3>
@@ -87,7 +87,13 @@ export default {
 
 <style scoped>
 .content {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
 }
 </style>

@@ -1,4 +1,10 @@
 @media screen and (min-width: 1024px) {
+  .mobile{
+    display: none;
+  }
+  .desktop{
+    display: block;
+  }
   /* MARGIN */
   .lg\:m-auto {
     margin: auto;

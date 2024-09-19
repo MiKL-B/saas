@@ -153,7 +153,7 @@
             >
               <a class="uk-accordion-title" href>
                 <span>{{ question.title }}</span>
-                <span class="size-4 uk-accordion-icon"> chevron </span>
+                <span class="size-2 uk-accordion-icon"><ChevronDown /></span>
               </a>
               <div class="uk-accordion-content">
                 {{ question.content }}
@@ -240,10 +240,10 @@
 import NavCompo from "@/components/layout/NavCompo.vue";
 import SectionCompo from "@/components/reusable/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
-import { Check } from "lucide-vue-next";
+import { Check, ChevronDown } from "lucide-vue-next";
 export default {
   name: "IndexView",
-  components: { NavCompo, SectionCompo, FooterCompo, Check },
+  components: { NavCompo, SectionCompo, FooterCompo, Check, ChevronDown },
   data() {
     return {
       testimonials: [

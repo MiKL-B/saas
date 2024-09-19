@@ -20,8 +20,8 @@
               />
             </th>
             <th class="uk-table-shrink">N°</th>
-            <th class="uk-table-expand">Name</th>
-            <th class="uk-table-expand">Address</th>
+            <th class="uk-table-shrink">Name</th>
+            <th class="uk-table-shrink">Address</th>
           </tr>
         </thead>
         <tbody>
@@ -74,10 +74,10 @@ export default {
 .content {
   display: grid;
 }
-nav{
+/* nav{
   position: absolute;
   bottom: 0;
   right:0;
   margin:1rem;
-}
+} */
 </style>
