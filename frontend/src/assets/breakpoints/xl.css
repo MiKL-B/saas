@@ -1,4 +1,278 @@
-@media screen and (min-width: 1248px)
-{
+@media screen and (min-width: 1248px) {
+  /* MARGIN */
+  .xl\:m-auto {
+    margin: auto;
+  }
 
+  .xl\:m-2 {
+    margin: 0.5rem;
+  }
+
+  .xl\:m-4 {
+    margin: 1rem;
+  }
+
+  .xl\:m-6 {
+    margin: 1.5rem;
+  }
+
+  .xl\:my-2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .xl\:my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .xl\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .xl\:mx-2 {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .xl\:mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .xl\:mt-auto {
+    margin-top: auto;
+  }
+
+  .xl\:mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .xl\:mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .xl\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .xl\:ml-auto {
+    margin-left: auto;
+  }
+
+  .xl\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
+  .xl\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
+  /* PADDING */
+  .xl\:p-4 {
+    padding: 1rem;
+  }
+
+  .xl\:py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .xl\:py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .xl\:py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .xl\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .xl\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .xl\:pt-2 {
+    padding-top: 0.5rem;
+  }
+
+  .xl\:pt-4 {
+    padding-top: 1rem;
+  }
+
+  .xl\:pb-2 {
+    padding-bottom: 0.5rem;
+  }
+
+  .xl\:pl-2 {
+    padding-left: 0.5rem;
+  }
+
+  .xl\:pb-4 {
+    padding-bottom: 1rem;
+  }
+
+  .xl\:pr-2 {
+    padding-right: 0.5rem;
+  }
+
+  /* GAP */
+  .xl\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+
+  /* FLEX */
+  .xl\:flex {
+    display: flex;
+  }
+
+  .xl\:flex-col {
+    flex-direction: column;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  /* JUSTIFY CONTENT */
+  .xl\:justify-center {
+    justify-content: center;
+  }
+
+  .xl\:justify-around {
+    justify-content: space-around;
+  }
+
+  .xl\:justify-between {
+    justify-content: space-between;
+  }
+
+  /* ALIGN ITEMS */
+  .xl\:items-center {
+    align-items: center;
+  }
+
+  .xl\:text-center {
+    text-align: center;
+  }
+
+  /* BLOCK */
+  .xl\:block {
+    display: block;
+  }
+
+  /* GRID */
+  .xl\:grid {
+    display: grid;
+  }
+
+  .xl\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:grid-flow-col {
+    grid-auto-flow: column;
+  }
+
+  /* HEIGHT */
+  .xl\:h-36rem {
+    height: 36rem;
+  }
+
+  .xl\:h-48rem {
+    height: 48rem;
+  }
+
+  .xl\:h-full {
+    height: 100%;
+  }
+
+  .xl\:max-h-full-vh {
+    height: 100vh;
+  }
+
+  /* WIDTH */
+  .xl\:w-96 {
+    width: 24rem;
+  }
+
+  .xl\:w-75 {
+    width: 75%;
+  }
+
+  .xl\:w-full {
+    width: 100%;
+  }
+
+  .xl\:max-w-7xl {
+    max-width: 80rem;
+  }
+
+  /* BORDER */
+  .xl\:border-grey {
+    border: 1px solid #e2e8f0;
+  }
+
+  .xl\:border-b-grey {
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .xl\:border-r-grey {
+    border-right: 1px solid #e2e8f0;
+  }
+
+  /* BACKGROUND */
+  .xl\:bg-grey {
+    background: #f9fbfd;
+  }
+
+  /* OVERFLOW */
+  .xl\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  /* POSITION */
+  .xl\:sticky-top {
+    position: sticky;
+    top: 0;
+  }
+
+  /* TEXT DECORATION */
+  .xl\:underline {
+    text-decoration: underline;
+  }
+
+  /* CURSOR POINTER */
+  .xl\:cursor-pointer {
+    cursor: pointer;
+  }
+
+  /* FONT SIZE */
+  .xl\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
