@@ -4,30 +4,23 @@
     <SectionCompo>
       <template v-slot:content>
         <h1 class="uk-h1 md:text-center">Management software</h1>
-        <p class="md:text-center">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur,
-          iste.
-        </p>
       </template>
     </SectionCompo>
-
     <!-- begin features -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-2 md:text-center">
+        <h2 class="uk-h2">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="md:text-center">
+        <p class="mb-4">
           Revolutionize your invoicing and customer management with our
-          all-in-one SaaS solution.
-        </p>
-        <p class="mb-4 md:text-center">
+          all-in-one SaaS solution.<br />
           Effortlessly create invoices, track payments, and enhance client
           relationships to drive your business forward!
         </p>
         <div
-          class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col flex-wrap gap-4 md:max-w-7xl md:mx-auto"
+          class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col gap-4"
         >
           <div class="uk-card" v-for="feature in features">
             <div class="uk-card-header">
@@ -46,13 +39,13 @@
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-2 md:text-center">An all-in-one platform.</h2>
-        <p class="mb-4 md:text-center">
+        <h2 class="uk-h2">An all-in-one platform.</h2>
+        <p class="mb-4">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
         </p>
-        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
+        <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="keyfigure in keyfigures">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ keyfigure.figure }}</h3>
@@ -71,8 +64,8 @@
     <!-- begin steps -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-4 md:text-center">How to start</h2>
-        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
+        <h2 class="uk-h2 mb-4">How to start</h2>
+        <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="step in steps">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
@@ -86,13 +79,16 @@
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-4 md:text-center">
+        <h2 class="uk-h2 mb-4">
           Optimize your business management: invoices and CRM in one tool!
         </h2>
         <div
-          class="flex flex-wrap justify-center md:justify-between gap-4 md:max-w-7xl md:mx-auto"
+          class="flex flex-col md:flex-row justify-center md:justify-between gap-4"
         >
-          <div class="uk-card" v-for="pricing in pricings">
+          <div
+            class="uk-card md:flex md:flex-col md:justify-between"
+            v-for="pricing in pricings"
+          >
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ pricing.title }}</h3>
               <p
@@ -102,8 +98,8 @@
               </p>
             </div>
             <div class="uk-card-body">
-              <p class="mb-4">
-                <span class="text-4xl">{{ pricing.price }}€</span>/month
+              <p>
+                <span class="uk-h2">{{ pricing.price }}€</span>/month
               </p>
               <ul>
                 <li v-for="feature in pricing.features" class="flex">
@@ -118,20 +114,17 @@
             </div>
           </div>
         </div>
-        <p class="link underline cursor-pointer my-4 text-center">
-          Start your 14-day free trial today!
-        </p>
+        <a href="#" class="flex justify-center link underline mt-4"
+          >Start your 14-day free trial today!</a
+        >
       </template>
     </SectionCompo>
-
     <!-- end pricing -->
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-4 md:text-center">
-          We are attentive to our customers!
-        </h2>
-        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
+        <h2 class="uk-h2 mb-4">We are attentive to our customers!</h2>
+        <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="testimonial in testimonials">
             <div class="uk-card-header">
               <h3 class="uk-card-title">{{ testimonial.person }}</h3>
@@ -146,13 +139,12 @@
         </div>
       </template>
     </SectionCompo>
-
     <!-- end testimonials -->
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-4 md:text-center">Common Questions</h2>
-        <div class="flex flex-col flex-wrap gap-4 md:max-w-7xl md:mx-auto">
+        <h2 class="uk-h2 mb-4">Common Questions</h2>
+        <div class="flex flex-col flex-wrap gap-4">
           <ul uk-accordion>
             <li
               v-for="question in questions"
@@ -171,16 +163,15 @@
         </div>
       </template>
     </SectionCompo>
-
     <!-- end common questions -->
     <!-- begin newsletter -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-2 md:text-center">The newsletter</h2>
-        <p class="mb-4 md:text-center">
+        <h2 class="uk-h2">The newsletter</h2>
+        <p class="mb-4">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
-        <div class="flex flex-wrap gap-4 md:justify-center">
+        <div class="flex flex-wrap gap-4">
           <input
             type="email"
             placeholder="Your email address"
@@ -190,62 +181,52 @@
         </div>
       </template>
     </SectionCompo>
-
     <!-- end newsletter -->
     <!-- begin CTA -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-2 md:text-center">Ready to start ?</h2>
-        <p class="mb-4 md:text-center">
+        <h2 class="uk-h2">Ready to start ?</h2>
+        <p class="mb-4">
           Sign up and discover how our solution can make your billing and
           customer relationship management easier!
         </p>
-        <button class="flex md:m-auto uk-button uk-button-primary">
-          Join Saas
-        </button>
+        <button class="uk-button uk-button-primary">Join Saas</button>
       </template>
     </SectionCompo>
-
     <!-- end CTA -->
     <!-- begin creator -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl mb-2 md:text-center">
-          About the creator of the Saas
-        </h2>
-        <p class="mb-4 md:text-center">Mika, Coder</p>
-        <p class="md:max-w-7xl md:mx-auto mb-2">
+        <h2 class="uk-h2">About the creator of the Saas</h2>
+        <p class="mb-2">Mika, Coder</p>
+        <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
           realms of invoice management and customer relationship management
           (CRM). Our platform is designed to empower businesses of all sizes to
           enhance their financial processes, improve client interactions, and
           drive growth.
-        </p>
-        <p class="md:max-w-7xl md:mx-auto mb-2">
+          <br /><br />
           We understand the challenges companies face when managing invoices,
           tracking payments, and maintaining customer relationships. That's why
           our development team utilizes cutting-edge technology to build a
           user-friendly interface that simplifies these tasks. Features like
           automated invoicing, real-time payment tracking, and customizable CRM
           tools allow our users to save time and enhance their efficiency.
-        </p>
-        <p class="md:max-w-7xl md:mx-auto mb-2">
+          <br /><br />
           Our commitment to scalability ensures that as our clients grow, our
           software evolves with them. By integrating advanced analytics and
           reporting features, we provide businesses with insights that help them
           make informed decisions. Also, with robust security measures in place,
           our users can rest easy knowing their financial data and customer
           information are protected.
-        </p>
-        <p class="md:max-w-7xl md:mx-auto mb-2">
+          <br /><br />
           At the heart of our development process is a passion for customer
           satisfaction. We actively gather feedback and continuously improve our
           platform to meet the changing needs of our users. With our innovative
           SaaS solution, managing invoices and nurturing customer relationships
           has never been easier.
-        </p>
-        <p class="md:max-w-7xl md:mx-auto">
+          <br /><br />
           Partner with us today to leverage technology that transforms your
           financial operations and CRM strategies into a seamless experience!
         </p>
@@ -257,7 +238,7 @@
 </template>
 <script>
 import NavCompo from "@/components/layout/NavCompo.vue";
-import SectionCompo from "@/components/layout/SectionCompo.vue";
+import SectionCompo from "@/components/reusable/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
 import { Check } from "lucide-vue-next";
 export default {

@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between p-4 items-center sticky-top border-b-grey"
+    class="flex justify-between p-4 items-center sticky-top border-b-grey md:max-w-7xl lg:mx-auto"
   >
     <h1>Saas</h1>
     <nav>

@@ -136,7 +136,7 @@
   .lg\:flex {
     display: flex;
   }
-  
+
   .lg\:flex-col {
     flex-direction: column;
   }

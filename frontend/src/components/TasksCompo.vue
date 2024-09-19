@@ -93,11 +93,6 @@
             >
               <div>
                 <p class="flex items-center gap-2">
-                  <AvatarCompo>
-                    <template v-slot:content>
-                      <User />
-                    </template>
-                  </AvatarCompo>
                   <span>Note #1</span>
                 </p>
               </div>
