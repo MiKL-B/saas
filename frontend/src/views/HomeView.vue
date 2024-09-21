@@ -96,7 +96,7 @@
         <div class="mt-auto pl-2">
           <li class="uk-nav-divider"></li>
           <div class="flex justify-between pt-2 pr-2 items-center">
-            <li class="flex items-center gap-2">
+            <li class="flex items-center gap-2" @click="currentComponent = 'UserCompo'">
               <AvatarCompo>
                 <template v-slot:content>
                   <User />
@@ -130,6 +130,7 @@ import ScheduleCompo from "@/components/ScheduleCompo.vue";
 import SettingsCompo from "@/components/SettingsCompo.vue";
 import TasksCompo from "@/components/TasksCompo.vue";
 import ContactsCompo from "@/components/ContactsCompo.vue";
+import UserCompo from "@/components/UserCompo.vue";
 import {
   Menu,
   User,
@@ -188,6 +189,7 @@ export default {
     SettingsCompo,
     TasksCompo,
     ContactsCompo,
+    UserCompo,
   },
   data() {
     return {

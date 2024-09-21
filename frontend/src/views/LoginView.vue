@@ -89,7 +89,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 form{
   height:30rem;
   max-width:30rem;
