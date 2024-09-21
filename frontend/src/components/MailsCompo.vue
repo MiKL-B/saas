@@ -1,7 +1,9 @@
 <template>
   <div class="content">
     <!-- content 1 -->
-    <div class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh">
+    <div
+      class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh"
+    >
       <input type="text" class="uk-input" placeholder="Search..." />
       <select class="uk-select">
         <option value="">Inbox</option>
@@ -10,9 +12,9 @@
         <option value="">Junk</option>
         <option value="">Trash</option>
       </select>
-      <div class="flex flex-col h-20rem lg:h-full gap-4 overflow-scroll">
+      <div class="flex flex-col h-full gap-4 overflow-scroll">
         <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
-          <h3 class="uk-card-title">Default</h3>
+          <h3 class="uk-card-title">Default {{ i }}</h3>
           <p class="uk-margin">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           </p>
@@ -20,19 +22,16 @@
       </div>
     </div>
     <!-- content 2 -->
-    <div class="p-4 flex flex-col">
-      <!--  -->
+    <div class="p-4 flex flex-col content-desktop">
       <div class="flex justify-between items-center gap-4 border-b-grey py-2">
-        <div>
-          <p class="flex items-center gap-2">
-            <AvatarCompo>
-              <template v-slot:content>
-                <User />
-              </template>
-            </AvatarCompo>
-            <span>User</span>
-          </p>
-        </div>
+        <p class="flex items-center gap-2">
+          <AvatarCompo>
+            <template v-slot:content>
+              <User />
+            </template>
+          </AvatarCompo>
+          <span>User</span>
+        </p>
         <span class="text-muted-foreground"> Oct 22, 2023, 9:00:00 AM </span>
       </div>
       <!--  -->
@@ -84,14 +83,16 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  display: flex;
-  flex-direction: column;
+.content-desktop{
+  display: none;
 }
 @media screen and (min-width: 1024px) {
   .content {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
+  }
+  .content-desktop{
+    display: grid;
   }
 }
 </style>

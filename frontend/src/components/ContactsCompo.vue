@@ -1,6 +1,6 @@
 <template>
-  <div class="content p-4">
-    <div class="h-full">
+  <div class="p-4">
+    <div class="h-full flex flex-col justify-between">
       <div class="flex justify-between">
         <button class="uk-button uk-button-default">Filter</button>
         <div class="flex gap-2">
@@ -70,14 +70,4 @@ export default {
   name: "ContactsCompo",
 };
 </script>
-<style scoped>
-.content {
-  display: grid;
-}
-/* nav{
-  position: absolute;
-  bottom: 0;
-  right:0;
-  margin:1rem;
-} */
-</style>
+

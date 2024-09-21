@@ -61,7 +61,7 @@
         </li>
       </ul>
     </nav>
-    <div class="nav-desktop border-r-grey desktop">
+    <div class="nav-desktop border-r-grey display-desktop">
       <ul
         class="flex flex-col justify-between h-full uk-nav uk-nav-primary py-4"
         uk-nav

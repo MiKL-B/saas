@@ -1,4 +1,4 @@
-.desktop {
+.display-desktop {
   display: none;
 }
 /* MARGIN */
@@ -212,7 +212,9 @@
 .h-36rem {
   height: 36rem;
 }
-
+.h-40rem {
+  height: 40rem;
+}
 .h-48rem {
   height: 48rem;
 }
@@ -226,6 +228,9 @@
 }
 
 /* WIDTH */
+.w-12rem {
+  width: 12rem;
+}
 .w-96 {
   width: 24rem;
 }

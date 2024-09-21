@@ -1,48 +1,7 @@
 <template>
-  <div class="flex flex-col lg:flex-row justify-between gap-4 p-4">
-    <div class="lg:w-96">
-      <ul
-        class="flex flex-col justify-between uk-nav uk-nav-primary"
-        uk-nav
-      >
-        <li class="uk-active">
-          <a href="#">
-            <span class="flex gap-4">
-              <span>Profile</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="flex gap-4">
-              <span>Account</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="flex gap-4">
-              <span>Appearance</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="flex gap-4">
-              <span>Notifications</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="flex gap-4">
-              <span>Display</span>
-            </span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <form class="lg:w-full">
+  <div>
+   <p>SettingsCompo</p>
+    <!-- <form class="lg:w-full">
       <fieldset class="uk-fieldset">
         <div>
           <h3 class="uk-card-title">Settings</h3>
@@ -51,7 +10,7 @@
           </p>
         </div>
         <div class="flex flex-col gap-4 lg:w-96">
-          <!-- Name -->
+      
           <div class="uk-form-controls">
             <label class="uk-form-label" for="email">Name</label>
             <input
@@ -62,7 +21,7 @@
               placeholder="Name"
             />
           </div>
-          <!-- Email -->
+     
           <div class="uk-form-controls">
             <label class="uk-form-label" for="email">Email</label>
             <input
@@ -73,7 +32,7 @@
               placeholder="name@example.com"
             />
           </div>
-          <!-- Password -->
+       
           <div class="uk-form-controls">
             <label class="uk-form-label" for="password">Password</label>
             <input
@@ -83,7 +42,7 @@
               aria-describedby="pass-help-block"
             />
           </div>
-          <!-- Confirm password -->
+      
           <div class="uk-form-controls">
             <label class="uk-form-label" for="password">Confirm password</label>
             <input
@@ -93,7 +52,7 @@
               aria-describedby="pass-help-block"
             />
           </div>
-          <!-- Remember me -->
+        
           <div class="uk-form-controls">
             <label>
               <input class="uk-checkbox" type="checkbox" />
@@ -103,7 +62,7 @@
           <button class="flex uk-button uk-button-primary">Update profile</button>
         </div>
       </fieldset>
-    </form>
+    </form> -->
   </div>
 </template>
 

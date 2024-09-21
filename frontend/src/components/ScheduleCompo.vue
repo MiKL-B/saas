@@ -1,14 +1,6 @@
 <template>
-  <div class="content">
-    <!-- content 1 -->
-    <div class="flex flex-col gap-4 border-r-grey h-full max-h-full-vh">
-      <!-- schedule -->
-      <Qalendar :events="events" :config="config" class="p-4" />
-    </div>
-    <!-- content 2 -->
-    <!-- <div class="p-4 flex flex-col">
-      <input type="date" class="uk-input" />
-    </div> -->
+  <div class="flex flex-col gap-4 border-r-grey h-full max-h-full-vh">
+    <Qalendar :events="events" :config="config" class="p-4" />
   </div>
 </template>
 
@@ -52,12 +44,5 @@ export default {
       },
     };
   },
-  methods: {},
 };
 </script>
-<style scoped>
-.content {
-  display: grid;
-  /* grid-template-columns: 1fr 0.3fr; */
-}
-</style>
