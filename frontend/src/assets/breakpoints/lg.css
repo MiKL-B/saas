@@ -1,5 +1,5 @@
 @media screen and (min-width: 1024px) {
-  .mobile{
+  .display-mobile{
     display: none;
   }
   .desktop{

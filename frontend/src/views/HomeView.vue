@@ -1,54 +1,63 @@
 <template>
   <div class="container">
-    <nav uk-dropnav="mode: click" class="p-4 mobile">
-      <ul class="uk-subnav">
-        <li>
-          <a href="#">Menu <span uk-drop-parent-icon></span></a>
-          <div class="uk-drop uk-dropdown w-full">
-            <ul class="uk-dropdown-nav uk-nav">
-              <li
-                v-for="link in links"
-                :class="currentComponent === link.component ? 'uk-active' : ''"
-              >
-                <a href="#" @click="currentComponent = link.component">
-                  <span class="flex gap-4">
-                    <component
-                      :is="link.icon"
-                      :size="20"
-                      :class="
-                        currentComponent === link.component
-                          ? ''
-                          : 'text-muted-foreground'
-                      "
-                    />
-                    <span>{{ link.label }}</span>
-                  </span>
-                </a>
-              </li>
+    <nav
+      uk-dropnav="mode: click"
+      class="p-4 display-mobile border-b-grey sticky-top z-3 bg-white"
+    >
+      <ul>
+        <li class="flex">
+          <a href="#" class="flex" @click="toggle" ref="ignoreButton"
+            >Menu
+            <span v-if="isNavOpened"><ChevronUp /></span>
+            <span v-else><ChevronDown /></span>
+          </a>
 
-              <!-- user -->
-              <li class="uk-nav-divider"></li>
-              <div class="flex justify-between p-2 pr-2 items-center">
-                <li class="flex items-center gap-2">
-                  <AvatarCompo>
-                    <template v-slot:content>
-                      <User />
-                    </template>
-                  </AvatarCompo>
-                  <span>User</span>
-                </li>
-                <RouterLink
-                  to="/"
-                  class="uk-button uk-button-default"
-                  uk-tooltip="Log out"
-                >
-                  <button>
-                    <LogOut />
-                  </button>
-                </RouterLink>
-              </div>
-            </ul>
-          </div>
+          <ul
+            class="uk-dropdown-nav uk-nav border-b-grey absolute top-3rem left-0 right-0 bg-white"
+            v-if="isNavOpened"
+          >
+            <li
+              v-for="link in links"
+              :class="currentComponent === link.component ? 'uk-active' : ''"
+            >
+              <a href="#" @click="handleNavMobile(link.component)">
+                <span class="flex gap-4">
+                  <component
+                    :is="link.icon"
+                    :size="20"
+                    :class="
+                      currentComponent === link.component
+                        ? ''
+                        : 'text-muted-foreground'
+                    "
+                  />
+                  <span>{{ link.label }}</span>
+                </span>
+              </a>
+            </li>
+
+            <!-- user -->
+            <li class="uk-nav-divider"></li>
+            <div class="flex justify-between p-2 pr-2 items-center">
+              <li class="flex items-center gap-2">
+                <AvatarCompo>
+                  <template v-slot:content>
+                    <User />
+                  </template>
+                </AvatarCompo>
+                <span>User</span>
+              </li>
+              <RouterLink
+                to="/"
+                class="uk-button uk-button-default"
+                uk-tooltip="Log out"
+              >
+                <button>
+                  <LogOut />
+                </button>
+              </RouterLink>
+            </div>
+          </ul>
         </li>
       </ul>
     </nav>
@@ -142,6 +151,8 @@ import {
   FileText,
   Settings,
   CircleHelp,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-vue-next";
 import AvatarCompo from "@/components/reusable/AvatarCompo.vue";
 export default {
@@ -167,6 +178,8 @@ export default {
     FileText,
     Settings,
     CircleHelp,
+    ChevronDown,
+    ChevronUp,
     AvatarCompo,
     DashboardCompo,
     MailsCompo,
@@ -178,6 +191,7 @@ export default {
   },
   data() {
     return {
+      isNavOpened: false,
       currentComponent: "DashboardCompo",
       links: [
         {
@@ -217,6 +231,29 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handleNavMobile(link) {
+      this.currentComponent = link;
+      this.isNavOpened = false;
+    },
+    toggle() {
+      this.isNavOpened = !this.isNavOpened;
+    },
+    handleClick(event){
+      if (event.target !== this.$refs.ignoreButton) {
+        this.isNavOpened = false;
+      }
+      
+    }
+  },
+  mounted() {
+    // Ajouter un écouteur d'événements au document
+    document.addEventListener('click', this.handleClick);
+  },
+  beforeDestroy() {
+    // Retirer l'écouteur d'événements lorsque le composant est détruit
+    document.removeEventListener('click', this.handleClick);
   },
 };
 </script>

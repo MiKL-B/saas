@@ -235,8 +235,9 @@
     <!-- end creator -->
   </main>
   <FooterCompo />
-</template>
+</template> 
 <script>
+
 import NavCompo from "@/components/layout/NavCompo.vue";
 import SectionCompo from "@/components/reusable/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
@@ -244,6 +245,7 @@ import { Check, ChevronDown } from "lucide-vue-next";
 export default {
   name: "IndexView",
   components: { NavCompo, SectionCompo, FooterCompo, Check, ChevronDown },
+
   data() {
     return {
       testimonials: [
@@ -451,3 +453,4 @@ export default {
   },
 };
 </script>
+

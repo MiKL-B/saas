@@ -259,6 +259,9 @@
 .bg-grey {
   background: #f9fbfd;
 }
+.bg-white {
+  background: #ffffff;
+}
 
 /* OVERFLOW */
 .overflow-scroll {
@@ -270,7 +273,18 @@
   position: sticky;
   top: 0;
 }
-
+.absolute {
+  position: absolute;
+}
+.top-3rem {
+  top: 3rem;
+}
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
 /* TEXT DECORATION */
 .underline {
   text-decoration: underline;
@@ -285,4 +299,13 @@
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+/* Z-INDEX */
+.z-3 {
+  z-index: 3;
+}
+
+.shadow {
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
