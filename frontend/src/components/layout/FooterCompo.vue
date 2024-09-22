@@ -9,7 +9,7 @@
     </ul>
     <ul>
       <li><h3 class="uk-h3">Support</h3></li>
-      <li><a href="#" class="link">Help docs</a></li>
+      <li><RouterLink to="/help" target="_blank" class="link">Help docs</RouterLink></li>
       <li><a href="#" class="link">Contact us</a></li>
       <li><a href="#" class="link">Changelog</a></li>
       <li><a href="#" class="link">Affiliation</a></li>

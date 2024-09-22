@@ -39,7 +39,10 @@
             <!-- user -->
             <li class="uk-nav-divider"></li>
             <div class="flex justify-between p-2 pr-2 items-center">
-              <li class="flex items-center gap-2">
+              <li
+                class="flex items-center gap-2"
+                @click="currentComponent = 'UserCompo'"
+              >
                 <AvatarCompo>
                   <template v-slot:content>
                     <User />
@@ -86,17 +89,20 @@
           </a>
         </li>
         <li>
-          <a href="/">
+          <RouterLink to="/help" target="_blank">
             <span class="flex gap-4">
               <CircleHelp :size="20" class="text-muted-foreground" />
               <span>Help</span>
             </span>
-          </a>
+          </RouterLink>
         </li>
         <div class="mt-auto pl-2">
           <li class="uk-nav-divider"></li>
           <div class="flex justify-between pt-2 pr-2 items-center">
-            <li class="flex items-center gap-2" @click="currentComponent = 'UserCompo'">
+            <li
+              class="flex items-center gap-2"
+              @click="currentComponent = 'UserCompo'"
+            >
               <AvatarCompo>
                 <template v-slot:content>
                   <User />
@@ -242,20 +248,19 @@ export default {
     toggle() {
       this.isNavOpened = !this.isNavOpened;
     },
-    handleClick(event){
+    handleClick(event) {
       if (event.target !== this.$refs.ignoreButton) {
         this.isNavOpened = false;
       }
-      
-    }
+    },
   },
   mounted() {
     // Ajouter un écouteur d'événements au document
-    document.addEventListener('click', this.handleClick);
+    document.addEventListener("click", this.handleClick);
   },
   beforeDestroy() {
     // Retirer l'écouteur d'événements lorsque le composant est détruit
-    document.removeEventListener('click', this.handleClick);
+    document.removeEventListener("click", this.handleClick);
   },
 };
 </script>
@@ -274,5 +279,4 @@ export default {
     height: 100vh;
   }
 }
-
 </style>

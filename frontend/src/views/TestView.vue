@@ -12,8 +12,6 @@
     </button>
   </div>
 
-
-
   <div style="height: 100vh">
     <iframe
       title="test"
@@ -30,7 +28,7 @@ export default {
   name: "TestView",
   data() {
     return {
-      currentViewportSize: 340, // Valeur par défaut
+      currentViewportSize: 1248 + "px", // Valeur par défaut
 
       buttons: [
         { viewport: 340 + "px" },

@@ -7,7 +7,7 @@
       </template>
     </SectionCompo>
     <!-- begin features -->
-    <SectionCompo>
+    <SectionCompo id="features">
       <template v-slot:content>
         <h2 class="uk-h2">
           Simplify invoicing and elevate customer relationships with our
@@ -77,7 +77,7 @@
     </SectionCompo>
     <!-- end steps -->
     <!-- begin pricing -->
-    <SectionCompo>
+    <SectionCompo id="pricing">
       <template v-slot:content>
         <h2 class="uk-h2 mb-4">
           Optimize your business management: invoices and CRM in one tool!

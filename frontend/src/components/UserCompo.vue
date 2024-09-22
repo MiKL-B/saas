@@ -2,7 +2,7 @@
   <div class="p-4">
     <form>
       <fieldset class="uk-fieldset">
-        <div class="flex flex-col md:flex-row md:justify-between">
+        <div class="grid md:grid-cols-2 gap-4">
           <!-- left -->
           <div>
             <h3 class="uk-h3">Account</h3>
