@@ -59,10 +59,10 @@
               <button>{{ isLoginForm ? "Login" : "Sign up" }}</button>
             </RouterLink>
             <hr class="uk-divider-icon" />
-            <p class="uk-link flex justify-center p-4">
+            <p class="flex justify-center p-4 gap-2">
               {{ isLoginForm ? "" : "Already have an account ?" }}
-              <span
-                class="underline cursor-pointer link"
+               <span
+                class="cursor-pointer text-primary underline"
                 @click="isLoginForm = !isLoginForm"
                 >{{ isLoginForm ? "Create an account here !" : "Login" }}</span
               >

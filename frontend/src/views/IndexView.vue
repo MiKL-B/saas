@@ -1,5 +1,6 @@
 <template>
   <NavCompo />
+
   <main>
     <SectionCompo>
       <template v-slot:content>
@@ -114,7 +115,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="flex justify-center link underline mt-4"
+        <a href="#" class="flex justify-center underline mt-4 text-primary"
           >Start your 14-day free trial today!</a
         >
       </template>
@@ -235,13 +236,13 @@
     <!-- end creator -->
   </main>
   <FooterCompo />
-</template> 
+</template>
 <script>
-
 import NavCompo from "@/components/layout/NavCompo.vue";
 import SectionCompo from "@/components/reusable/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
 import { Check, ChevronDown } from "lucide-vue-next";
+
 export default {
   name: "IndexView",
   components: { NavCompo, SectionCompo, FooterCompo, Check, ChevronDown },
@@ -453,4 +454,3 @@ export default {
   },
 };
 </script>
-

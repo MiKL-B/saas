@@ -38,8 +38,18 @@
       <div class="mails-bottom pt-4 flex flex-col h-full">
         <p class="py-2 h-full">
           Subject: Important Update Regarding Your Account<br /><br />
-          From: support@fakemagnet.com<br />
-          To: user@example.com<br /><br />
+          <span
+            >From:
+            <span class="text-primary underline"
+              >support@fakemagnet.com</span
+            ></span
+          >
+          <br />
+          <span
+            >To:
+            <span class="text-primary underline">user@example.com</span></span
+          >
+          <br /><br/>
           Dear User,<br /><br />
           We hope this message finds you well. We are reaching out to inform you
           of an important update regarding your account with us.<br />
@@ -47,7 +57,8 @@
           verification protocols. Please take a moment to log in to your account
           and verify your details using the link below:<br /><br />
 
-          <a href="#" class="link">Verify Your Account Now</a><br /><br />
+          <a href="#" class="text-primary underline">Verify Your Account Now</a
+          ><br /><br />
 
           Failure to complete this verification process within 48 hours may
           result in temporary suspension of your account.<br />
@@ -83,7 +94,7 @@ export default {
 </script>
 
 <style scoped>
-.content-desktop{
+.content-desktop {
   display: none;
 }
 @media screen and (min-width: 1024px) {
@@ -91,7 +102,7 @@ export default {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
   }
-  .content-desktop{
+  .content-desktop {
     display: grid;
   }
 }

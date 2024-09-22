@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between p-4 items-center sticky-top border-b-grey md:max-w-7xl lg:mx-auto"
+    class="flex justify-between p-4 items-center sticky-top  md:max-w-7xl lg:mx-auto"
   >
     <h1>Saas</h1>
     <nav>
@@ -23,6 +23,8 @@ export default {
 <style>
 header {
   z-index: 3;
-  background: white;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
 }
+
 </style>

@@ -15,7 +15,7 @@ export default {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background:#F1F5F9;
+  /* background:#F1F5F9; */
   cursor: pointer;
 }
 </style>

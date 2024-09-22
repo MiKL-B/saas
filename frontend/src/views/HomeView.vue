@@ -2,7 +2,7 @@
   <div class="container">
     <nav
       uk-dropnav="mode: click"
-      class="p-4 display-mobile border-b-grey sticky-top z-3 bg-white"
+      class="p-4 display-mobile sticky-top z-3 "
     >
       <ul>
         <li class="flex">
@@ -13,7 +13,7 @@
           </a>
 
           <ul
-            class="uk-dropdown-nav uk-nav border-b-grey absolute top-3rem left-0 right-0 bg-white"
+            class="uk-dropdown-nav uk-nav uk-nav-primary absolute top-3rem left-0 right-0 bg-primary-foreground"
             v-if="isNavOpened"
           >
             <li
@@ -64,9 +64,10 @@
         </li>
       </ul>
     </nav>
-    <div class="nav-desktop border-r-grey display-desktop">
+    <!-- nav desktop -->
+    <div class="display-desktop">
       <ul
-        class="flex flex-col justify-between h-full uk-nav uk-nav-primary py-4"
+        class="flex flex-col justify-between h-full uk-nav uk-nav-primary py-4 bg-primary-foreground"
         uk-nav
       >
         <li
@@ -265,9 +266,7 @@ export default {
 };
 </script>
 <style scoped>
-.nav-desktop {
-  background: #f9fbfd;
-}
+
 .container {
   display: flex;
   flex-direction: column;
