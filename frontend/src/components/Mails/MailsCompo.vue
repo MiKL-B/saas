@@ -81,7 +81,7 @@
 </template>
 
 <script>
-import AvatarCompo from "./reusable/AvatarCompo.vue";
+import AvatarCompo from "../reusable/AvatarCompo.vue";
 import { User, Inbox } from "lucide-vue-next";
 export default {
   name: "MailsCompo",

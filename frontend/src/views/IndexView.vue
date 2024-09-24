@@ -8,7 +8,7 @@
       </template>
     </SectionCompo>
     <!-- begin features -->
-    <SectionCompo id="features">
+    <SectionCompo>
       <template v-slot:content>
         <h2 class="uk-h2">
           Simplify invoicing and elevate customer relationships with our
@@ -24,13 +24,22 @@
           class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col gap-4"
         >
           <div class="uk-card" v-for="feature in features">
-            <div class="uk-card-header">
-              <h3 class="uk-card-title">{{ feature.title }}</h3>
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
-                {{ feature.description }}
-              </p>
+            <div class="uk-card-header flex gap-4">
+              <div>
+                <Cuboid
+                  :size="48"
+                  style="color: var(--red)"
+                  class="display-desktop"
+                />
+              </div>
+              <div class="flex flex-col">
+                <h3 class="uk-card-title">{{ feature.title }}</h3>
+                <p
+                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
+                >
+                  {{ feature.description }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -48,13 +57,22 @@
         </p>
         <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="keyfigure in keyfigures">
-            <div class="uk-card-header">
-              <h3 class="uk-card-title">{{ keyfigure.figure }}</h3>
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
-                {{ keyfigure.person }}
-              </p>
+            <div class="uk-card-header flex items-center gap-4">
+              <component
+                :is="keyfigure.icon"
+                :size="48"
+                style="color: var(--red)"
+                class="display-desktop"
+              />
+
+              <div class="flex flex-col">
+                <h3 class="uk-card-title">{{ keyfigure.figure }}</h3>
+                <p
+                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
+                >
+                  {{ keyfigure.person }}
+                </p>
+              </div>
             </div>
             <div class="uk-card-body">{{ keyfigure.text }}</div>
           </div>
@@ -66,19 +84,29 @@
     <SectionCompo>
       <template v-slot:content>
         <h2 class="uk-h2 mb-4">How to start</h2>
-        <div class="flex flex-col flex-wrap gap-4">
-          <div class="uk-card" v-for="step in steps">
-            <div class="uk-card-header">
-              <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-4">
+            <div class="uk-card" v-for="step in steps">
+              <div class="uk-card-header">
+                <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
+                <p>{{ step.text }}</p>
+              </div>
             </div>
-            <div class="uk-card-body">{{ step.text }}</div>
+          </div>
+          <div class="display-desktop">
+            <img
+              src="https://picsum.photos/600"
+              class="w-full"
+              style="object-fit: cover"
+              alt=""
+            />
           </div>
         </div>
       </template>
     </SectionCompo>
     <!-- end steps -->
     <!-- begin pricing -->
-    <SectionCompo id="pricing">
+    <SectionCompo>
       <template v-slot:content>
         <h2 class="uk-h2 mb-4">
           Optimize your business management: invoices and CRM in one tool!
@@ -100,11 +128,17 @@
             </div>
             <div class="uk-card-body">
               <p>
-                <span class="uk-h2">{{ pricing.price }}€</span>/month
+                <span class="uk-h2" style="color: var(--red)"
+                  >{{ pricing.price }}€</span
+                >
+                / month
               </p>
-              <ul>
-                <li v-for="feature in pricing.features" class="flex">
-                  <Check :size="20" />{{ feature }}
+              <ul class="mt-2">
+                <li
+                  v-for="feature in pricing.features"
+                  class="flex items-center gap-2"
+                >
+                  <Check :size="20" style="color: var(--red)" />{{ feature }}
                 </li>
               </ul>
             </div>
@@ -115,7 +149,10 @@
             </div>
           </div>
         </div>
-        <a href="#" class="flex justify-center underline mt-4 text-primary"
+        <a
+          href="#"
+          class="flex justify-center underline mt-4 text-primary"
+          style="color: var(--red)"
           >Start your 14-day free trial today!</a
         >
       </template>
@@ -127,13 +164,20 @@
         <h2 class="uk-h2 mb-4">We are attentive to our customers!</h2>
         <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="testimonial in testimonials">
-            <div class="uk-card-header">
-              <h3 class="uk-card-title">{{ testimonial.person }}</h3>
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
-                {{ testimonial.job }}
-              </p>
+            <div class="uk-card-header flex items-center gap-4">
+              <User
+                :size="48"
+                style="color: var(--red)"
+                class="display-desktop"
+              />
+              <div class="flex flex-col">
+                <h3 class="uk-card-title">{{ testimonial.person }}</h3>
+                <p
+                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
+                >
+                  {{ testimonial.job }}
+                </p>
+              </div>
             </div>
             <div class="uk-card-body">{{ testimonial.text }}</div>
           </div>
@@ -154,7 +198,9 @@
             >
               <a class="uk-accordion-title" href>
                 <span>{{ question.title }}</span>
-                <span class="size-2 uk-accordion-icon"><ChevronDown /></span>
+                <span class="size-2 uk-accordion-icon"
+                  ><ChevronDown style="color: var(--red)"
+                /></span>
               </a>
               <div class="uk-accordion-content">
                 {{ question.content }}
@@ -165,24 +211,6 @@
       </template>
     </SectionCompo>
     <!-- end common questions -->
-    <!-- begin newsletter -->
-    <SectionCompo>
-      <template v-slot:content>
-        <h2 class="uk-h2">The newsletter</h2>
-        <p class="mb-4">
-          Sign up for tips about working in Saas, news about our apps, and more.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <input
-            type="email"
-            placeholder="Your email address"
-            class="uk-input w-96"
-          />
-          <button class="uk-button uk-button-primary">Subscribe</button>
-        </div>
-      </template>
-    </SectionCompo>
-    <!-- end newsletter -->
     <!-- begin CTA -->
     <SectionCompo>
       <template v-slot:content>
@@ -198,8 +226,7 @@
     <!-- begin creator -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">About the creator of the Saas</h2>
-        <p class="mb-2">Mika, Coder</p>
+        <h2 class="uk-h2">About us</h2>
         <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
@@ -234,6 +261,80 @@
       </template>
     </SectionCompo>
     <!-- end creator -->
+    <!-- begin contact us -->
+    <SectionCompo>
+      <template v-slot:content>
+        <h2 class="uk-h2">Contact us</h2>
+        <p class="mb-4">Get in touch and ask us anything</p>
+        <form>
+          <div class="flex flex-col sm:flex-row justify-between sm:gap-4">
+
+            <div class="w-full mb-2">
+              <label for="email">Name</label>
+              <input
+                class="uk-input"
+                id="name"
+                type="text"
+                aria-describedby="name-help-block"
+                placeholder="Your name"
+              />
+            </div>
+            <div class="w-full mb-2">
+              <label for="email">Email</label>
+              <input
+                class="uk-input"
+                id="email"
+                type="email"
+                aria-describedby="name-help-block"
+                placeholder="mail@example.com"
+              />
+            </div>
+          </div>
+          <div class="mb-2">
+            <label for="email">Subject</label>
+            <input
+              class="uk-input"
+              id="subject"
+              type="text"
+              aria-describedby="name-help-block"
+              placeholder="Subject"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="messag">Message</label>
+            <textarea
+              class="uk-textarea"
+              placeholder="Your message here"
+              name=""
+              id="message"
+              rows="10"
+              style="resize:none"
+            ></textarea>
+          </div>
+
+          <button class="uk-button uk-button-primary">Send your message</button>
+        </form>
+      </template>
+    </SectionCompo>
+    <!-- end contact us -->
+    <!-- begin newsletter -->
+    <SectionCompo>
+      <template v-slot:content>
+        <h2 class="uk-h2">The newsletter</h2>
+        <p class="mb-4">
+          Sign up for tips about working in Saas, news about our apps, and more.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <input
+            type="email"
+            placeholder="Your email address"
+            class="uk-input w-96"
+          />
+          <button class="uk-button uk-button-primary">Subscribe</button>
+        </div>
+      </template>
+    </SectionCompo>
+    <!-- end newsletter -->
   </main>
   <FooterCompo />
 </template>
@@ -241,11 +342,28 @@
 import NavCompo from "@/components/layout/NavCompo.vue";
 import SectionCompo from "@/components/reusable/SectionCompo.vue";
 import FooterCompo from "@/components/layout/FooterCompo.vue";
-import { Check, ChevronDown } from "lucide-vue-next";
+import {
+  Check,
+  ChevronDown,
+  Cuboid,
+  Users,
+  Building2,
+  User,
+} from "lucide-vue-next";
 
 export default {
   name: "IndexView",
-  components: { NavCompo, SectionCompo, FooterCompo, Check, ChevronDown },
+  components: {
+    NavCompo,
+    SectionCompo,
+    FooterCompo,
+    Check,
+    ChevronDown,
+    Cuboid,
+    Users,
+    Building2,
+    User,
+  },
 
   data() {
     return {
@@ -280,18 +398,21 @@ export default {
           index: 0,
           figure: "1500",
           person: "Customers",
+          icon: Users,
           text: "Satisfied customers who are boosting their performance through our platform.",
         },
         {
           index: 1,
           figure: "2000",
           person: "Users",
+          icon: Users,
           text: "Users are active each month on our SaaS solution.",
         },
         {
           index: 2,
           figure: "200",
           person: "Companies",
+          icon: Building2,
           text: "Companies that have reduced their operational costs by 30% with our tool.",
         },
       ],
@@ -313,6 +434,11 @@ export default {
         },
         {
           index: 4,
+          title: "Monitoring and management",
+          text: "Use our dashboard to track payments, manage customer interactions and access analytics.",
+        },
+        {
+          index: 5,
           title: "Monitoring and management",
           text: "Use our dashboard to track payments, manage customer interactions and access analytics.",
         },

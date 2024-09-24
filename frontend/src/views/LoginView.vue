@@ -62,7 +62,7 @@
             <p class="flex justify-center p-4 gap-2">
               {{ isLoginForm ? "" : "Already have an account ?" }}
                <span
-                class="cursor-pointer text-primary underline"
+                class="cursor-pointer text-primary link underline"
                 @click="isLoginForm = !isLoginForm"
                 >{{ isLoginForm ? "Create an account here !" : "Login" }}</span
               >
@@ -94,5 +94,8 @@ form{
   height:30rem;
   max-width:30rem;
   margin:auto;
+}
+.link{
+  color:var(--red);
 }
 </style>

@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import AvatarCompo from "./reusable/AvatarCompo.vue";
+import AvatarCompo from "../reusable/AvatarCompo.vue";
 import { User } from "lucide-vue-next";
 export default {
   name: "DashboardCompo",

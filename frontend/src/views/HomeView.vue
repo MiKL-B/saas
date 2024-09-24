@@ -2,7 +2,7 @@
   <div class="container">
     <nav
       uk-dropnav="mode: click"
-      class="p-4 display-mobile sticky-top z-3 "
+      class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur"
     >
       <ul>
         <li class="flex">
@@ -11,9 +11,8 @@
             <span v-if="isNavOpened"><ChevronUp /></span>
             <span v-else><ChevronDown /></span>
           </a>
-
           <ul
-            class="uk-dropdown-nav uk-nav uk-nav-primary absolute top-3rem left-0 right-0 bg-primary-foreground"
+            class="uk-dropdown-nav uk-nav uk-nav-primary absolute top-3rem left-0 right-0 bg-primary-foreground border-b-grey"
             v-if="isNavOpened"
           >
             <li
@@ -36,30 +35,36 @@
               </a>
             </li>
 
-            <!-- user -->
             <li class="uk-nav-divider"></li>
-            <div class="flex justify-between p-2 pr-2 items-center">
-              <li
-                class="flex items-center gap-2"
-                @click="currentComponent = 'UserCompo'"
-              >
-                <AvatarCompo>
-                  <template v-slot:content>
-                    <User />
-                  </template>
-                </AvatarCompo>
-                <span>User</span>
-              </li>
-              <RouterLink
-                to="/"
-                class="uk-button uk-button-default"
-                uk-tooltip="Log out"
-              >
-                <button>
-                  <LogOut />
-                </button>
+            <!-- user -->
+            <li class="uk-nav-header">User</li>
+            <!-- user settings -->
+            <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
+              <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
+                <span>
+                  <Settings :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Settings</span>
+              </a>
+            </li>
+            <!-- help -->
+            <li>
+              <RouterLink to="/help" target="_blank" class="gap-4">
+                <span>
+                  <CircleHelp :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Help</span>
               </RouterLink>
-            </div>
+            </li>
+            <!-- logout -->
+            <li>
+              <RouterLink to="/" class="gap-4">
+                <span>
+                  <LogOut :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Logout</span>
+              </RouterLink>
+            </li>
           </ul>
         </li>
       </ul>
@@ -67,7 +72,7 @@
     <!-- nav desktop -->
     <div class="display-desktop">
       <ul
-        class="flex flex-col justify-between h-full uk-nav uk-nav-primary py-4 bg-primary-foreground"
+        class="flex flex-col justify-between h-full border-r-grey uk-nav uk-nav-primary py-4 bg-primary-foreground"
         uk-nav
       >
         <li
@@ -89,38 +94,40 @@
             </span>
           </a>
         </li>
-        <li>
-          <RouterLink to="/help" target="_blank">
-            <span class="flex gap-4">
-              <CircleHelp :size="20" class="text-muted-foreground" />
-              <span>Help</span>
-            </span>
-          </RouterLink>
-        </li>
-        <div class="mt-auto pl-2">
+        <!-- user -->
+        <div class="mt-auto">
           <li class="uk-nav-divider"></li>
-          <div class="flex justify-between pt-2 pr-2 items-center">
-            <li
-              class="flex items-center gap-2"
-              @click="currentComponent = 'UserCompo'"
-            >
-              <AvatarCompo>
-                <template v-slot:content>
-                  <User />
-                </template>
-              </AvatarCompo>
-              <span>User</span>
+          <ul class="uk-dropdown-nav uk-nav uk-nav-primary">
+            <!-- user -->
+            <li class="uk-nav-header">User</li>
+            <!-- user settings -->
+            <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
+              <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
+                <span>
+                  <Settings :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Settings</span>
+              </a>
             </li>
-            <RouterLink
-              to="/"
-              class="uk-button uk-button-default"
-              uk-tooltip="Log out"
-            >
-              <button>
-                <LogOut />
-              </button>
-            </RouterLink>
-          </div>
+            <!-- help -->
+            <li>
+              <RouterLink to="/help" target="_blank" class="gap-4">
+                <span>
+                  <CircleHelp :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Help</span>
+              </RouterLink>
+            </li>
+            <!-- logout -->
+            <li>
+              <RouterLink to="/" class="gap-4">
+                <span>
+                  <LogOut :size="20" class="text-muted-foreground" />
+                </span>
+                <span>Logout</span>
+              </RouterLink>
+            </li>
+          </ul>
         </div>
       </ul>
     </div>
@@ -130,14 +137,15 @@
 </template>
 
 <script>
-import DashboardCompo from "@/components/DashboardCompo.vue";
-import MailsCompo from "@/components/MailsCompo.vue";
-import FinancialCompo from "@/components/FinancialCompo.vue";
-import ScheduleCompo from "@/components/ScheduleCompo.vue";
-import SettingsCompo from "@/components/SettingsCompo.vue";
-import TasksCompo from "@/components/TasksCompo.vue";
-import ContactsCompo from "@/components/ContactsCompo.vue";
-import UserCompo from "@/components/UserCompo.vue";
+import DashboardCompo from "@/components/Dashboard/DashboardCompo.vue";
+import MailsCompo from "@/components/Mails/MailsCompo.vue";
+import ScheduleCompo from "@/components/Schedule/ScheduleCompo.vue";
+import TasksCompo from "@/components/Tasks/TasksCompo.vue";
+import ContactsCompo from "@/components/Contacts/ContactsCompo.vue";
+import FinancialCompo from "@/components/Financial/FinancialCompo.vue";
+import ReportCompo from "@/components/Reports/ReportCompo.vue";
+import SettingsCompo from "@/components/Settings/SettingsCompo.vue";
+import UserCompo from "@/components/User/UserCompo.vue";
 import {
   Menu,
   User,
@@ -156,7 +164,7 @@ import {
   Folder,
   CalendarCheck,
   ListTodo,
-  FileText,
+  HandCoins,
   Settings,
   CircleHelp,
   ChevronDown,
@@ -183,7 +191,7 @@ export default {
     Folder,
     CalendarCheck,
     ListTodo,
-    FileText,
+    HandCoins,
     Settings,
     CircleHelp,
     ChevronDown,
@@ -191,11 +199,12 @@ export default {
     AvatarCompo,
     DashboardCompo,
     MailsCompo,
-    FinancialCompo,
     ScheduleCompo,
-    SettingsCompo,
     TasksCompo,
     ContactsCompo,
+    ReportCompo,
+    FinancialCompo,
+    SettingsCompo,
     UserCompo,
   },
   data() {
@@ -230,8 +239,13 @@ export default {
         },
         {
           label: "Financial",
-          icon: FileText,
+          icon: HandCoins,
           component: "FinancialCompo",
+        },
+        {
+          label: "Reports",
+          icon: ChartSpline,
+          component: "ReportCompo",
         },
         {
           label: "Settings",
@@ -266,7 +280,6 @@ export default {
 };
 </script>
 <style scoped>
-
 .container {
   display: flex;
   flex-direction: column;

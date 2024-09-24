@@ -10,12 +10,12 @@
 </template>
 
 <script>
-import DashboardSettingsCompo from "./DashboardSettingsCompo.vue";
-import MailsSettingsCompo from "./MailsSettingsCompo.vue";
-import ScheduleSettingsCompo from "./ScheduleSettingsCompo.vue";
-import TasksSettingsCompo from "./TasksSettingsCompo.vue";
-import ContactsSettingsCompo from "./ContactsSettingsCompo.vue";
-import FinancialSettingsCompo from "./FinancialSettingsCompo.vue";
+import DashboardSettingsCompo from "../Dashboard/DashboardSettingsCompo.vue";
+import MailsSettingsCompo from "../Mails/MailsSettingsCompo.vue";
+import ScheduleSettingsCompo from "../Schedule/ScheduleSettingsCompo.vue";
+import TasksSettingsCompo from "../Tasks/TasksSettingsCompo.vue";
+import ContactsSettingsCompo from "../Contacts/ContactsSettingsCompo.vue";
+import FinancialSettingsCompo from "../Financial/FinancialSettingsCompo.vue";
 export default {
   name: "SettingsCompo",
   components: {

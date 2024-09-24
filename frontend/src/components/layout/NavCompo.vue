@@ -1,13 +1,14 @@
 <template>
   <header
-    class="flex justify-between p-4 items-center sticky-top  md:max-w-7xl lg:mx-auto"
+    class="flex justify-between p-4 items-center sticky-top md:max-w-7xl lg:mx-auto"
   >
-    <h1>Saas</h1>
+    <RouterLink to="/">Saas</RouterLink>
     <nav>
-      <ul class="flex gap-2 items-center">
-        <li><RouterLink to="/">Home</RouterLink></li>
+      <ul>
         <li>
-          <RouterLink to="/login" class="uk-button uk-button-primary">Login</RouterLink>
+          <RouterLink to="/login" class="uk-button uk-button-primary"
+            >Login</RouterLink
+          >
         </li>
       </ul>
     </nav>
@@ -26,5 +27,4 @@ header {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
-
 </style>
