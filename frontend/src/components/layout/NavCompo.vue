@@ -1,8 +1,8 @@
 <template>
   <header
-    class="flex justify-between p-4 items-center sticky-top md:max-w-7xl lg:mx-auto border-b-grey" 
+    class="flex justify-between p-4 items-center md:max-w-7xl lg:mx-auto" 
   >
-    <RouterLink to="/">Saas</RouterLink>
+    <RouterLink to="/" class="text-danger uk-h1">Crispy lobster</RouterLink>
     <nav>
       <ul>
         <li>
@@ -22,9 +22,5 @@ export default {
 </script>
 
 <style>
-header {
-  z-index: 3;
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
-}
+
 </style>

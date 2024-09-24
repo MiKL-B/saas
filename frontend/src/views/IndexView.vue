@@ -1,14 +1,21 @@
 <template>
   <NavCompo />
   <main>
+    <div class="background">
+      <div></div>
+      <div></div>
+    </div>
+
     <SectionCompo>
       <template v-slot:content>
-        <h1 class="text-5xl font-500 mb-4" >Ready to Simplify Your Business Management?</h1>
+        <h1 class="text-5xl font-500 mb-4">
+          Ready to Simplify Your Business Management?
+        </h1>
         <p class="mb-4">
-          Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.<br>Take
+          Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.<br />Take
           control of your finances and customer relationships with our
-          all-in-one platform.<br>Start your free trial today and transform the way
-          you manage your business!
+          all-in-one platform.<br />Start your free trial today and transform
+          the way you manage your business!
         </p>
         <div class="flex gap-2">
           <button class="uk-button uk-button-primary">Get started</button>
@@ -31,7 +38,7 @@
           relationships to drive your business forward!
         </p>
         <div
-          class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col gap-4"
+          class="flex flex-col md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col gap-4"
         >
           <div class="uk-card" v-for="feature in features">
             <div class="uk-card-header flex flex-col sm:flex-row gap-4">
@@ -88,7 +95,9 @@
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">We are attentive to our customers!</h2>
+        <h2 class="text-4xl font-500 mb-4">
+          We are attentive to our customers!
+        </h2>
         <div class="flex flex-col flex-wrap gap-4">
           <div class="uk-card" v-for="testimonial in testimonials">
             <div class="uk-card-header flex items-center gap-4">
@@ -113,7 +122,7 @@
       <template v-slot:content>
         <h2 class="text-4xl font-500 mb-4">How to start</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col justify-between gap-4">
             <div class="uk-card" v-for="step in steps">
               <div class="uk-card-header">
                 <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
@@ -121,11 +130,11 @@
               </div>
             </div>
           </div>
-          <div class="display-desktop m-auto">
+          <div class="display-desktop">
             <img
               src="https://picsum.photos/600"
               class="w-full"
-              style="object-fit: cover"
+              style="object-fit: cover; border-radius: 0.75rem;"
               alt=""
             />
           </div>
@@ -211,7 +220,7 @@
     </SectionCompo>
     <!-- end common questions -->
     <!-- begin creator -->
-    <SectionCompo>
+    <SectionCompo class="bg-danger text-secondary">
       <template v-slot:content>
         <h2 class="text-4xl font-500 mb-4">About us</h2>
         <p class="mb-2">
@@ -303,7 +312,7 @@
     </SectionCompo>
     <!-- end contact us -->
     <!-- begin newsletter -->
-    <SectionCompo>
+    <SectionCompo class="bg-muted">
       <template v-slot:content>
         <h2 class="text-4xl font-500 mb-4">The newsletter</h2>
         <p class="mb-4">
@@ -531,37 +540,82 @@ export default {
       ],
       features: [
         {
-          title: "Custom Invoice Creation",
+          title: "Capture opportunities like a lobster",
           description:
-            "Create professional invoices in just a few clicks. Choose from a variety of customizable templates, add your logo, include your contact information, and modify colors to reflect your brand identity. Save time and ensure every invoice aligns with your company's image.",
+            "Capture opportunities like a lobster: Our CRM catches your leads as effectively as a lobster in its net, helping you never let go of a sale.",
         },
         {
-          title: "Automated Payment Tracking",
+          title: "Follow-up that’s a real treat",
           description:
-            "Never lose track of your payments with our automated tracking system. Receive notifications when your clients open invoices and generate automatic reminders for overdue payments. Stay in control of your cash flow while simplifying your follow-up process.",
+            "Follow-up that’s a real treat: Enjoy a dashboard that gives you a tasty overview of your customers and your bills, like a lobster on a seafood platter.",
         },
         {
-          title: "Comprehensive CRM Integration",
+          title: "Hassle-free invoices",
           description:
-            "Manage your clients and opportunities directly within our platform. With comprehensive CRM integration, track interaction history, manage contacts, and segment your clientele for targeted marketing campaigns. Strengthen your client relationships and boost your sales.",
+            "Eliminate payment stress with our automated invoice generation, for a process as smooth as a stroll by the sea.",
         },
         {
-          title: "Advanced Reporting and Analytics",
+          title: "Grow at the speed of a lobster",
           description:
-            "Access interactive dashboards and detailed reports on your financial performance. Analyze billing trends, track customer behavior, and identify areas for improvement. Make informed decisions to optimize your business strategy.",
+            "Our solution allows you to quickly adapt your CRM strategy and invoice management, just like a lobster that moulds to grow.",
         },
         {
-          title: "Subscription Management",
+          title: "Lobster-style customer satisfaction",
           description:
-            "Simplify the management of your subscriptions with our dedicated feature. Easily create, track, and manage your clients' subscriptions with automated billing cycles. Give your customers the flexibility of self-service options to modify, renew, or cancel their subscriptions.",
+            "Build strong relationships with your customers through our personalized follow-up, for an experience as delicious as a lobster dish.",
         },
         {
-          title: "Multi-User Access with Custom Permissions",
+          title: "Crisp performance analytics",
           description:
-            "Collaborate securely with your team through multi-user access. Assign roles and custom permissions to each team member to ensure efficient and secure management of invoices and customer data. Work together while protecting sensitive information.",
+            "Discover detailed reports that break down your data, allowing you to seize every opportunity accurately.",
+        },
+        {
+          title: "No-pinch payment reminders",
+          description:
+            "Receive automatic alerts for your due payments, so your cash flow remains as dynamic as a swimming lobster.",
         },
       ],
     };
   },
 };
 </script>
+
+<style scoped>
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  display: flex;
+  flex-grow: 1;
+  z-index: -1;
+}
+
+.background div {
+  position: absolute;
+  border-radius: 100%;
+  height: 0;
+  filter: blur(240vw);
+  opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+  background: linear-gradient(132deg, #e84a6c 0%, #ffffff 100%);
+  width: 77%;
+  padding-top: 77%;
+  left: 12%;
+  top: 0%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(2) {
+  background: linear-gradient(132deg, #ffffff 0%, #e84a6c 100%);
+  width: 143%;
+  padding-top: 143%;
+  left: 100%;
+  top: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+</style>
