@@ -42,7 +42,7 @@
             <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
               <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
                 <span>
-                  <Settings :size="20" class="text-muted-foreground" />
+                  <Settings :size="20" :class="currentComponent === 'UserCompo' ? '': 'text-muted-foreground'" />
                 </span>
                 <span>Settings</span>
               </a>
@@ -104,7 +104,7 @@
             <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
               <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
                 <span>
-                  <Settings :size="20" class="text-muted-foreground" />
+                  <Settings :size="20" :class="currentComponent === 'UserCompo' ? '': 'text-muted-foreground'" />
                 </span>
                 <span>Settings</span>
               </a>
