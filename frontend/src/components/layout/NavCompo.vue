@@ -1,6 +1,6 @@
 <template>
   <header
-    class="flex justify-between p-4 items-center sticky-top md:max-w-7xl lg:mx-auto"
+    class="flex justify-between p-4 items-center sticky-top md:max-w-7xl lg:mx-auto border-b-grey" 
   >
     <RouterLink to="/">Saas</RouterLink>
     <nav>

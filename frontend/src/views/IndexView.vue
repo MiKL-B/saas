@@ -1,16 +1,26 @@
 <template>
   <NavCompo />
-
   <main>
     <SectionCompo>
       <template v-slot:content>
-        <h1 class="uk-h1 md:text-center">Management software</h1>
+        <h1 class="text-5xl font-500 mb-4" >Ready to Simplify Your Business Management?</h1>
+        <p class="mb-4">
+          Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.<br>Take
+          control of your finances and customer relationships with our
+          all-in-one platform.<br>Start your free trial today and transform the way
+          you manage your business!
+        </p>
+        <div class="flex gap-2">
+          <button class="uk-button uk-button-primary">Get started</button>
+          <button class="uk-button uk-button-default">Request a demo</button>
+        </div>
       </template>
     </SectionCompo>
+
     <!-- begin features -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">
+        <h2 class="text-4xl font-500 mb-4">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
@@ -24,13 +34,9 @@
           class="flex flex-col md:grid md:grid-rows-3 md:grid-flow-col gap-4"
         >
           <div class="uk-card" v-for="feature in features">
-            <div class="uk-card-header flex gap-4">
+            <div class="uk-card-header flex flex-col sm:flex-row gap-4">
               <div>
-                <Cuboid
-                  :size="48"
-                  style="color: var(--red)"
-                  class="display-desktop"
-                />
+                <Cuboid :size="48" style="color: var(--red)" />
               </div>
               <div class="flex flex-col">
                 <h3 class="uk-card-title">{{ feature.title }}</h3>
@@ -49,7 +55,7 @@
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">An all-in-one platform.</h2>
+        <h2 class="text-4xl font-500 mb-4">An all-in-one platform.</h2>
         <p class="mb-4">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
@@ -62,7 +68,6 @@
                 :is="keyfigure.icon"
                 :size="48"
                 style="color: var(--red)"
-                class="display-desktop"
               />
 
               <div class="flex flex-col">
@@ -80,10 +85,33 @@
       </template>
     </SectionCompo>
     <!-- end keyfigures -->
+    <!-- begin testimonials -->
+    <SectionCompo>
+      <template v-slot:content>
+        <h2 class="text-4xl font-500 mb-4">We are attentive to our customers!</h2>
+        <div class="flex flex-col flex-wrap gap-4">
+          <div class="uk-card" v-for="testimonial in testimonials">
+            <div class="uk-card-header flex items-center gap-4">
+              <User :size="48" style="color: var(--red)" />
+              <div class="flex flex-col">
+                <h3 class="uk-card-title">{{ testimonial.person }}</h3>
+                <p
+                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
+                >
+                  {{ testimonial.job }}
+                </p>
+              </div>
+            </div>
+            <div class="uk-card-body">{{ testimonial.text }}</div>
+          </div>
+        </div>
+      </template>
+    </SectionCompo>
+    <!-- end testimonials -->
     <!-- begin steps -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2 mb-4">How to start</h2>
+        <h2 class="text-4xl font-500 mb-4">How to start</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
           <div class="flex flex-col gap-4">
             <div class="uk-card" v-for="step in steps">
@@ -93,7 +121,7 @@
               </div>
             </div>
           </div>
-          <div class="display-desktop">
+          <div class="display-desktop m-auto">
             <img
               src="https://picsum.photos/600"
               class="w-full"
@@ -108,7 +136,7 @@
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2 mb-4">
+        <h2 class="text-4xl font-500 mb-4">
           Optimize your business management: invoices and CRM in one tool!
         </h2>
         <div
@@ -128,9 +156,7 @@
             </div>
             <div class="uk-card-body">
               <p>
-                <span class="uk-h2" style="color: var(--red)"
-                  >{{ pricing.price }}€</span
-                >
+                <span class="uk-h2">{{ pricing.price }}€</span>
                 / month
               </p>
               <ul class="mt-2">
@@ -158,37 +184,10 @@
       </template>
     </SectionCompo>
     <!-- end pricing -->
-    <!-- begin testimonials -->
-    <SectionCompo>
-      <template v-slot:content>
-        <h2 class="uk-h2 mb-4">We are attentive to our customers!</h2>
-        <div class="flex flex-col flex-wrap gap-4">
-          <div class="uk-card" v-for="testimonial in testimonials">
-            <div class="uk-card-header flex items-center gap-4">
-              <User
-                :size="48"
-                style="color: var(--red)"
-                class="display-desktop"
-              />
-              <div class="flex flex-col">
-                <h3 class="uk-card-title">{{ testimonial.person }}</h3>
-                <p
-                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-                >
-                  {{ testimonial.job }}
-                </p>
-              </div>
-            </div>
-            <div class="uk-card-body">{{ testimonial.text }}</div>
-          </div>
-        </div>
-      </template>
-    </SectionCompo>
-    <!-- end testimonials -->
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2 mb-4">Common Questions</h2>
+        <h2 class="text-4xl font-500 mb-4">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4">
           <ul uk-accordion>
             <li
@@ -211,22 +210,10 @@
       </template>
     </SectionCompo>
     <!-- end common questions -->
-    <!-- begin CTA -->
-    <SectionCompo>
-      <template v-slot:content>
-        <h2 class="uk-h2">Ready to start ?</h2>
-        <p class="mb-4">
-          Sign up and discover how our solution can make your billing and
-          customer relationship management easier!
-        </p>
-        <button class="uk-button uk-button-primary">Join Saas</button>
-      </template>
-    </SectionCompo>
-    <!-- end CTA -->
     <!-- begin creator -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">About us</h2>
+        <h2 class="text-4xl font-500 mb-4">About us</h2>
         <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
@@ -264,11 +251,10 @@
     <!-- begin contact us -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">Contact us</h2>
+        <h2 class="text-4xl font-500 mb-4">Contact us</h2>
         <p class="mb-4">Get in touch and ask us anything</p>
         <form>
           <div class="flex flex-col sm:flex-row justify-between sm:gap-4">
-
             <div class="w-full mb-2">
               <label for="email">Name</label>
               <input
@@ -308,10 +294,9 @@
               name=""
               id="message"
               rows="10"
-              style="resize:none"
+              style="resize: none"
             ></textarea>
           </div>
-
           <button class="uk-button uk-button-primary">Send your message</button>
         </form>
       </template>
@@ -320,7 +305,7 @@
     <!-- begin newsletter -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="uk-h2">The newsletter</h2>
+        <h2 class="text-4xl font-500 mb-4">The newsletter</h2>
         <p class="mb-4">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>

@@ -5,7 +5,7 @@
       <template v-slot:content>
         <form>
           <fieldset>
-            <legend class="uk-h2 mb-4">
+            <legend class="text-4xl font-500 mb-4">
               {{ isLoginForm ? "Login to your account" : "Create an account" }}
             </legend>
             <!-- name -->

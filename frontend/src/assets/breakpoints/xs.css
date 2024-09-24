@@ -332,7 +332,10 @@
   font-size: 8rem; /* 128px */
   line-height: 1;
 }
-
+/* FONT WEIGHT */
+.font-500{
+  font-weight: 500;
+}
 /* Z-INDEX */
 .z-3 {
   z-index: 3;
