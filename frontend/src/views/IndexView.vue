@@ -333,9 +333,9 @@
   <FooterCompo />
 </template>
 <script>
-import NavCompo from "@/components/layout/NavCompo.vue";
-import SectionCompo from "@/components/reusable/SectionCompo.vue";
-import FooterCompo from "@/components/layout/FooterCompo.vue";
+import NavCompo from "@/components/Layout/NavCompo.vue";
+import SectionCompo from "@/components/Reusable/SectionCompo.vue";
+import FooterCompo from "@/components/Layout/FooterCompo.vue";
 import {
   Check,
   ChevronDown,

@@ -7,7 +7,10 @@
     </ul> -->
 
     <!-- Overview -->
-    <div v-if="currentView === 'overview'" class="h-full flex flex-col overview gap-4">
+    <div
+      v-if="currentView === 'overview'"
+      class="h-full flex flex-col overview gap-4"
+    >
       <!-- sales -->
       <div class="uk-card w-full" :class="'sales' + i" v-for="i in 4">
         <div class="uk-card-header">
@@ -39,11 +42,10 @@
         <div class="flex flex-col h-40rem overflow-scroll">
           <div class="flex justify-between pt-2 pb-2 px-4" v-for="i in 20">
             <div class="flex items-center gap-2">
-              <AvatarCompo>
-                <template v-slot:content>
-                  <User />
-                </template>
-              </AvatarCompo>
+          
+                <User />
+        
+
               <div class="flex flex-col">
                 <span>User {{ i }}</span>
                 <span
@@ -69,12 +71,10 @@
 </template>
 
 <script>
-import AvatarCompo from "../reusable/AvatarCompo.vue";
 import { User } from "lucide-vue-next";
 export default {
   name: "DashboardCompo",
   components: {
-    AvatarCompo,
     User,
   },
   data() {

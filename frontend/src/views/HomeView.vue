@@ -143,7 +143,7 @@ import ScheduleCompo from "@/components/Schedule/ScheduleCompo.vue";
 import TasksCompo from "@/components/Tasks/TasksCompo.vue";
 import ContactsCompo from "@/components/Contacts/ContactsCompo.vue";
 import FinancialCompo from "@/components/Financial/FinancialCompo.vue";
-import ReportCompo from "@/components/Reports/ReportCompo.vue";
+import ReportsCompo from "@/components/Reports/ReportsCompo.vue";
 import SettingsCompo from "@/components/Settings/SettingsCompo.vue";
 import UserCompo from "@/components/User/UserCompo.vue";
 import {
@@ -170,7 +170,7 @@ import {
   ChevronDown,
   ChevronUp,
 } from "lucide-vue-next";
-import AvatarCompo from "@/components/reusable/AvatarCompo.vue";
+
 export default {
   name: "HomeView",
   components: {
@@ -196,13 +196,12 @@ export default {
     CircleHelp,
     ChevronDown,
     ChevronUp,
-    AvatarCompo,
     DashboardCompo,
     MailsCompo,
     ScheduleCompo,
     TasksCompo,
     ContactsCompo,
-    ReportCompo,
+    ReportsCompo,
     FinancialCompo,
     SettingsCompo,
     UserCompo,
@@ -245,7 +244,7 @@ export default {
         {
           label: "Reports",
           icon: ChartSpline,
-          component: "ReportCompo",
+          component: "ReportsCompo",
         },
         {
           label: "Settings",

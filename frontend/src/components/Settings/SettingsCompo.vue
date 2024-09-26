@@ -16,6 +16,7 @@ import ScheduleSettingsCompo from "../Schedule/ScheduleSettingsCompo.vue";
 import TasksSettingsCompo from "../Tasks/TasksSettingsCompo.vue";
 import ContactsSettingsCompo from "../Contacts/ContactsSettingsCompo.vue";
 import FinancialSettingsCompo from "../Financial/FinancialSettingsCompo.vue";
+import ReportsSettingsCompo from "../Reports/ReportsSettingsCompo.vue";
 export default {
   name: "SettingsCompo",
   components: {
@@ -25,6 +26,7 @@ export default {
     TasksSettingsCompo,
     ContactsSettingsCompo,
     FinancialSettingsCompo,
+    ReportsSettingsCompo,
   },
   data() {
     return {
@@ -53,6 +55,10 @@ export default {
         {
           label: "Financial",
           link: "FinancialSettingsCompo",
+        },
+        {
+          label: "Reports",
+          link: "ReportsSettingsCompo",
         },
       ],
     };

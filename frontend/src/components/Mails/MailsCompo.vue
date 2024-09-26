@@ -4,7 +4,7 @@
     <div
       class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh"
     >
-      <input type="text" class="uk-input" placeholder="Search..." />
+      <SearchCompo />
       <select class="uk-select">
         <option value="">Inbox</option>
         <option value="">Drafts</option>
@@ -25,11 +25,8 @@
     <div class="p-4 flex flex-col content-desktop">
       <div class="flex justify-between items-center gap-4 border-b-grey py-2">
         <p class="flex items-center gap-2">
-          <AvatarCompo>
-            <template v-slot:content>
-              <User />
-            </template>
-          </AvatarCompo>
+          <User />
+
           <span>User</span>
         </p>
         <span class="text-muted-foreground"> Oct 22, 2023, 9:00:00 AM </span>
@@ -49,7 +46,7 @@
             >To:
             <span class="text-primary underline">user@example.com</span></span
           >
-          <br /><br/>
+          <br /><br />
           Dear User,<br /><br />
           We hope this message finds you well. We are reaching out to inform you
           of an important update regarding your account with us.<br />
@@ -81,12 +78,12 @@
 </template>
 
 <script>
-import AvatarCompo from "../reusable/AvatarCompo.vue";
+import SearchCompo from "../Reusable/SearchCompo.vue";
 import { User, Inbox } from "lucide-vue-next";
 export default {
   name: "MailsCompo",
   components: {
-    AvatarCompo,
+    SearchCompo,
     User,
     Inbox,
   },

@@ -1,12 +1,31 @@
 <template>
   <div class="p-4">
     <div class="h-full flex flex-col justify-between">
-      <div class="flex justify-between">
-        <button class="uk-button uk-button-default">Filter</button>
+      <div class="flex flex-col md:flex-row justify-between flew-wrap gap-2">
         <div class="flex gap-2">
-          <button class="uk-button uk-button-primary">Add</button>
-          <button class="uk-button uk-button-default">Edit</button>
-          <button class="uk-button uk-button-default">Delete</button>
+          <SearchCompo />
+          <button class="uk-button uk-button-default">Filter</button>
+        </div>
+        <div class="flex gap-2">
+          <a
+            class="uk-button uk-button-primary"
+            href="#modal-sections"
+            uk-toggle
+            >Add</a
+          >
+          <a
+            class="uk-button uk-button-default"
+            href="#modal-sections"
+            uk-toggle
+            >Edit</a
+          >
+          <a
+            class="uk-button uk-button-default"
+            href="#modal-sections"
+            uk-toggle
+            >Delete</a
+          >
+          <ModalCompo />
         </div>
       </div>
       <table class="uk-table uk-table-middle uk-table-divider uk-table-hover">
@@ -45,29 +64,21 @@
           </tr>
         </tbody>
       </table>
-      <nav aria-label="Pagination">
-        <ul class="uk-flex-right uk-pagination" uk-margin>
-          <li>
-            <a href="#"><span uk-pagination-previous></span></a>
-          </li>
-          <li><a href="#">1</a></li>
-          <li class="uk-disabled"><span>…</span></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#">6</a></li>
-          <li class="uk-active"><span aria-current="page">7</span></li>
-          <li><a href="#">8</a></li>
-          <li>
-            <a href="#"><span uk-pagination-next></span></a>
-          </li>
-        </ul>
-      </nav>
+      <PaginationCompo />
     </div>
   </div>
 </template>
 
 <script>
+import SearchCompo from "../Reusable/SearchCompo.vue";
+import ModalCompo from "../Reusable/ModalCompo.vue";
+import PaginationCompo from "../Reusable/PaginationCompo.vue";
 export default {
   name: "ContactsCompo",
+  components: {
+    SearchCompo,
+    ModalCompo,
+    PaginationCompo,
+  },
 };
 </script>
-
