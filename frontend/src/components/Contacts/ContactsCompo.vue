@@ -1,30 +1,33 @@
 <template>
   <div class="p-4">
     <div class="h-full flex flex-col justify-between">
-      <div class="flex flex-col md:flex-row justify-between flew-wrap gap-2">
-        <div class="flex gap-2">
-          <SearchCompo />
-          <button class="uk-button uk-button-default">Filter</button>
-        </div>
-        <div class="flex gap-2">
-          <a
-            class="uk-button uk-button-primary"
-            href="#modal-sections"
-            uk-toggle
-            >Add</a
-          >
-          <a
-            class="uk-button uk-button-default"
-            href="#modal-sections"
-            uk-toggle
-            >Edit</a
-          >
-          <a
-            class="uk-button uk-button-default"
-            href="#modal-sections"
-            uk-toggle
-            >Delete</a
-          >
+      <div class="flex flex-col gap-2">
+        <SearchCompo />
+        <div class="flex justify-between">
+          <button class="uk-button uk-button-default gap-2">
+            <Filter :size="16" class="text-muted-foreground"/>
+            <span>Filter</span>
+          </button>
+          <div class="flex gap-2">
+            <a
+              class="uk-button uk-button-primary"
+              href="#modal-sections"
+              uk-toggle
+              >Add</a
+            >
+            <a
+              class="uk-button uk-button-default"
+              href="#modal-sections"
+              uk-toggle
+              >Edit</a
+            >
+            <a
+              class="uk-button uk-button-default"
+              href="#modal-sections"
+              uk-toggle
+              >Delete</a
+            >
+          </div>
           <ModalCompo />
         </div>
       </div>
@@ -73,12 +76,14 @@
 import SearchCompo from "../Reusable/SearchCompo.vue";
 import ModalCompo from "../Reusable/ModalCompo.vue";
 import PaginationCompo from "../Reusable/PaginationCompo.vue";
+import { Filter } from "lucide-vue-next";
 export default {
   name: "ContactsCompo",
   components: {
     SearchCompo,
     ModalCompo,
     PaginationCompo,
+    Filter
   },
 };
 </script>

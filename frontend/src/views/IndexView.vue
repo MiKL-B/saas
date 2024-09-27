@@ -1,5 +1,6 @@
 <template>
   <NavCompo />
+
   <main>
     <div class="background">
       <div></div>
@@ -345,6 +346,7 @@ import {
   User,
 } from "lucide-vue-next";
 
+
 export default {
   name: "IndexView",
   components: {
@@ -357,6 +359,7 @@ export default {
     Users,
     Building2,
     User,
+
   },
 
   data() {

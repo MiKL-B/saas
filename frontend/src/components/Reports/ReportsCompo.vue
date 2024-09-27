@@ -1,11 +1,12 @@
 <template>
-<div class="p-4">
+  <div class="p-4">
     <p>Report Compo</p>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"ReportCompo"
-}
+  name: "ReportsCompo",
+};
 </script>
+

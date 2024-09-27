@@ -41,10 +41,8 @@
 
         <div class="flex flex-col h-40rem overflow-scroll">
           <div class="flex justify-between pt-2 pb-2 px-4" v-for="i in 20">
-            <div class="flex items-center gap-2">
-          
-                <User />
-        
+            <div class="flex gap-2">
+              <User class="text-muted-foreground" />
 
               <div class="flex flex-col">
                 <span>User {{ i }}</span>

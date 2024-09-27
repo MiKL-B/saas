@@ -2,7 +2,7 @@
   <a
     href="#search"
     uk-toggle
-    class="uk-button uk-button-default flex justify-start gap-2 text-muted-foreground w-full"
+    class="uk-button uk-button-default flex justify-start gap-2 text-muted-foreground"
   >
     <Search :size="16" />
     <span>Search</span>

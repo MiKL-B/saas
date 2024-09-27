@@ -1,7 +1,8 @@
 <template>
-  <div class="content">
+  <div class="">
     <!-- content 1 -->
-    <div
+
+    <!-- <div
       class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh"
     >
       <SearchCompo />
@@ -20,18 +21,103 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- content 2 -->
-    <div class="p-4 flex flex-col content-desktop">
+    <SplitterCompo>
+      <template v-slot:left>
+        <div
+          class="flex flex-col gap-4 p-4 lg:h-full lg:max-h-full-vh"
+        >
+          <SearchCompo />
+          <select class="uk-select">
+            <option value="">Inbox</option>
+            <option value="">Drafts</option>
+            <option value="">Sent</option>
+            <option value="">Junk</option>
+            <option value="">Trash</option>
+          </select>
+          <div class="flex flex-col h-full gap-4 overflow-scroll">
+            <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
+              <h3 class="uk-card-title">Default {{ i }}</h3>
+              <p class="uk-margin">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template v-slot:right>
+        <div class="px-4 pt-4 flex flex-col content-desktop">
+          <div
+            class="flex justify-between items-center gap-4 border-b-grey py-2"
+          >
+            <p class="flex items-center gap-2">
+              <User class="text-muted-foreground" />
+              <span>User</span>
+            </p>
+            <span class="text-muted-foreground">
+              Oct 22, 2023, 9:00:00 AM
+            </span>
+          </div>
+          <div class="mails-bottom pt-4 flex flex-col h-full">
+            <p class="py-2 h-full">
+              Subject: Important Update Regarding Your Account<br /><br />
+              <span
+                >From:
+                <span class="text-primary underline"
+                  >support@fakemagnet.com</span
+                ></span
+              >
+              <br />
+              <span
+                >To:
+                <span class="text-primary underline"
+                  >user@example.com</span
+                ></span
+              >
+              <br /><br />
+              Dear User,<br /><br />
+              We hope this message finds you well. We are reaching out to inform
+              you of an important update regarding your account with us.<br />
+              To ensure the security of your information, we have implemented
+              new verification protocols. Please take a moment to log in to your
+              account and verify your details using the link below:<br /><br />
+
+              <a href="#" class="text-primary underline"
+                >Verify Your Account Now</a
+              ><br /><br />
+
+              Failure to complete this verification process within 48 hours may
+              result in temporary suspension of your account.<br />
+              Thank you for your prompt attention to this matter. If you have
+              any questions, please do not hesitate to contact our support
+              team.<br /><br />
+              Best regards,<br />
+              The Fake Magnet Team
+            </p>
+            <textarea
+              rows="10"
+              name=""
+              id=""
+              class="uk-textarea my-4"
+              placeholder="Reply User"
+            ></textarea>
+            <button class="uk-button uk-button-primary flex ml-auto">
+              Send
+            </button>
+          </div>
+        </div>
+      </template>
+    </SplitterCompo>
+    <!-- <div class="p-4 flex flex-col content-desktop">
       <div class="flex justify-between items-center gap-4 border-b-grey py-2">
         <p class="flex items-center gap-2">
-          <User />
+          <User class="text-muted-foreground" />
 
           <span>User</span>
         </p>
         <span class="text-muted-foreground"> Oct 22, 2023, 9:00:00 AM </span>
       </div>
-      <!--  -->
       <div class="mails-bottom pt-4 flex flex-col h-full">
         <p class="py-2 h-full">
           Subject: Important Update Regarding Your Account<br /><br />
@@ -73,19 +159,22 @@
         ></textarea>
         <button class="uk-button uk-button-primary flex ml-auto">Send</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import SearchCompo from "../Reusable/SearchCompo.vue";
 import { User, Inbox } from "lucide-vue-next";
+import SplitterCompo from "../Reusable/SplitterCompo.vue";
+
 export default {
   name: "MailsCompo",
   components: {
     SearchCompo,
     User,
     Inbox,
+    SplitterCompo,
   },
 };
 </script>
@@ -95,10 +184,10 @@ export default {
   display: none;
 }
 @media screen and (min-width: 1024px) {
-  .content {
+  /* .content {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
-  }
+  } */
   .content-desktop {
     display: grid;
   }

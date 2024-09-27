@@ -70,10 +70,10 @@
       </ul>
     </nav>
     <!-- nav desktop -->
-    <div class="display-desktop">
+    <div class="display-desktop w-16rem">
       <ul
-        class="flex flex-col justify-between h-full border-r-grey uk-nav uk-nav-primary py-4 bg-primary-foreground"
-        uk-nav
+      class="flex flex-col justify-between h-full border-r-grey uk-nav uk-nav-primary py-4 bg-primary-foreground"
+      uk-nav
       >
         <li
           v-for="link in links"
@@ -286,7 +286,7 @@ export default {
 @media screen and (min-width: 1024px) {
   .container {
     display: grid;
-    grid-template-columns: 0.2fr 1fr;
+    grid-template-columns: auto 1fr;
     height: 100vh;
   }
 }
