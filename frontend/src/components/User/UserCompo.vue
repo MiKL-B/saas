@@ -1,135 +1,160 @@
 <template>
   <div class="p-4">
     <form>
-      <fieldset class="uk-fieldset">
+      <fieldset>
         <div class="grid md:grid-cols-2 gap-4">
           <!-- left -->
           <div>
-            <h3 class="uk-h3">Account</h3>
-            <p
-              class="uk-margin-xsmall-top uk-text-small text-muted-foreground mb-4"
-            >
-              Manage your account.
-            </p>
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="name">Name</label>
-              <input
-                class="uk-input"
-                id="name"
-                type="text"
-                aria-describedby="name-help-block"
-                placeholder="Name"
-              />
+            <h3>Account</h3>
+            <p class="text-small text-grey mb-4">Manage your account.</p>
+            <!-- name -->
+            <div class="field mb-4">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Name" />
             </div>
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="date">Date of birth</label>
-              <input
-                class="uk-input"
-                id="date"
-                type="date"
-                aria-describedby="name-help-block"
-              />
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
+            <!-- date -->
+            <div class="field mb-4">
+              <label for="date">Date of birth</label>
+              <input id="date" type="date" />
+              <p class="text-small text-grey">
                 Your date of birth is used to calculate your age.
               </p>
             </div>
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="email">Email</label>
-              <input
-                class="uk-input"
-                id="email"
-                type="email"
-                aria-describedby="name-help-block"
-                placeholder="name@example.com"
-              />
+            <!-- email -->
+            <div class="field mb-4">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="name@example.com" />
             </div>
-
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="password">Password</label>
-              <input
-                class="uk-input"
-                id="password"
-                type="password"
-                aria-describedby="pass-help-block"
-              />
+            <!-- password -->
+            <div class="field mb-4">
+              <label for="password">Password</label>
+              <input id="password" type="password" />
             </div>
-
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="password"
-                >Confirm password</label
-              >
-              <input
-                class="uk-input mb-4"
-                id="confirm"
-                type="confirm"
-                aria-describedby="pass-help-block"
-              />
+            <!-- confirm -->
+            <div class="field mb-4">
+              <label for="confirm">Confirm password</label>
+              <input id="confirm" type="password" />
+            </div>
+            <!-- color -->
+            <div class="field">
+              <label for="color">Colors</label>
+              <div class="flex gap-2">
+                <div
+                  class="color"
+                  v-for="color in colors"
+                  :style="{ background: color.text }"
+                ></div>
+              </div>
             </div>
           </div>
           <!-- right -->
           <div>
-            <h3 class="uk-h3">Preferences</h3>
-            <p
-              class="uk-margin-xsmall-top uk-text-small text-muted-foreground mb-4"
-            >
-              Manage your preferences.
-            </p>
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="url">URLs</label>
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
-                Add links to your website, blog, or social media profiles.
-              </p>
-              <input
-                class="uk-input mb-2"
-                id="url"
-                type="text"
-                aria-describedby="pass-help-block"
-                placeholder="https://www.website.com"
-              />
-              <input
-                class="uk-input mb-2"
-                id="url"
-                type="text"
-                aria-describedby="pass-help-block"
-                placeholder="https://github.com/"
-              />
-              <button class="uk-button uk-button-default">Add URL</button>
+            <h3>Preferences</h3>
+            <p class="text-small text-grey mb-4">Manage your preferences.</p>
+            <div class="mb-4">
+              <div class="field">
+                <label for="url">Urls</label>
+                <p class="text-small text-grey">
+                  Add links to your website, blog, or social media profiles.
+                </p>
+                <input type="text" placeholder="https://www.website.com" />
+                <input type="text" placeholder="https://github.com/" />
+              </div>
+              <button class="secondary">Add URL</button>
             </div>
 
-            <div class="uk-form-controls mb-4">
-              <label class="uk-form-label" for="language">Language</label>
+            <div class="field mb-4">
+              <label for="language">Language</label>
               <select name="select" id="select" class="uk-select">
                 <option value="Fr">French</option>
                 <option value="En">English</option>
                 <option value="Sw">Swedish</option>
               </select>
             </div>
-            <div class="uk-form-controls mb-4">
-              <label>
-                <input class="uk-checkbox" type="checkbox" />
-                Remember me
-              </label>
+            <div class="field mb-4">
+              <input type="checkbox" id="check1" />
+              <label for="check1"> Remember me </label>
             </div>
-            <button class="flex uk-button uk-button-primary">
-              Update profile
-            </button>
+            <button>Update profile</button>
           </div>
         </div>
       </fieldset>
     </form>
   </div>
-
 </template>
 
 <script>
-
+export default {
+  name: "UserCompo",
+  data() {
+    return {
+      colors: [
+        {
+          index: 1,
+          text: "#f9daff",
+        },
+        {
+          index: 2,
+          text: "#ecdaff",
+        },
+        {
+          index: 3,
+          text: "#dae3ff",
+        },
+        {
+          index: 4,
+          text: "#e0daff",
+        },
+        {
+          index: 5,
+          text: "#daeeff",
+        },
+        {
+          index: 6,
+          text: "#dafafe",
+        },
+        {
+          index: 7,
+          text: "#dafff7",
+        },
+        {
+          index: 8,
+          text: "#daffec",
+        },
+        {
+          index: 9,
+          text: "#ecffda",
+        },
+        {
+          index: 10,
+          text: "#fff8de",
+        },
+        {
+          index: 11,
+          text: "#ffe9e0",
+        },
+        {
+          index: 12,
+          text: "#ffe0e0",
+        },
+        {
+          index: 13,
+          text: "#ffdae0",
+        },
+        {
+          index: 14,
+          text: "#f7f1e0",
+        },
+      ],
+    };
+  },
+};
 </script>
 
-
-<style>
-
+<style scoped>
+.color {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
 </style>

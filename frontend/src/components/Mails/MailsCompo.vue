@@ -1,80 +1,63 @@
 <template>
-  <div class="">
-    <!-- content 1 -->
-
-    <!-- <div
-      class="flex flex-col gap-4 p-4 border-r-grey lg:h-full lg:max-h-full-vh"
-    >
-      <SearchCompo />
-      <select class="uk-select">
-        <option value="">Inbox</option>
-        <option value="">Drafts</option>
-        <option value="">Sent</option>
-        <option value="">Junk</option>
-        <option value="">Trash</option>
-      </select>
-      <div class="flex flex-col h-full gap-4 overflow-scroll">
-        <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
-          <h3 class="uk-card-title">Default {{ i }}</h3>
-          <p class="uk-margin">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </div>
-      </div>
-    </div> -->
-    <!-- content 2 -->
+  <div>
     <SplitterCompo>
       <template v-slot:left>
-        <div
-          class="flex flex-col gap-4 p-4 lg:h-full lg:max-h-full-vh"
-        >
-          <SearchCompo />
-          <select class="uk-select">
-            <option value="">Inbox</option>
-            <option value="">Drafts</option>
-            <option value="">Sent</option>
-            <option value="">Junk</option>
-            <option value="">Trash</option>
-          </select>
+        <div class="flex flex-col gap-4 p-4 lg:h-full lg:max-h-full-vh">
+          <div class="flex flex-col sm:grid sm:grid-cols-2 gap-2">
+            <SearchCompo />
+            <ul uk-tab class="uk-tab-alt">
+              <li><a href="#">All mails</a></li>
+              <li><a href="#">Unread</a></li>
+            </ul>
+          </div>
+          <div class="grid grid-cols-2 items-center gap-2">
+            <select class="uk-select">
+              <option value="">Inbox</option>
+              <option value="">Drafts</option>
+              <option value="">Sent</option>
+              <option value="">Junk</option>
+              <option value="">Trash</option>
+            </select>
+            <div>
+              <p>Count: {{ inbox.length }}</p>
+            </div>
+          </div>
           <div class="flex flex-col h-full gap-4 overflow-scroll">
-            <div class="uk-card uk-card-body uk-card-default" v-for="i in 20">
-              <h3 class="uk-card-title">Default {{ i }}</h3>
-              <p class="uk-margin">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              </p>
+            <div class="card" v-for="mail in inbox">
+              <div class="card-header flex-col">
+                <h3 class="card-title">{{ mail.title }} {{ mail.index }}</h3>
+                <p class="text-grey">
+                  {{ mail.description }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </template>
       <template v-slot:right>
-        <div class="px-4 pt-4 flex flex-col content-desktop">
-          <div
-            class="flex justify-between items-center gap-4 border-b-grey py-2"
-          >
-            <p class="flex items-center gap-2">
-              <User class="text-muted-foreground" />
-              <span>User</span>
-            </p>
-            <span class="text-muted-foreground">
-              Oct 22, 2023, 9:00:00 AM
-            </span>
+        <div class="p-4 flex flex-col h-full">
+          <div class="flex justify-between items-center">
+            <button class="secondary flex items-center gap-2">
+              <User :size="16" class="text-grey" />
+              <span>John Doe</span>
+            </button>
+            <div class="uk-drop uk-dropdown" uk-dropdown="mode: click">
+              <ul class="uk-dropdown-nav uk-nav">
+                <li class="uk-nav-header">John Doe</li>
+                <li><a href="#">Profile</a></li>
+              </ul>
+            </div>
+            <span class="text-grey"> Oct 22, 2023, 9:00:00 AM </span>
           </div>
-          <div class="mails-bottom pt-4 flex flex-col h-full">
-            <p class="py-2 h-full">
+          <div class="flex flex-col h-full justify-between">
+            <p class="pt-4 overflow-scroll h-36rem">
               Subject: Important Update Regarding Your Account<br /><br />
               <span
                 >From:
-                <span class="text-primary underline"
-                  >support@fakemagnet.com</span
-                ></span
+                <span class="underline">support@fakemagnet.com</span></span
               >
               <br />
-              <span
-                >To:
-                <span class="text-primary underline"
-                  >user@example.com</span
-                ></span
-              >
+              <span>To: <span class="underline">user@example.com</span></span>
               <br /><br />
               Dear User,<br /><br />
               We hope this message finds you well. We are reaching out to inform
@@ -83,8 +66,7 @@
               new verification protocols. Please take a moment to log in to your
               account and verify your details using the link below:<br /><br />
 
-              <a href="#" class="text-primary underline"
-                >Verify Your Account Now</a
+              <a href="#" class="underline">Verify Your Account Now</a
               ><br /><br />
 
               Failure to complete this verification process within 48 hours may
@@ -94,72 +76,29 @@
               team.<br /><br />
               Best regards,<br />
               The Fake Magnet Team
+              <br />
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+              hic, inventore fugit quam aliquam quod tenetur velit, animi quis,
+              atque quidem! Tenetur placeat, soluta a hic dolores quo aliquid
+              esse impedit distinctio nesciunt odit ipsum possimus, error illum
+              laudantium, quibusdam recusandae itaque earum quas labore natus.
+              Deleniti ad eum fugit. Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Deserunt hic, inventore fugit quam aliquam quod
+              tenetur velit, animi quis, atque quidem! Tenetur placeat, soluta a
+              hic dolores quo aliquid esse impedit distinctio nesciunt odit
+              ipsum possimus, error illum laudantium, quibusdam recusandae
+              itaque earum quas labore natus. Deleniti ad eum fugit.
             </p>
             <textarea
-              rows="10"
-              name=""
-              id=""
-              class="uk-textarea my-4"
+              rows="6"
+              class="uk-textarea my-4 w-full h-12rem"
               placeholder="Reply User"
             ></textarea>
-            <button class="uk-button uk-button-primary flex ml-auto">
-              Send
-            </button>
+            <button class="flex ml-auto">Send</button>
           </div>
         </div>
       </template>
     </SplitterCompo>
-    <!-- <div class="p-4 flex flex-col content-desktop">
-      <div class="flex justify-between items-center gap-4 border-b-grey py-2">
-        <p class="flex items-center gap-2">
-          <User class="text-muted-foreground" />
-
-          <span>User</span>
-        </p>
-        <span class="text-muted-foreground"> Oct 22, 2023, 9:00:00 AM </span>
-      </div>
-      <div class="mails-bottom pt-4 flex flex-col h-full">
-        <p class="py-2 h-full">
-          Subject: Important Update Regarding Your Account<br /><br />
-          <span
-            >From:
-            <span class="text-primary underline"
-              >support@fakemagnet.com</span
-            ></span
-          >
-          <br />
-          <span
-            >To:
-            <span class="text-primary underline">user@example.com</span></span
-          >
-          <br /><br />
-          Dear User,<br /><br />
-          We hope this message finds you well. We are reaching out to inform you
-          of an important update regarding your account with us.<br />
-          To ensure the security of your information, we have implemented new
-          verification protocols. Please take a moment to log in to your account
-          and verify your details using the link below:<br /><br />
-
-          <a href="#" class="text-primary underline">Verify Your Account Now</a
-          ><br /><br />
-
-          Failure to complete this verification process within 48 hours may
-          result in temporary suspension of your account.<br />
-          Thank you for your prompt attention to this matter. If you have any
-          questions, please do not hesitate to contact our support team.<br /><br />
-          Best regards,<br />
-          The Fake Magnet Team
-        </p>
-        <textarea
-          rows="10"
-          name=""
-          id=""
-          class="uk-textarea my-4"
-          placeholder="Reply User"
-        ></textarea>
-        <button class="uk-button uk-button-primary flex ml-auto">Send</button>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -176,20 +115,47 @@ export default {
     Inbox,
     SplitterCompo,
   },
+  data() {
+    return {
+      inbox: [
+        {
+          index: 1,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 2,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 3,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 4,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 5,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 6,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+      ],
+    };
+  },
 };
 </script>
-
-<style scoped>
-.content-desktop {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  /* .content {
-    display: grid;
-    grid-template-columns: 0.3fr 1fr;
-  } */
-  .content-desktop {
-    display: grid;
-  }
-}
-</style>

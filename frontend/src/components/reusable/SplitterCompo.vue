@@ -60,7 +60,7 @@ export default {
     height:100vh;
   }
   .left-pane{
-    min-width: 300px;
+    min-width: 350px;
   }
   .right-pane {
     flex: 1;

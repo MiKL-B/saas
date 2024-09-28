@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <p>Report Compo</p>
+    <p class="uk-placeholder text-center">Coming soon</p>
   </div>
 </template>
 

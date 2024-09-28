@@ -5,66 +5,47 @@
       <template v-slot:content>
         <form>
           <fieldset>
-            <legend class="text-4xl font-500 mb-4">
+            <h2 class="mb-4">
               {{ isLoginForm ? "Login to your account" : "Create an account" }}
-            </legend>
-            <!-- name -->
-            <div v-if="!isLoginForm" class="mb-2">
+            </h2>
+            <!-- Name -->
+            <div class="field" v-if="!isLoginForm">
               <label for="name">Name</label>
-              <input
-                class="uk-input"
-                id="name"
-                type="name"
-                aria-describedby="name-help-block"
-                placeholder="Name"
-              />
+              <input id="name" type="text" placeholder="Name" />
             </div>
-            <!-- email -->
-            <div class="mb-2">
+            <!-- Email -->
+            <div class="field">
               <label for="email">Email</label>
-              <input
-                class="uk-input"
-                id="email"
-                type="email"
-                aria-describedby="name-help-block"
-                placeholder="name@example.com"
-              />
+              <input id="email" type="text" placeholder="name@example.com" />
             </div>
             <!-- Password -->
-            <div class="mb-2">
+            <div class="field">
               <label for="password">Password</label>
-              <input
-                class="uk-input"
-                id="password"
-                type="password"
-                aria-describedby="pass-help-block"
-              />
+              <input id="password" type="password" />
             </div>
             <!-- Confirm password -->
-            <div v-if="!isLoginForm" class="mb-2">
-              <label for="confirm">Confirm password</label>
-              <input
-                class="uk-input"
-                id="confirm"
-                type="password"
-                aria-describedby="pass-help-block"
-              />
+            <div v-if="!isLoginForm" class="field">
+              <label for="confirm">Confirm</label>
+              <input id="confirm" type="password" />
             </div>
             <!-- Remember me -->
-            <div v-if="isLoginForm" class="flex gap-2 items-center text-center">
-              <input id="remember" class="uk-checkbox" type="checkbox" />
+            <div v-if="isLoginForm" class="field">
+              <input id="remember" type="checkbox" />
               <label for="remember">Remember me</label>
             </div>
-            <RouterLink to="/home" class="uk-button uk-button-primary w-full my-4">
-              <button>{{ isLoginForm ? "Login" : "Sign up" }}</button>
+            <RouterLink to="/home">
+              <button class="w-full my-4">
+                {{ isLoginForm ? "Login" : "Sign up" }}
+              </button>
             </RouterLink>
-            <hr class="uk-divider-icon" />
+            <hr />
             <p class="flex justify-center p-4 gap-2">
               {{ isLoginForm ? "" : "Already have an account ?" }}
-               <span
-                class="cursor-pointer text-primary link underline"
+              <a
+                href="#"
+                class="cursor-pointer"
                 @click="isLoginForm = !isLoginForm"
-                >{{ isLoginForm ? "Create an account here !" : "Login" }}</span
+                >{{ isLoginForm ? "Create an account here !" : "Login" }}</a
               >
             </p>
           </fieldset>
@@ -76,9 +57,10 @@
 </template>
 
 <script>
-import NavCompo from "@/components/layout/NavCompo.vue";
-import FooterCompo from "@/components/layout/FooterCompo.vue";
-import SectionCompo from "@/components/reusable/SectionCompo.vue";
+import NavCompo from "@/components/Layout/NavCompo.vue";
+import FooterCompo from "@/components/Layout/FooterCompo.vue";
+import SectionCompo from "@/components/Reusable/SectionCompo.vue";
+
 export default {
   name: "LoginView",
   components: { NavCompo, FooterCompo, SectionCompo },
@@ -90,12 +72,9 @@ export default {
 };
 </script>
 <style scoped>
-form{
-  height:30rem;
-  max-width:30rem;
-  margin:auto;
-}
-.link{
-  color:var(--red);
+form {
+  height: 30rem;
+  max-width: 30rem;
+  margin: auto;
 }
 </style>

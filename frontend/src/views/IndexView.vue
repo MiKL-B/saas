@@ -1,26 +1,18 @@
 <template>
   <NavCompo />
-
   <main>
-    <div class="background">
-      <div></div>
-      <div></div>
-    </div>
-
     <SectionCompo>
       <template v-slot:content>
-        <h1 class="text-5xl font-500 mb-4">
-          Ready to Simplify Your Business Management?
-        </h1>
-        <p class="mb-4">
+        <h1 class="mb-4">Ready to Simplify Your Business Management?</h1>
+        <p class="mb-4 text-grey">
           Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.<br />Take
           control of your finances and customer relationships with our
           all-in-one platform.<br />Start your free trial today and transform
           the way you manage your business!
         </p>
         <div class="flex gap-2">
-          <button class="uk-button uk-button-primary">Get started</button>
-          <button class="uk-button uk-button-default">Request a demo</button>
+          <button>Get started</button>
+          <button class="secondary">Request a demo</button>
         </div>
       </template>
     </SectionCompo>
@@ -28,11 +20,11 @@
     <!-- begin features -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">
+        <h2 class="mb-4">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="mb-4">
+        <p class="mb-4 text-grey">
           Revolutionize your invoicing and customer management with our
           all-in-one SaaS solution.<br />
           Effortlessly create invoices, track payments, and enhance client
@@ -41,16 +33,14 @@
         <div
           class="flex flex-col md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col gap-4"
         >
-          <div class="uk-card" v-for="feature in features">
-            <div class="uk-card-header flex flex-col sm:flex-row gap-4">
+          <div class="card" v-for="feature in features">
+            <div class="card-header flex-col sm:flex-row gap-4">
               <div>
                 <Cuboid :size="48" style="color: var(--red)" />
               </div>
               <div class="flex flex-col">
-                <h3 class="uk-card-title">{{ feature.title }}</h3>
-                <p
-                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-                >
+                <h3 class="card-title">{{ feature.title }}</h3>
+                <p class="text-grey">
                   {{ feature.description }}
                 </p>
               </div>
@@ -63,31 +53,28 @@
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">An all-in-one platform.</h2>
-        <p class="mb-4">
+        <h2 class="mb-4">An all-in-one platform.</h2>
+        <p class="mb-4 text-grey">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
         </p>
         <div class="flex flex-col flex-wrap gap-4">
-          <div class="uk-card" v-for="keyfigure in keyfigures">
-            <div class="uk-card-header flex items-center gap-4">
+          <div class="card" v-for="keyfigure in keyfigures">
+            <div class="card-header items-center gap-4">
               <component
                 :is="keyfigure.icon"
                 :size="48"
                 style="color: var(--red)"
               />
-
               <div class="flex flex-col">
-                <h3 class="uk-card-title">{{ keyfigure.figure }}</h3>
-                <p
-                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-                >
+                <h3 class="card-title">{{ keyfigure.figure }}</h3>
+                <p class="text-grey">
                   {{ keyfigure.person }}
                 </p>
               </div>
             </div>
-            <div class="uk-card-body">{{ keyfigure.text }}</div>
+            <div class="card-body">{{ keyfigure.text }}</div>
           </div>
         </div>
       </template>
@@ -96,23 +83,19 @@
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">
-          We are attentive to our customers!
-        </h2>
+        <h2 class="mb-4">We are attentive to our customers!</h2>
         <div class="flex flex-col flex-wrap gap-4">
-          <div class="uk-card" v-for="testimonial in testimonials">
-            <div class="uk-card-header flex items-center gap-4">
+          <div class="card" v-for="testimonial in testimonials">
+            <div class="card-header flex items-center gap-4">
               <User :size="48" style="color: var(--red)" />
               <div class="flex flex-col">
-                <h3 class="uk-card-title">{{ testimonial.person }}</h3>
-                <p
-                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-                >
+                <h3 class="card-title">{{ testimonial.person }}</h3>
+                <p class="text-grey">
                   {{ testimonial.job }}
                 </p>
               </div>
             </div>
-            <div class="uk-card-body">{{ testimonial.text }}</div>
+            <div class="card-body">{{ testimonial.text }}</div>
           </div>
         </div>
       </template>
@@ -121,13 +104,13 @@
     <!-- begin steps -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">How to start</h2>
+        <h2 class="mb-4">How to start</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
           <div class="flex flex-col justify-between gap-4">
-            <div class="uk-card" v-for="step in steps">
-              <div class="uk-card-header">
-                <h3 class="uk-card-title">{{ step.index }} {{ step.title }}</h3>
-                <p>{{ step.text }}</p>
+            <div class="card" v-for="step in steps">
+              <div class="card-header flex-col">
+                <h3 class="card-title">{{ step.index }} {{ step.title }}</h3>
+                <p class="text-grey">{{ step.text }}</p>
               </div>
             </div>
           </div>
@@ -135,7 +118,7 @@
             <img
               src="https://picsum.photos/600"
               class="w-full"
-              style="object-fit: cover; border-radius: 0.75rem;"
+              style="object-fit: cover; border-radius: 0.75rem"
               alt=""
             />
           </div>
@@ -146,27 +129,25 @@
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">
+        <h2 class="mb-4">
           Optimize your business management: invoices and CRM in one tool!
         </h2>
         <div
           class="flex flex-col md:flex-row justify-center md:justify-between gap-4"
         >
           <div
-            class="uk-card md:flex md:flex-col md:justify-between"
+            class="card md:flex md:flex-col md:justify-between"
             v-for="pricing in pricings"
           >
-            <div class="uk-card-header">
-              <h3 class="uk-card-title">{{ pricing.title }}</h3>
-              <p
-                class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-              >
+            <div class="card-header flex-col">
+              <h3 class="card-title">{{ pricing.title }}</h3>
+              <p class="text-grey">
                 {{ pricing.description }}
               </p>
             </div>
-            <div class="uk-card-body">
+            <div class="card-body">
               <p>
-                <span class="uk-h2">{{ pricing.price }}€</span>
+                <span class="text-3xl font-bold">{{ pricing.price }}€</span>
                 / month
               </p>
               <ul class="mt-2">
@@ -178,17 +159,12 @@
                 </li>
               </ul>
             </div>
-            <div class="uk-card-footer">
-              <button class="w-full uk-button uk-button-primary">
-                Buy now
-              </button>
+            <div class="card-footer">
+              <button class="w-full">Buy now</button>
             </div>
           </div>
         </div>
-        <a
-          href="#"
-          class="flex justify-center underline mt-4 text-primary"
-          style="color: var(--red)"
+        <a href="#" class="flex justify-center mt-4"
           >Start your 14-day free trial today!</a
         >
       </template>
@@ -197,23 +173,20 @@
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">Common Questions</h2>
+        <h2 class="mb-4">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4">
-          <ul uk-accordion>
+          <ul>
             <li
               v-for="question in questions"
               :key="question.value"
               :value="question.value"
             >
-              <a class="uk-accordion-title" href>
-                <span>{{ question.title }}</span>
-                <span class="size-2 uk-accordion-icon"
-                  ><ChevronDown style="color: var(--red)"
-                /></span>
-              </a>
-              <div class="uk-accordion-content">
-                {{ question.content }}
-              </div>
+              <details>
+                <summary>{{ question.title }}</summary>
+                <p class="text-grey">
+                  {{ question.content }}
+                </p>
+              </details>
             </li>
           </ul>
         </div>
@@ -221,9 +194,9 @@
     </SectionCompo>
     <!-- end common questions -->
     <!-- begin creator -->
-    <SectionCompo class="bg-danger text-secondary">
+    <SectionCompo class="bg-danger text-white">
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">About us</h2>
+        <h2 class="mb-4">About us</h2>
         <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
@@ -261,71 +234,56 @@
     <!-- begin contact us -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">Contact us</h2>
-        <p class="mb-4">Get in touch and ask us anything</p>
+        <h2 class="mb-4">Contact us</h2>
+        <p class="mb-4 text-grey">Get in touch and ask us anything</p>
         <form>
           <div class="flex flex-col sm:flex-row justify-between sm:gap-4">
-            <div class="w-full mb-2">
-              <label for="email">Name</label>
-              <input
-                class="uk-input"
-                id="name"
-                type="text"
-                aria-describedby="name-help-block"
-                placeholder="Your name"
-              />
+            <!-- Name -->
+            <div class="field w-full mb-2">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Name" />
             </div>
-            <div class="w-full mb-2">
+            <!-- Email -->
+            <div class="field w-full mb-2">
               <label for="email">Email</label>
-              <input
-                class="uk-input"
-                id="email"
-                type="email"
-                aria-describedby="name-help-block"
-                placeholder="mail@example.com"
-              />
+              <input id="email" type="email" placeholder="mail@example.com" />
             </div>
           </div>
-          <div class="mb-2">
-            <label for="email">Subject</label>
-            <input
-              class="uk-input"
-              id="subject"
-              type="text"
-              aria-describedby="name-help-block"
-              placeholder="Subject"
-            />
+          <!-- Subject -->
+          <div class="field mb-2">
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" placeholder="Subject" />
           </div>
-          <div class="mb-4">
-            <label for="messag">Message</label>
+          <!-- Textarea -->
+          <div class="field mb-4">
+            <label for="message">Message</label>
             <textarea
-              class="uk-textarea"
-              placeholder="Your message here"
-              name=""
+              name="message"
               id="message"
+              placeholder="Message"
               rows="10"
               style="resize: none"
             ></textarea>
           </div>
-          <button class="uk-button uk-button-primary">Send your message</button>
+          <button>Send your message</button>
         </form>
       </template>
     </SectionCompo>
     <!-- end contact us -->
     <!-- begin newsletter -->
-    <SectionCompo class="bg-muted">
+    <SectionCompo class="bg-secondary">
       <template v-slot:content>
-        <h2 class="text-4xl font-500 mb-4">The newsletter</h2>
-        <p class="mb-4">
+        <h2 class="mb-4">The newsletter</h2>
+        <p class="mb-4 text-grey">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
         <div class="flex flex-wrap gap-4">
           <input
             type="email"
             placeholder="Your email address"
-            class="uk-input w-96"
+            class="w-96 bg-white"
           />
-          <button class="uk-button uk-button-primary">Subscribe</button>
+          <button>Subscribe</button>
         </div>
       </template>
     </SectionCompo>
@@ -346,7 +304,6 @@ import {
   User,
 } from "lucide-vue-next";
 
-
 export default {
   name: "IndexView",
   components: {
@@ -359,7 +316,6 @@ export default {
     Users,
     Building2,
     User,
-
   },
 
   data() {
@@ -582,43 +538,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: linear-gradient(to right, #ffffff, #ffffff);
-  display: flex;
-  flex-grow: 1;
-  z-index: -1;
-}
-
-.background div {
-  position: absolute;
-  border-radius: 100%;
-  height: 0;
-  filter: blur(240vw);
-  opacity: 0.4;
-}
-
-.background div:nth-child(1) {
-  background: linear-gradient(132deg, #e84a6c 0%, #ffffff 100%);
-  width: 77%;
-  padding-top: 77%;
-  left: 12%;
-  top: 0%;
-  transform: translateX(-50%) translateY(-50%);
-}
-
-.background div:nth-child(2) {
-  background: linear-gradient(132deg, #ffffff 0%, #e84a6c 100%);
-  width: 143%;
-  padding-top: 143%;
-  left: 100%;
-  top: 100%;
-  transform: translateX(-50%) translateY(-50%);
-}
-</style>

@@ -1,0 +1,9 @@
+.bg-danger {
+  background: var(--red);
+}
+.bg-secondary {
+  background: var(--secondary);
+}
+.bg-white {
+  background: var(--white);
+}

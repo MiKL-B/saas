@@ -4,29 +4,20 @@
       <div class="flex flex-col gap-2">
         <SearchCompo />
         <div class="flex justify-between">
-          <button class="uk-button uk-button-default gap-2">
-            <Filter :size="16" class="text-muted-foreground" />
+          <button class="secondary gap-2">
+            <Filter :size="16" class="text-grey" />
             <span>Filter</span>
           </button>
           <div class="flex gap-2">
-            <a
-              class="uk-button uk-button-primary"
-              href="#modal-sections"
-              uk-toggle
-              >Add</a
-            >
-            <a
-              class="uk-button uk-button-default"
-              href="#modal-sections"
-              uk-toggle
-              >Edit</a
-            >
-            <a
-              class="uk-button uk-button-default"
-              href="#modal-sections"
-              uk-toggle
-              >Delete</a
-            >
+            <a href="#modal-sections" uk-toggle>
+              <button>Add</button>
+            </a>
+            <a href="#modal-sections" uk-toggle>
+              <button class="secondary">Edit</button>
+            </a>
+            <a href="#modal-sections" uk-toggle>
+              <button class="secondary">Delete</button>
+            </a>
           </div>
           <ModalCompo />
         </div>
@@ -35,11 +26,8 @@
         <thead>
           <tr>
             <th class="uk-table-shrink">
-              <input
-                class="uk-checkbox"
-                type="checkbox"
-                aria-label="Checkbox"
-              />
+              <input id="check1" type="checkbox" />
+              <label for="check1"></label>
             </th>
             <th class="uk-table-shrink">Task</th>
             <th class="uk-table-shrink">Title</th>
@@ -49,15 +37,10 @@
         <tbody>
           <tr v-for="i in 13">
             <td>
-              <input
-                class="uk-checkbox"
-                type="checkbox"
-                aria-label="Checkbox"
-              />
+              <input id="check2" type="checkbox" />
+              <label for="check2"></label>
             </td>
-            <td>
-              <a class="uk-link-reset" href="#">#{{ i }}</a>
-            </td>
+            <td>{{ i }}</td>
             <td class="uk-text-truncate">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.

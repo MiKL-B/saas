@@ -4,29 +4,20 @@
       <div class="flex flex-col gap-2">
         <SearchCompo />
         <div class="flex justify-between">
-          <button class="uk-button uk-button-default gap-2">
-            <Filter :size="16" class="text-muted-foreground" />
+          <button class="secondary gap-2">
+            <Filter :size="16" class="text-grey" />
             <span>Filter</span>
           </button>
           <div class="flex gap-2">
-            <a
-              class="uk-button uk-button-primary"
-              href="#modal-sections"
-              uk-toggle
-              >Add</a
-            >
-            <a
-              class="uk-button uk-button-default"
-              href="#modal-sections"
-              uk-toggle
-              >Edit</a
-            >
-            <a
-              class="uk-button uk-button-default"
-              href="#modal-sections"
-              uk-toggle
-              >Delete</a
-            >
+            <a href="#modal-sections" uk-toggle>
+              <button>Add</button>
+            </a>
+            <a href="#modal-sections" uk-toggle>
+              <button class="secondary">Edit</button>
+            </a>
+            <a href="#modal-sections" uk-toggle>
+              <button class="secondary">Delete</button>
+            </a>
           </div>
           <ModalCompo />
         </div>

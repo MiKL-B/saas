@@ -1,0 +1,35 @@
+.text-danger {
+  color: var(--red);
+}
+.text-secondary {
+  color: var(--grey);
+}
+.text-white {
+  color: var(--white);
+}
+.text-grey{
+  color:var(--grey);
+}
+.text-small{
+  font-size:0.875rem;
+}
+.font-bold{
+  font-weight: bold;
+}
+
+h1{
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 500;
+}
+h2{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 400;
+}
+h3{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}

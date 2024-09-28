@@ -1,27 +1,26 @@
 <template>
-  <div>
-    <Tag :size="16" />
+  <span>
     <slot name="content"></slot>
-  </div>
+  </span>
 </template>
 
 <script>
-import { Tag } from "lucide-vue-next";
+
 export default {
   name: "TagCompo",
   components: {
-    Tag,
+
   },
 };
 </script>
 
 <style scoped>
-div {
+span {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   border-radius: 0.875rem;
-  padding: 0.2rem 0.5rem;
+  padding: 0.05rem 0.5rem;
   background: var(--red);
   color: white;
 }

@@ -1,17 +1,15 @@
 <template>
-  <a
-    href="#search"
-    uk-toggle
-    class="uk-button uk-button-default flex justify-start gap-2 text-muted-foreground"
-  >
-    <Search :size="16" />
-    <span>Search</span>
+  <a href="#search" uk-toggle>
+    <button class="secondary flex justify-start gap-2 text-grey w-full">
+      <Search :size="16" />
+      <span>Search</span>
+    </button>
   </a>
   <div id="search" uk-modal>
     <div class="uk-modal-dialog uk-margin-auto-vertical pb-4">
       <div class="uk-inline w-full">
         <span class="uk-form-icon uk-form-icon-flip">
-          <Search :size="16" />
+          <Search :size="16" class="text-grey" />
         </span>
         <input
           class="w-full outline-none px-4 py-2 border-b-grey"

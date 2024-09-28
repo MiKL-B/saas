@@ -1,7 +1,7 @@
 <template>
   <div id="modal-sections" uk-modal>
     <div class="uk-modal-dialog uk-margin-auto-vertical">
-      <button class="uk-modal-close-default" type="button" uk-close></button>
+      <button class="uk-modal-close-default secondary" uk-close></button>
       <div class="uk-modal-header">
         <h2 class="uk-modal-title">Modal Title</h2>
       </div>
@@ -15,15 +15,11 @@
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
+        <button class="secondary">Print</button>
       </div>
       <div class="uk-modal-footer flex justify-end gap-2">
-        <button
-          class="uk-modal-close uk-button uk-button-default"
-          type="button"
-        >
-          Cancel
-        </button>
-        <button class="uk-button uk-button-primary" type="button">Save</button>
+        <button class="uk-modal-close secondarys">Cancel</button>
+        <button>Save</button>
       </div>
     </div>
   </div>

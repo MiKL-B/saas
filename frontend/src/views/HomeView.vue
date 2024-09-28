@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <!-- nav mobile -->
     <nav
       uk-dropnav="mode: click"
       class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur"
@@ -34,8 +35,7 @@
                 </span>
               </a>
             </li>
-
-            <li class="uk-nav-divider"></li>
+            <hr>
             <!-- user -->
             <li class="uk-nav-header">User</li>
             <!-- user settings -->
@@ -70,7 +70,7 @@
       </ul>
     </nav>
     <!-- nav desktop -->
-    <div class="display-desktop w-16rem">
+    <nav class="display-desktop w-16rem">
       <ul
       class="flex flex-col justify-between h-full border-r-grey uk-nav uk-nav-primary py-4 bg-primary-foreground"
       uk-nav
@@ -96,7 +96,7 @@
         </li>
         <!-- user -->
         <div class="mt-auto">
-          <li class="uk-nav-divider"></li>
+          <hr>
           <ul class="uk-dropdown-nav uk-nav uk-nav-primary">
             <!-- user -->
             <li class="uk-nav-header">User</li>
@@ -130,7 +130,7 @@
           </ul>
         </div>
       </ul>
-    </div>
+    </nav>
     <!-- content -->
     <component v-bind:is="currentComponent"></component>
   </div>
@@ -171,6 +171,7 @@ import {
   ChevronUp,
 } from "lucide-vue-next";
 
+
 export default {
   name: "HomeView",
   components: {
@@ -205,6 +206,7 @@ export default {
     FinancialCompo,
     SettingsCompo,
     UserCompo,
+
   },
   data() {
     return {

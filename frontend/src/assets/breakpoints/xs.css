@@ -217,6 +217,9 @@
 }
 
 /* HEIGHT */
+.h-12rem{
+  height:12rem;
+}
 .h-20rem {
   height: 20rem;
 }
@@ -233,7 +236,9 @@
 .h-full {
   height: 100%;
 }
-
+.max-h-14rem{
+  max-height: 14rem;
+}
 .max-h-full-vh {
   height: 100vh;
 }
@@ -278,7 +283,9 @@
 .border-b-none{
   border-bottom: none;
 }
-
+.border-none{
+  border: none !important;
+}
 /* BACKGROUND */
 .bg-grey {
   background: #f9fbfd;
@@ -320,6 +327,10 @@
 }
 
 /* FONT SIZE */
+.text-3xl {
+  font-size: 2rem;
+  line-height: 2rem;
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -344,10 +355,7 @@
   font-size: 8rem; /* 128px */
   line-height: 1;
 }
-/* FONT WEIGHT */
-.font-500{
-  font-weight: 500;
-}
+
 /* Z-INDEX */
 .z-3 {
   z-index: 3;
@@ -363,4 +371,9 @@
 /* input */
 .outline-none:focus {
   outline: none !important; 
+}
+
+/* textarea */
+textarea{
+  resize: none;
 }

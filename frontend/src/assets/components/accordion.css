@@ -1,0 +1,37 @@
+details {
+  border-bottom: 1px solid var(--light);
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+summary {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  text-decoration: underline;
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+}
+
+summary::marker {
+  content: "";
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+  color: rgb(167, 166, 166);
+}
+
+details[open] summary::after {
+  content: "-";
+  transform: rotate(180deg);
+  font-size: 20px;
+  font-weight: 300;
+  color: rgb(167, 166, 166);
+}

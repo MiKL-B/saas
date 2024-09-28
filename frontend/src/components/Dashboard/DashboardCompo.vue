@@ -12,44 +12,35 @@
       class="h-full flex flex-col overview gap-4"
     >
       <!-- sales -->
-      <div class="uk-card w-full" :class="'sales' + i" v-for="i in 4">
-        <div class="uk-card-header">
-          <h3 class="uk-card-title">Total revenue</h3>
+      <div class="card w-full" :class="'sales' + i" v-for="i in 4">
+        <div class="card-header flex-col">
+          <h3 class="card-title">Total revenue</h3>
           <p>$45,231.89</p>
-          <p class="uk-margin-xsmall-top uk-text-small text-muted-foreground">
-            +20.1% from last month
-          </p>
+          <p class="text-small text-grey">+20.1% from last month</p>
         </div>
       </div>
       <!-- graph -->
-      <div class="uk-card w-full h-full graph">
-        <div class="uk-card-header">
-          <h3 class="uk-card-title">Chart</h3>
+      <div class="card w-full h-full graph">
+        <div class="card-header">
+          <h3 class="card-title">Chart</h3>
         </div>
-        <div class="uk-card-body flex justify-center">
-          <p>put graph here</p>
+        <div class="card-body flex justify-center">
+          <div class="uk-placeholder text-center">put graph here</div>
         </div>
       </div>
       <!-- users -->
-      <div class="uk-card w-full users">
-        <h3 class="uk-card-title pt-4 px-4">Recent Sales</h3>
-        <p
-          class="uk-margin-xsmall-top uk-text-small text-muted-foreground px-4"
-        >
-          You made 265 sales this month.
-        </p>
+      <div class="card w-full users">
+        <h3 class="card-title pt-4 px-4">Recent Sales</h3>
+        <p class="text-small text-grey px-4">You made 265 sales this month.</p>
 
         <div class="flex flex-col h-40rem overflow-scroll">
           <div class="flex justify-between pt-2 pb-2 px-4" v-for="i in 20">
             <div class="flex gap-2">
-              <User class="text-muted-foreground" />
+              <User class="text-grey" />
 
               <div class="flex flex-col">
                 <span>User {{ i }}</span>
-                <span
-                  class="uk-margin-xsmall-top uk-text-small text-muted-foreground"
-                  >user@email.com</span
-                >
+                <span class="text-small text-grey">user@email.com</span>
               </div>
             </div>
             <span>+$1,999.00</span>
