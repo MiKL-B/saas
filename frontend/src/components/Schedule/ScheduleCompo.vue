@@ -1,6 +1,9 @@
 <template>
-  <div class="flex flex-col gap-4 border-r-grey h-full max-h-full-vh">
+  <div v-if="1==0" class="flex flex-col gap-4 border-r-grey h-full max-h-full-vh">
     <Qalendar :events="events" :config="config" class="p-4" />
+  </div>
+  <div v-else class="p-4">
+    <p>Coming soon...</p>
   </div>
 </template>
 

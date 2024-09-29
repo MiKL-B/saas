@@ -2,7 +2,7 @@
   <div class="p-4">
     <form>
       <fieldset>
-        <div class="grid md:grid-cols-2 gap-4">
+        <div>
           <!-- left -->
           <div>
             <h3>Account</h3>
@@ -10,7 +10,7 @@
             <!-- name -->
             <div class="field mb-4">
               <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Name" />
+              <input id="name" type="text" placeholder="Name"/>
             </div>
             <!-- date -->
             <div class="field mb-4">
@@ -36,16 +36,16 @@
               <input id="confirm" type="password" />
             </div>
             <!-- color -->
-            <div class="field">
+            <!-- <div class="field">
               <label for="color">Colors</label>
-              <div class="flex gap-2">
+              <div class="flex flex-col gap-2">
                 <div
                   class="color"
                   v-for="color in colors"
                   :style="{ background: color.text }"
                 ></div>
               </div>
-            </div>
+            </div> -->
           </div>
           <!-- right -->
           <div>

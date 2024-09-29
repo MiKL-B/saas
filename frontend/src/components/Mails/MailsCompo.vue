@@ -1,27 +1,22 @@
 <template>
-  <div>
+  <div v-if="1==0">
     <SplitterCompo>
       <template v-slot:left>
         <div class="flex flex-col gap-4 p-4 lg:h-full lg:max-h-full-vh">
-          <div class="flex flex-col sm:grid sm:grid-cols-2 gap-2">
+          <!-- <div class="flex flex-col sm:grid sm:grid-cols-2 gap-2">
             <SearchCompo />
-            <ul uk-tab class="uk-tab-alt">
-              <li><a href="#">All mails</a></li>
-              <li><a href="#">Unread</a></li>
-            </ul>
-          </div>
-          <div class="grid grid-cols-2 items-center gap-2">
-            <select class="uk-select">
+          </div> -->
+
+          <div class="select">
+            <select>
               <option value="">Inbox</option>
               <option value="">Drafts</option>
               <option value="">Sent</option>
               <option value="">Junk</option>
               <option value="">Trash</option>
             </select>
-            <div>
-              <p>Count: {{ inbox.length }}</p>
-            </div>
           </div>
+
           <div class="flex flex-col h-full gap-4 overflow-scroll">
             <div class="card" v-for="mail in inbox">
               <div class="card-header flex-col">
@@ -41,12 +36,6 @@
               <User :size="16" class="text-grey" />
               <span>John Doe</span>
             </button>
-            <div class="uk-drop uk-dropdown" uk-dropdown="mode: click">
-              <ul class="uk-dropdown-nav uk-nav">
-                <li class="uk-nav-header">John Doe</li>
-                <li><a href="#">Profile</a></li>
-              </ul>
-            </div>
             <span class="text-grey"> Oct 22, 2023, 9:00:00 AM </span>
           </div>
           <div class="flex flex-col h-full justify-between">
@@ -91,7 +80,7 @@
             </p>
             <textarea
               rows="6"
-              class="uk-textarea my-4 w-full h-12rem"
+              class="my-4 w-full h-12rem"
               placeholder="Reply User"
             ></textarea>
             <button class="flex ml-auto">Send</button>
@@ -99,6 +88,9 @@
         </div>
       </template>
     </SplitterCompo>
+  </div>
+  <div v-else class="p-4">
+    <p>Coming soon...</p>
   </div>
 </template>
 
@@ -150,6 +142,18 @@ export default {
         },
         {
           index: 6,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 7,
+          title: "Mail #",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+        },
+        {
+          index: 8,
           title: "Mail #",
           description:
             "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",

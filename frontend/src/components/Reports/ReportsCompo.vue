@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <p class="uk-placeholder text-center">Coming soon</p>
+    <p>Coming soon...</p>
   </div>
 </template>
 

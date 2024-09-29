@@ -1,11 +1,14 @@
 <template>
-  <div class="p-4">
+  <div v-if="1==0" class="p-4">
     <ul>
       <li v-for="view in views">
         <a href="#" @click="currentView = view.link">{{ view.label }}</a>
       </li>
     </ul>
     <component v-bind:is="currentView" class="pt-4"></component>
+  </div>
+  <div v-else class="p-4">
+    <p>Coming soon...</p>
   </div>
 </template>
 

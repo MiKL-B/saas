@@ -1,11 +1,5 @@
 <template>
-  <div class="p-4">
-    <!-- <ul uk-tab>
-      <li><a href="#" @click="currentView = 'overview'">Overview</a></li>
-      <li><a href="#" @click="currentView = 'analytics'">Analytics</a></li>
-      <li><a href="#" @click="currentView = 'statistics'">Statistics</a></li>
-    </ul> -->
-
+  <div class="p-4" v-if="1==0">
     <!-- Overview -->
     <div
       v-if="currentView === 'overview'"
@@ -25,7 +19,7 @@
           <h3 class="card-title">Chart</h3>
         </div>
         <div class="card-body flex justify-center">
-          <div class="uk-placeholder text-center">put graph here</div>
+          <div class="text-center">put graph here</div>
         </div>
       </div>
       <!-- users -->
@@ -48,14 +42,9 @@
         </div>
       </div>
     </div>
-    <!-- Analytics -->
-    <!-- <div v-if="currentView === 'analytics'">
-        <p>Analytics</p>
-      </div> -->
-    <!-- Reports -->
-    <!-- <div v-if="currentView === 'statistics'">
-        <p>Reports</p>
-      </div> -->
+  </div>
+  <div v-else class="p-4">
+    <p>Coming soon...</p>
   </div>
 </template>
 

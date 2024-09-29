@@ -1,25 +1,19 @@
 <template>
-  <div class="p-4">
+  <div class="p-4" v-if="1 == 0">
     <div class="h-full flex flex-col justify-between">
       <div class="flex flex-col gap-2">
-        <SearchCompo />
+        <!-- <SearchCompo /> -->
         <div class="flex justify-between">
           <button class="secondary gap-2">
             <Filter :size="16" class="text-grey" />
             <span>Filter</span>
           </button>
           <div class="flex gap-2">
-            <a href="#modal-sections" uk-toggle>
-              <button>Add</button>
-            </a>
-            <a href="#modal-sections" uk-toggle>
-              <button class="secondary">Edit</button>
-            </a>
-            <a href="#modal-sections" uk-toggle>
-              <button class="secondary">Delete</button>
-            </a>
+            <button>Add</button>
+            <button class="secondary">Edit</button>
+            <button class="secondary">Delete</button>
           </div>
-          <ModalCompo />
+          <!-- <ModalCompo /> -->
         </div>
       </div>
       <table>
@@ -49,8 +43,11 @@
           </tr>
         </tbody>
       </table>
-      <PaginationCompo />
+      <!-- <PaginationCompo /> -->
     </div>
+  </div>
+  <div v-else class="p-4">
+    <p>Coming soon...</p>
   </div>
 </template>
 
