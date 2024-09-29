@@ -1,3 +1,7 @@
+.bg-primary{
+  background:var(--dark);
+
+}
 .bg-danger {
   background: var(--red);
 }
@@ -6,4 +10,16 @@
 }
 .bg-white {
   background: var(--white);
+}
+.bg-light{
+  background:var(--light);
+}
+.hover\:bg-light:hover{
+  background: var(--light);
+}
+.hover\:bg-secondary:hover{
+  background: var(--secondary);
+}
+.hover\:opacity:hover{
+  opacity: 0.9;
 }

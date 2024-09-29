@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <ul uk-tab>
+    <ul>
       <li v-for="view in views">
         <a href="#" @click="currentView = view.link">{{ view.label }}</a>
       </li>

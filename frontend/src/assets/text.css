@@ -33,3 +33,7 @@ h3{
   font-weight: 600;
   letter-spacing: -.025em;
 }
+
+.text-decoration-none{
+  text-decoration: none;
+}

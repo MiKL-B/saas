@@ -1,68 +1,98 @@
 <template>
   <div class="container">
     <!-- nav mobile -->
-    <nav
-      uk-dropnav="mode: click"
-      class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur"
-    >
+    <nav class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur">
       <ul>
-        <li class="flex">
-          <a href="#" class="flex" @click="toggle" ref="ignoreButton"
-            >Menu
-            <span v-if="isNavOpened"><ChevronUp /></span>
-            <span v-else><ChevronDown /></span>
-          </a>
+        <li
+          class="cursor-pointer flex justify-between items-center"
+          ref="ignoreButton"
+          @click="toggle"
+        >
+          Menu
+          <span class="text-grey">
+            <ChevronDown v-if="!isNavOpened" />
+            <ChevronUp v-else />
+          </span>
           <ul
-            class="uk-dropdown-nav uk-nav uk-nav-primary absolute top-3rem left-0 right-0 bg-primary-foreground border-b-grey"
+            class="absolute top-3rem left-0 right-0 bg-white border-b-grey"
             v-if="isNavOpened"
           >
             <li
               v-for="link in links"
-              :class="currentComponent === link.component ? 'uk-active' : ''"
+              :class="
+                currentComponent === link.component
+                  ? 'bg-primary'
+                  : 'hover:bg-light'
+              "
+              class="m-2 border-radius-375 cursor-pointer"
+              @click="handleNavMobile(link.component)"
             >
-              <a href="#" @click="handleNavMobile(link.component)">
-                <span class="flex gap-4">
-                  <component
-                    :is="link.icon"
-                    :size="20"
-                    :class="
-                      currentComponent === link.component
-                        ? ''
-                        : 'text-muted-foreground'
-                    "
-                  />
-                  <span>{{ link.label }}</span>
-                </span>
-              </a>
+              <span class="flex gap-4 p-2">
+                <component
+                  :is="link.icon"
+                  :size="16"
+                  :class="
+                    currentComponent === link.component
+                      ? 'text-white'
+                      : 'text-grey'
+                  "
+                />
+                <span
+                  :class="
+                    currentComponent === link.component ? 'text-white' : ''
+                  "
+                  >{{ link.label }}</span
+                >
+              </span>
             </li>
-            <hr>
+            <hr />
             <!-- user -->
-            <li class="uk-nav-header">User</li>
+            <li class="m-2">User</li>
             <!-- user settings -->
-            <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
-              <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
-                <span>
-                  <Settings :size="20" :class="currentComponent === 'UserCompo' ? '': 'text-muted-foreground'" />
-                </span>
-                <span>Settings</span>
-              </a>
+            <li
+              :class="
+                currentComponent === 'UserCompo'
+                  ? 'bg-primary'
+                  : 'hover:bg-light'
+              "
+              @click="currentComponent = 'UserCompo'"
+              class="m-2 border-radius-375 cursor-pointer"
+            >
+              <span class="flex gap-4 p-2">
+                <Settings
+                  :size="16"
+                  :class="
+                    currentComponent === 'UserCompo'
+                      ? 'text-white'
+                      : 'text-grey'
+                  "
+                />
+                <span
+                  :class="currentComponent === 'UserCompo' ? 'text-white' : ''"
+                  >Settings</span
+                >
+              </span>
             </li>
             <!-- help -->
-            <li>
-              <RouterLink to="/help" target="_blank" class="gap-4">
-                <span>
-                  <CircleHelp :size="20" class="text-muted-foreground" />
+            <li class="m-2 p-2 hover:bg-light border-radius-375">
+              <RouterLink
+                to="/help"
+                target="_blank"
+                class="text-decoration-none"
+              >
+                <span class="flex gap-4">
+                  <CircleHelp :size="16" class="text-grey" />
+                  <span>Help</span>
                 </span>
-                <span>Help</span>
               </RouterLink>
             </li>
             <!-- logout -->
-            <li>
-              <RouterLink to="/" class="gap-4">
-                <span>
-                  <LogOut :size="20" class="text-muted-foreground" />
+            <li class="m-2 p-2 hover:bg-light border-radius-375">
+              <RouterLink to="/" class="text-decoration-none">
+                <span class="flex gap-4">
+                  <LogOut :size="16" class="text-grey" />
+                  <span>Logout</span>
                 </span>
-                <span>Logout</span>
               </RouterLink>
             </li>
           </ul>
@@ -71,60 +101,82 @@
     </nav>
     <!-- nav desktop -->
     <nav class="display-desktop w-16rem">
-      <ul
-      class="flex flex-col justify-between h-full border-r-grey uk-nav uk-nav-primary py-4 bg-primary-foreground"
-      uk-nav
-      >
+      <ul class="flex flex-col justify-between h-full border-r-grey py-4 gap-2">
         <li
           v-for="link in links"
-          :class="currentComponent === link.component ? 'uk-active' : ''"
+          :class="
+            currentComponent === link.component
+              ? 'bg-primary'
+              : 'hover:bg-light'
+          "
+          class="mx-2 p-2 border-radius-375 cursor-pointer"
+          @click="currentComponent = link.component"
         >
-          <a href="#" @click="currentComponent = link.component">
-            <span class="flex gap-4">
-              <component
-                :is="link.icon"
-                :size="20"
-                :class="
-                  currentComponent === link.component
-                    ? ''
-                    : 'text-muted-foreground'
-                "
-              />
-              <span>{{ link.label }}</span>
-            </span>
-          </a>
+          <span class="flex gap-4">
+            <component
+              :is="link.icon"
+              :size="16"
+              :class="
+                currentComponent === link.component ? 'text-white' : 'text-grey'
+              "
+            />
+            <span
+              :class="currentComponent === link.component ? 'text-white' : ''"
+              >{{ link.label }}</span
+            >
+          </span>
         </li>
         <!-- user -->
         <div class="mt-auto">
-          <hr>
-          <ul class="uk-dropdown-nav uk-nav uk-nav-primary">
+          <hr />
+          <ul class="flex flex-col gap-2">
             <!-- user -->
-            <li class="uk-nav-header">User</li>
+            <li class="mx-2 p-2">User</li>
             <!-- user settings -->
-            <li :class="currentComponent === 'UserCompo' ? 'uk-active' : ''">
-              <a href="#" @click="currentComponent = 'UserCompo'" class="gap-4">
-                <span>
-                  <Settings :size="20" :class="currentComponent === 'UserCompo' ? '': 'text-muted-foreground'" />
-                </span>
-                <span>Settings</span>
-              </a>
+            <li
+              :class="
+                currentComponent === 'UserCompo'
+                  ? 'bg-primary'
+                  : 'hover:bg-light'
+              "
+              class="mx-2 p-2 border-radius-375 cursor-pointer"
+              @click="currentComponent = 'UserCompo'"
+            >
+              <span class="flex gap-4">
+                <Settings
+                  :size="16"
+                  :class="
+                    currentComponent === 'UserCompo'
+                      ? 'text-white'
+                      : 'text-grey'
+                  "
+                />
+                <span
+                  :class="currentComponent === 'UserCompo' ? 'text-white' : ''"
+                  >Settings</span
+                >
+              </span>
             </li>
             <!-- help -->
-            <li>
-              <RouterLink to="/help" target="_blank" class="gap-4">
-                <span>
-                  <CircleHelp :size="20" class="text-muted-foreground" />
+            <li class="mx-2 p-2 hover:bg-light border-radius-375">
+              <RouterLink
+                to="/help"
+                target="_blank"
+                class="text-decoration-none"
+              >
+                <span class="flex gap-4">
+                  <CircleHelp :size="16" class="text-grey" />
+                  <span>Help</span>
                 </span>
-                <span>Help</span>
               </RouterLink>
             </li>
             <!-- logout -->
-            <li>
-              <RouterLink to="/" class="gap-4">
-                <span>
-                  <LogOut :size="20" class="text-muted-foreground" />
+            <li class="mx-2 p-2 hover:bg-light border-radius-375">
+              <RouterLink to="/" class="text-decoration-none">
+                <span class="flex gap-4">
+                  <LogOut :size="16" class="text-grey" />
+                  <span>Logout</span>
                 </span>
-                <span>Logout</span>
               </RouterLink>
             </li>
           </ul>
@@ -171,7 +223,6 @@ import {
   ChevronUp,
 } from "lucide-vue-next";
 
-
 export default {
   name: "HomeView",
   components: {
@@ -197,6 +248,7 @@ export default {
     CircleHelp,
     ChevronDown,
     ChevronUp,
+    Menu,
     DashboardCompo,
     MailsCompo,
     ScheduleCompo,
@@ -206,7 +258,6 @@ export default {
     FinancialCompo,
     SettingsCompo,
     UserCompo,
-
   },
   data() {
     return {
@@ -263,6 +314,7 @@ export default {
     },
     toggle() {
       this.isNavOpened = !this.isNavOpened;
+      console.log("test");
     },
     handleClick(event) {
       if (event.target !== this.$refs.ignoreButton) {

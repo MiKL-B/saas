@@ -18,7 +18,7 @@ input:focus {
   outline: 1px solid var(--dark);
   border-radius: 0.375rem;
 }
-textarea{
+textarea {
   color: var(--dark);
   border-radius: 0.375rem;
   border: 1px solid var(--secondary);
@@ -27,7 +27,7 @@ textarea{
   padding: 0.25rem 0.75rem;
   box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
 }
-textarea:focus{
+textarea:focus {
   outline: 1px solid var(--dark);
   border-radius: 0.375rem;
 }
@@ -45,21 +45,63 @@ input[type="checkbox"] + label::before {
   border-radius: 0.375rem;
   border: 1px solid var(--secondary);
   box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   display: inline-flex;
   text-align: center;
   cursor: pointer;
 }
 input[type="checkbox"]:checked + label::before {
-  content: "\2713";
+  content: "x";
   background: var(--dark);
   border: 1px solid var(--dark);
-  color: white;
+  color: var(--white);
   display: flex;
   justify-content: center;
-  line-height: 100%;
-  font-size: 20px;
+  align-items: center;
+  font-size: 18px;
   font-weight: 500;
 }
 
+/* select */
+select {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0.75rem 0.75rem;
+  height: 2.25rem;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  outline: none;
+}
+.select {
+  width: 100%;
+  border: 1px solid var(--secondary);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  display: grid;
+  grid-template-areas: "select";
+  align-items: center;
+  position: relative;
+}
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: var(--secondary);
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  position: absolute;
+  right: 1rem;
+}
+
+select:focus {
+  border: 1px solid black;
+  border-radius: 0.375rem;
+}

@@ -22,16 +22,16 @@
           <ModalCompo />
         </div>
       </div>
-      <table class="uk-table uk-table-middle uk-table-divider uk-table-hover">
+      <table>
         <thead>
           <tr>
-            <th class="uk-table-shrink">
+            <th>
               <input id="check1" type="checkbox" />
               <label for="check1"></label>
             </th>
-            <th class="uk-table-shrink">Task</th>
-            <th class="uk-table-shrink">Title</th>
-            <th class="uk-table-shrink">Status</th>
+            <th>Task</th>
+            <th>Title</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -41,11 +41,11 @@
               <label for="check2"></label>
             </td>
             <td>{{ i }}</td>
-            <td class="uk-text-truncate">
+            <td>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
             </td>
-            <td class="uk-text-nowrap">Done</td>
+            <td>Done</td>
           </tr>
         </tbody>
       </table>

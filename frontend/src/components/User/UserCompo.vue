@@ -65,11 +65,14 @@
 
             <div class="field mb-4">
               <label for="language">Language</label>
-              <select name="select" id="select" class="uk-select">
-                <option value="Fr">French</option>
-                <option value="En">English</option>
-                <option value="Sw">Swedish</option>
-              </select>
+              <div class="select">
+
+                <select name="select" id="select">
+                  <option value="Fr">French</option>
+                  <option value="En">English</option>
+                  <option value="Sw">Swedish</option>
+                </select>
+              </div>
             </div>
             <div class="field mb-4">
               <input type="checkbox" id="check1" />

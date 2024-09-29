@@ -22,38 +22,30 @@
           <ModalCompo />
         </div>
       </div>
-      <table class="uk-table uk-table-middle uk-table-divider uk-table-hover">
+      <table>
         <thead>
           <tr>
-            <th class="uk-table-shrink">
-              <input
-                class="uk-checkbox"
-                type="checkbox"
-                aria-label="Checkbox"
-              />
+            <th>
+              <input type="checkbox" />
             </th>
-            <th class="uk-table-shrink">Task</th>
-            <th class="uk-table-shrink">Title</th>
-            <th class="uk-table-shrink">Status</th>
+            <th>Task</th>
+            <th>Title</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="i in 13">
             <td>
-              <input
-                class="uk-checkbox"
-                type="checkbox"
-                aria-label="Checkbox"
-              />
+              <input type="checkbox" />
             </td>
             <td>
-              <a class="uk-link-reset" href="#">#{{ i }}</a>
+              <a href="#">#{{ i }}</a>
             </td>
-            <td class="uk-text-truncate">
+            <td>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
             </td>
-            <td class="uk-text-nowrap">Done</td>
+            <td>Done</td>
           </tr>
         </tbody>
       </table>

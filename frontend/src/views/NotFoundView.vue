@@ -11,12 +11,12 @@
       <img
         src="../assets/image.png"
         alt=""
-        class="m-auto my-4"
-        style="width: 500px; object-fit: cover; border-radius: 0.75rem"
+        class="flex m-auto my-4 w-full max-w-96"
+        style="object-fit: cover; border-radius: 0.375rem;"
       />
-      <RouterLink to="/"
-        ><button class="flex m-auto">Homepage</button></RouterLink
-      >
+      <RouterLink to="/">
+        <button class="flex m-auto">Homepage</button>
+      </RouterLink>
     </template>
   </SectionCompo>
 </template>

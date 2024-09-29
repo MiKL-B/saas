@@ -2,22 +2,18 @@
   <div class="viewport-test flex flex-col gap-4 p-4">
     <button
       v-for="button in buttons"
-      class="uk-button uk-button-default"
-      :class="
-        currentViewportSize === button.viewport ? 'uk-button-secondary' : ''
-      "
+      :class="currentViewportSize === button.viewport ? 'primary' : 'secondary'"
       @click="currentViewportSize = button.viewport"
     >
       {{ button.viewport }}
     </button>
   </div>
-
   <div style="height: 100vh">
     <iframe
       title="test"
       src="http://localhost:5173/"
       :style="{ width: currentViewportSize }"
-      style="margin: auto; border: 2px dashed red; height: 100vh"
+      style="margin: auto; display:flex; justify-content: center; border: 2px dashed red; height: 100vh"
     >
     </iframe>
   </div>

@@ -1,5 +1,8 @@
 hr{
     border-top:1px solid var(--secondary);
+    border-bottom:none;
+    border-left:none;
+    border-right:none;
     margin-top:1rem;
     margin-bottom:1rem;
 }
