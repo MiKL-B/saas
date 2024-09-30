@@ -27,7 +27,10 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
+.my-8{
+  margin-top:2rem;
+  margin-bottom: 2rem;
+}
 .my-16 {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -60,6 +63,9 @@
 }
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-8{
+  margin-bottom: 2rem;
 }
 
 .mb-4 {
@@ -244,6 +250,7 @@
 }
 
 /* WIDTH */
+
 .w-12rem {
   width: 12rem;
 }
@@ -275,6 +282,9 @@
 
 .border-b-grey {
   border-bottom: 1px solid #e2e8f0;
+}
+.border-b-primary{
+  border-bottom:2px solid var(--dark);
 }
 
 .border-r-grey {
