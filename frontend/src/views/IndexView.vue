@@ -295,24 +295,6 @@
       </template>
     </SectionCompo>
     <!-- end contact us -->
-    <!-- begin newsletter -->
-    <SectionCompo class="bg-light">
-      <template v-slot:content>
-        <h2 class="mb-4 md:text-center">The newsletter</h2>
-        <p class="mb-4 text-grey md:text-center">
-          Sign up for tips about working in Saas, news about our apps, and more.
-        </p>
-        <div class="flex flex-wrap md:justify-center gap-4">
-          <input
-            type="email"
-            placeholder="Your email address"
-            class="w-96 bg-white"
-          />
-          <button>Subscribe</button>
-        </div>
-      </template>
-    </SectionCompo>
-    <!-- end newsletter -->
   </main>
   <FooterCompo />
 </template>
