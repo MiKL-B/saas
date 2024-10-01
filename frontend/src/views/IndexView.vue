@@ -3,35 +3,32 @@
   <main>
     <SectionCompo>
       <template v-slot:content>
-        <h1 class="mb-4">Ready to Simplify Your Business Management?</h1>
-        <p class="mb-4 text-grey">
-          Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.<br />Take
-          control of your finances and customer relationships with our
-          all-in-one platform.<br />Start your free trial today and transform
-          the way you manage your business!
+        <h1 class="mb-6 md:text-center">Simplify Your Business Management</h1>
+        <p class="mb-6 text-grey md:text-center">
+          Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.
         </p>
-        <div class="flex gap-2">
-          <button>Get started</button>
-          <button class="secondary">Request a demo</button>
+        <div class="flex gap-2 md:justify-center">
+          <button class="danger">Get started</button>
         </div>
       </template>
     </SectionCompo>
 
     <!-- begin features -->
-    <SectionCompo>
+    <SectionCompo class="bg-light">
       <template v-slot:content>
-        <h2 class="mb-4">
+        <p class="text-danger text-center text-small mb-4">FEATURES</p>
+        <h2 class="mb-4 md:text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="mb-4 text-grey">
+        <p class="mb-6 text-grey md:text-center">
           Revolutionize your invoicing and customer management with our
           all-in-one SaaS solution.<br />
           Effortlessly create invoices, track payments, and enhance client
           relationships to drive your business forward!
         </p>
         <div
-          class="flex flex-col md:grid md:grid-rows-3 md:grid-cols-3 md:grid-flow-col gap-4"
+          class="flex flex-col md:grid md:grid-rows-4 mt-16 md:grid-flow-col gap-4"
         >
           <div class="card" v-for="feature in features">
             <div class="card-header flex-col sm:flex-row gap-4">
@@ -39,7 +36,7 @@
                 <Cuboid :size="48" style="color: var(--red)" />
               </div>
               <div class="flex flex-col">
-                <h3 class="card-title">{{ feature.title }}</h3>
+                <h3 class="card-title mb-4">{{ feature.title }}</h3>
                 <p class="text-grey">
                   {{ feature.description }}
                 </p>
@@ -50,16 +47,43 @@
       </template>
     </SectionCompo>
     <!-- end features -->
+    <!-- begin steps -->
+    <SectionCompo>
+      <template v-slot:content>
+        <p class="text-danger text-center text-small mb-4">HOW TO START ?</p>
+        <h2 class="mb-4 md:text-center">Just 5 steps to get started</h2>
+        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-16">
+          <div class="flex flex-col justify-between gap-4">
+            <div class="card" v-for="step in steps">
+              <div class="card-header flex-col">
+                <h3 class="card-title">{{ step.index }} {{ step.title }}</h3>
+                <p class="text-grey">{{ step.text }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="display-desktop">
+            <img
+              src="https://picsum.photos/600"
+              class="w-full"
+              style="object-fit: cover; border-radius: 0.75rem"
+              alt=""
+            />
+          </div>
+        </div>
+      </template>
+    </SectionCompo>
+    <!-- end steps -->
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4">An all-in-one platform.</h2>
-        <p class="mb-4 text-grey">
+        <p class="text-danger text-center text-small mb-4">KEY FIGURES</p>
+        <h2 class="mb-4 md:text-center">An all-in-one platform.</h2>
+        <p class="mb-4 text-grey md:text-center">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
         </p>
-        <div class="flex flex-col flex-wrap gap-4">
+        <div class="flex flex-col flex-wrap gap-4 mt-16">
           <div class="card" v-for="keyfigure in keyfigures">
             <div class="card-header items-center gap-4">
               <component
@@ -83,9 +107,10 @@
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4">We are attentive to our customers!</h2>
-        <div class="flex flex-col flex-wrap gap-4">
-          <div class="card" v-for="testimonial in testimonials">
+        <p class="text-danger text-center text-small mb-4">TESTIMONIALS</p>
+        <h2 class="mb-4 md:text-center">We are attentive to our customers!</h2>
+        <div class="flex flex-col flex-wrap gap-4 mt-16">
+          <blockquote v-for="testimonial in testimonials">
             <div class="card-header flex items-center gap-4">
               <User :size="48" style="color: var(--red)" />
               <div class="flex flex-col">
@@ -95,108 +120,106 @@
                 </p>
               </div>
             </div>
-            <div class="card-body">{{ testimonial.text }}</div>
-          </div>
+            <div class="card-body font-italic">{{ testimonial.text }}</div>
+          </blockquote>
         </div>
       </template>
     </SectionCompo>
     <!-- end testimonials -->
-    <!-- begin steps -->
-    <SectionCompo>
-      <template v-slot:content>
-        <h2 class="mb-4">How to start</h2>
-        <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4">
-          <div class="flex flex-col justify-between gap-4">
-            <div class="card" v-for="step in steps">
-              <div class="card-header flex-col">
-                <h3 class="card-title">{{ step.index }} {{ step.title }}</h3>
-                <p class="text-grey">{{ step.text }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="display-desktop">
-            <img
-              src="https://picsum.photos/600"
-              class="w-full"
-              style="object-fit: cover; border-radius: 0.75rem"
-              alt=""
-            />
-          </div>
-        </div>
-      </template>
-    </SectionCompo>
-    <!-- end steps -->
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4">
-          Optimize your business management: invoices and CRM in one tool!
+        <p class="text-danger text-center text-small mb-4">PRICING</p>
+        <h2 class="mb-4 md:text-center">
+          Choose the plan that's right for you
         </h2>
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between gap-4"
+          class="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-16"
         >
           <div
             class="card md:flex md:flex-col md:justify-between"
-            v-for="pricing in pricings"
+            v-for="(pricing, index) in pricings"
+            :style="{
+              border: index % 2 !== 0 ? '2px solid var(--red)' : '',
+              margin: index % 2 !== 0 ? '' : '2rem 0',
+            }"
           >
             <div class="card-header flex-col">
-              <h3 class="card-title">{{ pricing.title }}</h3>
-              <p class="text-grey">
+              <h3 class="card-title text-grey text-center">
+                {{ pricing.title }}
+              </h3>
+              <p class="text-small text-grey text-center card-description">
                 {{ pricing.description }}
               </p>
             </div>
             <div class="card-body">
-              <p>
+              <p class="text-center">
                 <span class="text-3xl font-bold">{{ pricing.price }}€</span>
                 / month
               </p>
               <ul class="mt-2">
                 <li
                   v-for="feature in pricing.features"
-                  class="flex items-center gap-2"
+                  class="flex items-center gap-2 mb-4"
                 >
                   <Check :size="20" style="color: var(--red)" />{{ feature }}
                 </li>
               </ul>
             </div>
             <div class="card-footer">
-              <button class="w-full">Buy now</button>
+              <button
+                class="w-full"
+                :class="index % 2 !== 0 ? 'danger' : 'secondary'"
+              >
+                Subscribe
+              </button>
             </div>
           </div>
         </div>
-        <a href="#" class="flex justify-center mt-4"
-          >Start your 14-day free trial today!</a
-        >
       </template>
     </SectionCompo>
     <!-- end pricing -->
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4">Common Questions</h2>
-        <div class="flex flex-col flex-wrap gap-4">
-          <ul>
+        <p class="text-danger text-center text-small mb-4">FAQ</p>
+        <h2 class="mb-4 md:text-center">Common Questions</h2>
+        <div class="flex flex-col flex-wrap gap-4 mt-16">
+          <ul class="flex flex-col gap-2">
             <li
               v-for="question in questions"
               :key="question.value"
               :value="question.value"
             >
-              <details>
-                <summary>{{ question.title }}</summary>
-                <p class="text-grey">
-                  {{ question.content }}
-                </p>
-              </details>
+              <div class="card p-2">
+                <details name="question">
+                  <summary>{{ question.title }}</summary>
+                  <p class="text-grey text-small">
+                    {{ question.content }}
+                  </p>
+                </details>
+              </div>
             </li>
           </ul>
         </div>
       </template>
     </SectionCompo>
     <!-- end common questions -->
-    <!-- begin creator -->
-    <SectionCompo class="bg-danger text-white">
+    <!-- start free trial -->
+    <SectionCompo class="bg-homard">
       <template v-slot:content>
-        <h2 class="mb-4">About us</h2>
+        <p class="text-danger text-center text-small mb-4">
+          READY TO GET STARTED ?
+        </p>
+        <h2 class="mb-6 md:text-center">Start your free trial today.</h2>
+        <button class="flex m-auto danger">Get started</button>
+      </template>
+    </SectionCompo>
+    <!-- start free trial -->
+    <!-- begin creator -->
+    <SectionCompo>
+      <template v-slot:content>
+        <h2 class="mb-4 md:text-center">About us</h2>
         <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
@@ -234,28 +257,30 @@
     <!-- begin contact us -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4">Contact us</h2>
-        <p class="mb-4 text-grey">Get in touch and ask us anything</p>
+        <h2 class="mb-4 md:text-center">Contact us</h2>
+        <p class="mb-4 text-grey md:text-center">
+          Get in touch and ask us anything
+        </p>
         <form>
-          <div class="flex flex-col sm:flex-row justify-between sm:gap-4">
+          <div class="flex flex-col sm:flex-row justify-between sm:gap-4 mt-16">
             <!-- Name -->
-            <div class="field w-full mb-2">
+            <div class="field w-full">
               <label for="name">Name</label>
               <input id="name" type="text" placeholder="Name" />
             </div>
             <!-- Email -->
-            <div class="field w-full mb-2">
+            <div class="field w-full">
               <label for="email">Email</label>
               <input id="email" type="email" placeholder="mail@example.com" />
             </div>
           </div>
           <!-- Subject -->
-          <div class="field mb-2">
+          <div class="field">
             <label for="subject">Subject</label>
             <input id="subject" type="text" placeholder="Subject" />
           </div>
           <!-- Textarea -->
-          <div class="field mb-4">
+          <div class="field">
             <label for="message">Message</label>
             <textarea
               name="message"
@@ -265,19 +290,19 @@
               style="resize: none"
             ></textarea>
           </div>
-          <button>Send your message</button>
+          <button class="md:flex md:m-auto">Send your message</button>
         </form>
       </template>
     </SectionCompo>
     <!-- end contact us -->
     <!-- begin newsletter -->
-    <SectionCompo class="bg-secondary">
+    <SectionCompo class="bg-light">
       <template v-slot:content>
-        <h2 class="mb-4">The newsletter</h2>
-        <p class="mb-4 text-grey">
+        <h2 class="mb-4 md:text-center">The newsletter</h2>
+        <p class="mb-4 text-grey md:text-center">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap md:justify-center gap-4">
           <input
             type="email"
             placeholder="Your email address"
@@ -399,7 +424,7 @@ export default {
       pricings: [
         {
           index: 0,
-          title: "Basic Plan - 'Essential'",
+          title: "BASIC",
           price: 19,
           description: "Perfect for freelancers and small businesses.",
           features: [
@@ -411,7 +436,7 @@ export default {
         },
         {
           index: 1,
-          title: "Standard plan - 'Professional'",
+          title: "PRO",
           price: 39,
           description: "Ideal for SMEs with advanced needs.",
           features: [
@@ -423,7 +448,7 @@ export default {
         },
         {
           index: 2,
-          title: "Advanced Plan - 'Enterprise'",
+          title: "ENTREPRISE",
           price: 79,
           description: "Designed for growing businesses.",
           features: [

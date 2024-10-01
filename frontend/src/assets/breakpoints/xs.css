@@ -61,6 +61,9 @@
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-16{
+  margin-top:4rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -71,7 +74,9 @@
 .mb-4 {
   margin-bottom: 1rem;
 }
-
+.mb-6{
+  margin-bottom: 1.5rem;
+}
 .ml-auto {
   margin-left: auto;
 }
@@ -123,7 +128,10 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
+.px-6{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
 .pt-2 {
   padding-top: 0.5rem;
 }
@@ -299,6 +307,10 @@
 .border-radius-375 {
   border-radius: 0.375rem;
 }
+.border-danger{
+  border:1px solid var(--red);
+}
+
 /* BACKGROUND */
 .bg-grey {
   background: #f9fbfd;
