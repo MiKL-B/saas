@@ -4,10 +4,15 @@
       <h1>Crispy lobster</h1>
     </RouterLink>
     <nav>
-      <ul>
+      <ul class="flex gap-2">
         <li>
           <RouterLink to="/login">
-            <button>Login</button>
+            <button class="secondary">Login</button>
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/login">
+            <button class="danger">Get started</button>
           </RouterLink>
         </li>
       </ul>

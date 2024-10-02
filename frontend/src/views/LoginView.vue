@@ -76,11 +76,11 @@
               <label for="remember">Remember me</label>
             </div>
 
-            <button class="w-full my-4" @click="onSubmit">
+            <button class="w-full my-4 danger" @click="onSubmit">
               {{ isLoginForm ? "Login" : "Sign up" }}
             </button>
 
-            <hr />
+
             <p class="flex justify-center p-4 gap-2">
               {{ isLoginForm ? "" : "Already have an account ?" }}
               <a

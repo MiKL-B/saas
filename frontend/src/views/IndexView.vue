@@ -12,7 +12,6 @@
         </div>
       </template>
     </SectionCompo>
-
     <!-- begin features -->
     <SectionCompo class="bg-light">
       <template v-slot:content>
@@ -27,20 +26,24 @@
           Effortlessly create invoices, track payments, and enhance client
           relationships to drive your business forward!
         </p>
-        <div
-          class="flex flex-col md:grid md:grid-rows-4 mt-16 md:grid-flow-col gap-4"
-        >
-          <div class="card" v-for="feature in features">
-            <div class="card-header flex-col sm:flex-row gap-4">
-              <div>
-                <Cuboid :size="48" style="color: var(--red)" />
-              </div>
-              <div class="flex flex-col">
-                <h3 class="card-title mb-4">{{ feature.title }}</h3>
-                <p class="text-grey">
-                  {{ feature.description }}
-                </p>
-              </div>
+        <div v-for="(feature, index) in features" :key="feature.index">
+          <div
+            class="flex flex-col md:flex-row justify-between gap-8 py-20"
+            :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
+          >
+            <div class="flex flex-col justify-center m-auto">
+              <h3 class="card-title mb-4 text-4xl">{{ feature.title }}</h3>
+              <p class="text-grey">
+                {{ feature.description }}
+              </p>
+            </div>
+            <div>
+              <img
+                src="https://picsum.photos/600"
+                class="w-full"
+                style="object-fit: cover; border-radius: 0.75rem"
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -217,7 +220,7 @@
     <SectionCompo>
       <template v-slot:content>
         <h2 class="mb-4 text-center">About us</h2>
-        <p class="mb-2">
+        <p class="mt-16">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
           realms of invoice management and customer relationship management
@@ -251,44 +254,87 @@
       </template>
     </SectionCompo>
     <!-- end creator -->
+    <!-- begin our team -->
+    <SectionCompo>
+      <template v-slot:content>
+        <h2 class="mb-4 text-center">Our team</h2>
+        <div class="flex flex-col gap-4 md:flex-row md:justify-between mt-16">
+          <div class="flex flex-col justify-center" v-for="i in 3">
+            <User
+              :size="100"
+              class="bg-light text-grey p-4 m-auto mb-4"
+              style="border-radius: 50%"
+            />
+            <h3 class="font-bold text-center">John Doe</h3>
+            <p class="text-grey text-center mb-4">Job title</p>
+            <p class="text-center">
+              Lorem ipsum dolor amet, consectetuer adipiscing. Aenean commodo
+              ligula.
+            </p>
+          </div>
+        </div>
+      </template>
+    </SectionCompo>
+    <!-- end our team -->
     <!-- begin contact us -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4 text-center">Contact us</h2>
-        <p class="mb-4 text-grey text-center">
-          Get in touch and ask us anything
-        </p>
-        <form>
-          <div class="flex flex-col sm:flex-row justify-between sm:gap-4 mt-16">
-            <!-- Name -->
-            <div class="field w-full">
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Name" />
+        <div class="flex flex-col md:flex-row md:justify-between gap-4">
+          <div class="flex flex-col gap-4">
+            <div>
+              <h2 class="mb-4">Contact us</h2>
+              <p class="mb-6 text-grey">Get in touch and ask us anything</p>
             </div>
-            <!-- Email -->
-            <div class="field w-full">
-              <label for="email">Email</label>
-              <input id="email" type="email" placeholder="mail@example.com" />
+            <ul class="flex flex-col gap-4">
+              <li class="flex gap-4 items-center">
+                <Mail class="text-grey" />support@blocsmaster.com
+              </li>
+              <li class="flex gap-4 items-center">
+                <Phone class="text-grey" />+1 (123) 123-1234
+              </li>
+              <li class="flex gap-4 items-center">
+                <MapPin class="text-grey" />28, Blocs Av., NoCode, 28000
+                Blocsland
+              </li>
+            </ul>
+          </div>
+          <hr />
+          <form>
+            <div class="flex flex-col sm:flex-row justify-between sm:gap-4">
+              <!-- Name -->
+              <div class="field w-full">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Name" />
+              </div>
+              <!-- Email -->
+              <div class="field w-full">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="mail@example.com" />
+              </div>
             </div>
-          </div>
-          <!-- Subject -->
-          <div class="field">
-            <label for="subject">Subject</label>
-            <input id="subject" type="text" placeholder="Subject" />
-          </div>
-          <!-- Textarea -->
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Message"
-              rows="10"
-              style="resize: none"
-            ></textarea>
-          </div>
-          <button class="md:flex md:m-auto">Send your message</button>
-        </form>
+            <!-- Subject -->
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" type="text" placeholder="Subject" />
+            </div>
+            <!-- Textarea -->
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Message"
+                rows="10"
+                style="resize: none"
+              ></textarea>
+            </div>
+            <div class="field">
+              <input type="checkbox" name="checkbox" id="checkbox" />
+              <label for="checkbox">I accept the Terms & Conditions.</label>
+            </div>
+            <button>Send your message</button>
+          </form>
+        </div>
       </template>
     </SectionCompo>
     <!-- end contact us -->
@@ -306,6 +352,9 @@ import {
   Users,
   Building2,
   User,
+  Mail,
+  Phone,
+  MapPin,
 } from "lucide-vue-next";
 
 export default {
@@ -320,6 +369,9 @@ export default {
     Users,
     Building2,
     User,
+    Mail,
+    Phone,
+    MapPin,
   },
 
   data() {
