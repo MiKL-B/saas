@@ -1,26 +1,22 @@
 <template>
   <footer class="bg-light py-20">
     <div
-      class="flex flex-col md:grid md:grid-cols-2 items-center md:max-w-7xl lg:mx-auto py-20"
+      class="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:max-w-7xl lg:mx-auto py-20 px-6"
     >
       <div>
-        <h1 class="text-danger items-center mb-6">Crispy lobster</h1>
-        <h2 class="mb-4">The newsletter</h2>
-        <p class="mb-4 text-grey">
+        <h1 class="text-danger items-center mb-6 text-center md:text-left">Crispy lobster</h1>
+        <h2 class="mb-4 text-center md:text-left">The newsletter</h2>
+        <p class="mb-4 text-grey text-center md:text-left">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
-        <div class="flex flex-wrap gap-4 mb-4">
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
           <input
             type="email"
             placeholder="Your email address"
-            class="w-96 bg-white"
+            class="w-12rem bg-white"
           />
           <button>Subscribe</button>
         </div>
-        <p class="text-small text-grey mb-2">
-          By subscribing, you consent to receive updates from our
-        </p>
-        <p class="text-small text-grey">company and agree to our Privacy Policy.</p>
       </div>
       <nav class="flex flex-row justify-between px-4 gap-4">
         <ul>
@@ -49,7 +45,7 @@
       </nav>
     </div>
     <hr />
-    <div class="flex justify-between text-center md:max-w-7xl lg:mx-auto">
+    <div class="flex justify-between text-center md:max-w-7xl lg:mx-auto px-6">
       <span>© 2028 Blocs Master. All rights reserved.</span>
       <div class="flex gap-4">
         <a href="#">Privacy Policy </a>

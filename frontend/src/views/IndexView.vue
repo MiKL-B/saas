@@ -1,13 +1,13 @@
 <template>
   <NavCompo />
   <main>
-    <SectionCompo>
+    <SectionCompo class="h-100vh py-32">
       <template v-slot:content>
-        <h1 class="mb-6 md:text-center">Simplify Your Business Management</h1>
-        <p class="mb-6 text-grey md:text-center">
+        <h1 class="mb-6 text-center">Simplify Your Business Management</h1>
+        <p class="mb-6 text-grey text-center">
           Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.
         </p>
-        <div class="flex gap-2 md:justify-center">
+        <div class="flex gap-2 justify-center">
           <button class="danger">Get started</button>
         </div>
       </template>
@@ -17,7 +17,7 @@
     <SectionCompo class="bg-light">
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">FEATURES</p>
-        <h2 class="mb-4 md:text-center">
+        <h2 class="mb-4 text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
@@ -51,7 +51,7 @@
     <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">HOW TO START ?</p>
-        <h2 class="mb-4 md:text-center">Just 5 steps to get started</h2>
+        <h2 class="mb-4 text-center">Just 5 steps to get started</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-16">
           <div class="flex flex-col justify-between gap-4">
             <div class="card" v-for="step in steps">
@@ -77,8 +77,8 @@
     <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">KEY FIGURES</p>
-        <h2 class="mb-4 md:text-center">An all-in-one platform.</h2>
-        <p class="mb-4 text-grey md:text-center">
+        <h2 class="mb-4 text-center">An all-in-one platform.</h2>
+        <p class="mb-4 text-grey text-center">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
@@ -108,7 +108,7 @@
     <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">TESTIMONIALS</p>
-        <h2 class="mb-4 md:text-center">We are attentive to our customers!</h2>
+        <h2 class="mb-4 text-center">We are attentive to our customers!</h2>
         <div class="flex flex-col flex-wrap gap-4 mt-16">
           <blockquote v-for="testimonial in testimonials">
             <div class="card-header flex items-center gap-4">
@@ -130,18 +130,15 @@
     <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">PRICING</p>
-        <h2 class="mb-4 md:text-center">
-          Choose the plan that's right for you
-        </h2>
+        <h2 class="mb-4 text-center">Choose the plan that's right for you</h2>
         <div
-          class="flex flex-col md:flex-row justify-center md:justify-between gap-4 mt-16"
+          class="flex flex-col md:flex-row justify-center items-center md:justify-between gap-4 mt-16"
         >
           <div
-            class="card md:flex md:flex-col md:justify-between"
+            class="card max-w-96"
             v-for="(pricing, index) in pricings"
             :style="{
               border: index % 2 !== 0 ? '2px solid var(--red)' : '',
-              margin: index % 2 !== 0 ? '' : '2rem 0',
             }"
           >
             <div class="card-header flex-col">
@@ -183,7 +180,7 @@
     <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">FAQ</p>
-        <h2 class="mb-4 md:text-center">Common Questions</h2>
+        <h2 class="mb-4 text-center">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4 mt-16">
           <ul class="flex flex-col gap-2">
             <li
@@ -211,7 +208,7 @@
         <p class="text-danger text-center text-small mb-4">
           READY TO GET STARTED ?
         </p>
-        <h2 class="mb-6 md:text-center">Start your free trial today.</h2>
+        <h2 class="mb-6 text-center">Start your free trial today.</h2>
         <button class="flex m-auto danger">Get started</button>
       </template>
     </SectionCompo>
@@ -219,7 +216,7 @@
     <!-- begin creator -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4 md:text-center">About us</h2>
+        <h2 class="mb-4 text-center">About us</h2>
         <p class="mb-2">
           As a pioneering SaaS developer, we specialize in creating innovative
           solutions that streamline business operations, particularly in the
@@ -257,8 +254,8 @@
     <!-- begin contact us -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4 md:text-center">Contact us</h2>
-        <p class="mb-4 text-grey md:text-center">
+        <h2 class="mb-4 text-center">Contact us</h2>
+        <p class="mb-4 text-grey text-center">
           Get in touch and ask us anything
         </p>
         <form>
