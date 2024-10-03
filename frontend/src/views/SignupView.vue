@@ -14,7 +14,7 @@
                   id="firstname"
                   type="text"
                   placeholder="First name"
-                  v-model="firstname"
+                  v-model="formData.firstname"
                   :class="formErrors.firstname != '' ? 'border-danger' : ''"
                   required
                 />
@@ -31,7 +31,7 @@
                   id="lastname"
                   type="text"
                   placeholder="Last name"
-                  v-model="lastname"
+                  v-model="formData.lastname"
                   :class="formErrors.lastname != '' ? 'border-danger' : ''"
                   required
                 />
@@ -50,7 +50,7 @@
                 id="email"
                 type="email"
                 placeholder="name@example.com"
-                v-model="email"
+                v-model="formData.email"
                 :class="formErrors.email != '' ? 'border-danger' : ''"
                 required
               />
@@ -65,13 +65,21 @@
             <div class="field">
               <div class="flex justify-between items-center">
                 <label for="password">Password</label>
-                <Eye @click="toggleEye" v-if="isEyeOpen" class="cursor-pointer text-grey"/>
-                <EyeOff @click="toggleEye" v-else class="cursor-pointer text-grey"/>
+                <Eye
+                  @click="toggleEye"
+                  v-if="isEyeOpen"
+                  class="cursor-pointer text-grey"
+                />
+                <EyeOff
+                  @click="toggleEye"
+                  v-else
+                  class="cursor-pointer text-grey"
+                />
               </div>
               <input
                 id="password"
-                :type="isEyeOpen ? 'text': 'password'"
-                v-model="password"
+                :type="isEyeOpen ? 'text' : 'password'"
+                v-model="formData.password"
                 :class="formErrors.password != '' ? 'border-danger' : ''"
                 required
               />
@@ -87,8 +95,8 @@
               <label for="confirm">Confirm</label>
               <input
                 id="confirm"
-                :type="isEyeOpen ? 'text': 'password'"
-                v-model="confirm"
+                :type="isEyeOpen ? 'text' : 'password'"
+                v-model="formData.confirm"
                 :class="formErrors.confirm != '' ? 'border-danger' : ''"
                 required
               />
@@ -126,22 +134,12 @@ export default {
     SectionCompo,
     FooterCompo,
     CircleAlert,
-    Eye, EyeOff
+    Eye,
+    EyeOff,
   },
   data() {
     return {
-      isEyeOpen:false,
-      firstname: "",
-      lastname: "",
-      email: "",
-      password: "",
-      confirm: "",
-      remember: false,
-      user: {
-        name: "John",
-        email: "john@mail.com",
-        password: "doe",
-      },
+      isEyeOpen: false,
       formData: {
         firstname: "",
         lastname: "",
@@ -166,35 +164,36 @@ export default {
       this.formErrors.password = "";
       this.formErrors.confirm = "";
 
-      if (this.firstname.trim() === "") {
+      if (this.formData.firstname.trim() === "") {
         this.formErrors.firstname = "Empty first name";
         return;
       }
-      if (this.lastname.trim() === "") {
+      if (this.formData.lastname.trim() === "") {
         this.formErrors.lastname = "Empty last name";
         return;
       }
-      if (this.email.trim() === "") {
+      if (this.formData.email.trim() === "") {
         this.formErrors.email = "Empty email!";
         return;
       }
-      if (!this.validEmail(this.email)) {
+      if (!this.validEmail(this.formData.email)) {
         this.formErrors.email = "Valid email required";
         return;
       }
-      if (this.password.trim() === "") {
+      if (this.formData.password.trim() === "") {
         this.formErrors.password = "Empty password";
         return;
       }
-      if (!this.validPassword(this.password)) {
-        this.formErrors.password = "Valid password required (8 characters, 1 uppercase, 1 number)";
+      if (!this.validPassword(this.formData.password)) {
+        this.formErrors.password =
+          "Valid password required (8 characters, 1 uppercase, 1 number)";
         return;
       }
-      if (this.confirm.trim() === "") {
+      if (this.formData.confirm.trim() === "") {
         this.formErrors.confirm = "Empty confirm";
         return;
       }
-      if (this.password !== this.confirm) {
+      if (this.formData.password !== this.formData.confirm) {
         this.formErrors.confirm = "Password not equal to confirm";
         return;
       }
@@ -217,9 +216,9 @@ export default {
       var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
       return re.test(password);
     },
-    toggleEye(){
-      this.isEyeOpen = !this.isEyeOpen
-    }
+    toggleEye() {
+      this.isEyeOpen = !this.isEyeOpen;
+    },
   },
 };
 </script>

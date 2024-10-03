@@ -23,7 +23,7 @@
                 id="email"
                 type="text"
                 placeholder="name@example.com"
-                v-model="email"
+                v-model="formData.email"
                 :class="formErrors.email != '' ? 'border-danger' : ''"
               />
               <span
@@ -37,7 +37,6 @@
             <div class="field">
               <div class="flex justify-between items-center">
                 <label for="password">Password</label>
-
                 <Eye
                   @click="toggleEye"
                   v-if="isEyeOpen"
@@ -52,7 +51,7 @@
               <input
                 id="password"
                 :type="isEyeOpen ? 'text' : 'password'"
-                v-model="password"
+                v-model="formData.password"
                 :class="formErrors.password != '' ? 'border-danger' : ''"
               />
               <a href="#">Forgot your password?</a>
@@ -66,7 +65,7 @@
 
             <!-- Remember me -->
             <div class="field">
-              <input id="remember" type="checkbox" v-model="remember" />
+              <input id="remember" type="checkbox" v-model="formData.remember" />
               <label for="remember">Remember me</label>
             </div>
             <button type="submit" class="w-full my-4 danger" @click="login">
@@ -96,17 +95,10 @@ export default {
   data() {
     return {
       isEyeOpen: false,
-      email: "",
-      password: "",
-      remember: false,
-      user: {
-        name: "John",
-        email: "john@mail.com",
-        password: "doe",
-      },
       formData: {
         email: "",
         password: "",
+        remember:false,
       },
       formErrors: {
         email: "",
@@ -120,11 +112,11 @@ export default {
       this.formErrors.email = "";
       this.formErrors.password = "";
 
-      if (this.email.trim() === "") {
+      if (this.formData.email.trim() === "") {
         this.formErrors.email = "Empty email!";
         return;
       }
-      if (this.password.trim() === "") {
+      if (this.formData.password.trim() === "") {
         this.formErrors.password = "Empty password";
         return;
       }
