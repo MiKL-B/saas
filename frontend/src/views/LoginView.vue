@@ -5,31 +5,17 @@
       <template v-slot:content>
         <form v-on:submit.prevent>
           <fieldset>
-            <h2 class="mb-4">
-              {{ isLoginForm ? "Login to your account" : "Create an account" }}
-            </h2>
-            <section>
-              <p>Name: {{ name }}</p>
+            <h2 class="mb-4 text-center">Login to your account</h2>
+            <!-- <section>
+              <p>First name: {{ firstname }}</p>
+              <p>Last name: {{ lastname }}</p>
               <p>Email: {{ email }}</p>
               <p>Password: {{ password }}</p>
               <p>Confirm: {{ confirm }}</p>
               <p>Remember: {{ remember }}</p>
               <hr />
-            </section>
-            <!-- Name -->
-            <div class="field" v-if="!isLoginForm">
-              <label for="name">Name</label>
-              <input
-                id="name"
-                type="text"
-                placeholder="Name"
-                v-model="name"
-                :class="formErrors.name != '' ? 'border-danger' : ''"
-              />
-              <span v-if="formErrors.name" class="text-small text-danger">{{
-                formErrors.name
-              }}</span>
-            </div>
+            </section> -->
+
             <!-- Email -->
             <div class="field">
               <label for="email">Email</label>
@@ -40,54 +26,55 @@
                 v-model="email"
                 :class="formErrors.email != '' ? 'border-danger' : ''"
               />
-              <span v-if="formErrors.email" class="text-small text-danger">{{
-                formErrors.email
-              }}</span>
+              <span
+                v-if="formErrors.email"
+                class="flex items-center gap-2 text-small text-danger"
+              >
+                <CircleAlert :size="16" />{{ formErrors.email }}</span
+              >
             </div>
             <!-- Password -->
             <div class="field">
-              <label for="password">Password</label>
+              <div class="flex justify-between items-center">
+                <label for="password">Password</label>
+
+                <Eye
+                  @click="toggleEye"
+                  v-if="isEyeOpen"
+                  class="cursor-pointer text-grey"
+                />
+                <EyeOff
+                  @click="toggleEye"
+                  v-else
+                  class="cursor-pointer text-grey"
+                />
+              </div>
               <input
                 id="password"
-                type="password"
+                :type="isEyeOpen ? 'text' : 'password'"
                 v-model="password"
                 :class="formErrors.password != '' ? 'border-danger' : ''"
               />
-              <span v-if="formErrors.password" class="text-small text-danger">{{
-                formErrors.password
-              }}</span>
+              <a href="#">Forgot your password?</a>
+              <span
+                v-if="formErrors.password"
+                class="flex items-center gap-2 text-small text-danger"
+              >
+                <CircleAlert :size="16" />{{ formErrors.password }}</span
+              >
             </div>
-            <!-- Confirm password -->
-            <div v-if="!isLoginForm" class="field">
-              <label for="confirm">Confirm</label>
-              <input
-                id="confirm"
-                type="password"
-                v-model="confirm"
-                :class="formErrors.confirm != '' ? 'border-danger' : ''"
-              />
-              <span v-if="formErrors.confirm" class="text-small text-danger">{{
-                formErrors.confirm
-              }}</span>
-            </div>
+
             <!-- Remember me -->
-            <div v-if="isLoginForm" class="field">
+            <div class="field">
               <input id="remember" type="checkbox" v-model="remember" />
               <label for="remember">Remember me</label>
             </div>
-
-            <button class="w-full my-4 danger" @click="onSubmit">
-              {{ isLoginForm ? "Login" : "Sign up" }}
+            <button type="submit" class="w-full my-4 danger" @click="login">
+              Login
             </button>
-
-
             <p class="flex justify-center p-4 gap-2">
-              {{ isLoginForm ? "" : "Already have an account ?" }}
-              <a
-                href="#"
-                class="cursor-pointer"
-                @click="isLoginForm = !isLoginForm"
-                >{{ isLoginForm ? "Create an account here !" : "Login" }}</a
+              <RouterLink to="/signup" class="cursor-pointer"
+                >Create an account here !</RouterLink
               >
             </p>
           </fieldset>
@@ -102,66 +89,37 @@
 import NavCompo from "@/components/Layout/NavCompo.vue";
 import FooterCompo from "@/components/Layout/FooterCompo.vue";
 import SectionCompo from "@/components/Reusable/SectionCompo.vue";
-
+import { CircleAlert, Eye, EyeOff } from "lucide-vue-next";
 export default {
   name: "LoginView",
-  components: { NavCompo, FooterCompo, SectionCompo },
+  components: { NavCompo, FooterCompo, SectionCompo, CircleAlert, Eye, EyeOff },
   data() {
     return {
-      isLoginForm: false,
-      name: "",
+      isEyeOpen: false,
       email: "",
       password: "",
-      confirm: "",
       remember: false,
       user: {
         name: "John",
         email: "john@mail.com",
         password: "doe",
       },
-      formData:{
-        name:"",
-        email:"",
-        password:"",
-        confirm:"",
-      },
-      formErrors: {
-        name: "",
+      formData: {
         email: "",
         password: "",
-        confirm: "",
+      },
+      formErrors: {
+        email: "",
+        password: "",
       },
     };
   },
+
   methods: {
-    onSubmit() {
-      if (this.isLoginForm) {
-        this.login();
-      } else {
-        this.signup();
-      }
-      if (
-        this.formErrors.name == "" &&
-        this.formErrors.email == "" &&
-        this.formErrors.password == "" &&
-        this.formErrors.confirm == ""
-      ) {
-        this.$router.push("/home");
-      }
-    },
     login() {
-      console.log("login");
-    },
-    signup() {
-      this.formErrors.name = "";
       this.formErrors.email = "";
       this.formErrors.password = "";
-      this.formErrors.confirm = "";
 
-      if (this.name.trim() === "") {
-        this.formErrors.name = "Empty name!";
-        return;
-      }
       if (this.email.trim() === "") {
         this.formErrors.email = "Empty email!";
         return;
@@ -170,11 +128,12 @@ export default {
         this.formErrors.password = "Empty password";
         return;
       }
-      if (this.confirm.trim() === "") {
-        this.formErrors.confirm = "Empty confirm";
-        return;
+      if (this.formErrors.email == "" && this.formErrors.password == "") {
+        this.$router.push("/home");
       }
-      // check password != confirm -> return
+    },
+    toggleEye() {
+      this.isEyeOpen = !this.isEyeOpen;
     },
   },
 };

@@ -5,6 +5,9 @@
 .bg-danger {
   background: var(--red);
 }
+.bg-lobster{
+  background:var(--homard)
+}
 .bg-secondary {
   background: var(--secondary);
 }
@@ -19,7 +22,15 @@
 }
 .hover\:bg-light:hover{
   background: var(--light);
+
 }
+.hover\:bg-danger:hover{
+  background: var(--red);
+}
+.hover\:bg-red-2:hover{
+  background:var(--red-2)
+}
+
 .hover\:bg-secondary:hover{
   background: var(--secondary);
 }

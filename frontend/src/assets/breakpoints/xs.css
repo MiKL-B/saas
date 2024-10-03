@@ -305,6 +305,9 @@
 .border-r-grey {
   border-right: 1px solid #e2e8f0;
 }
+.border-success {
+  border: 1px solid green;
+}
 .border-b-none {
   border-bottom: none;
 }
@@ -317,7 +320,18 @@
 .border-danger{
   border:1px solid var(--red);
 }
-
+.border-r-danger {
+  border-right: 1px solid var(--red);
+}
+.border-b-danger {
+  border-bottom: 2px solid var(--red);
+}
+.border-r-red-2{
+  border-right: 1px solid var(--red-2);
+}
+.border-b-red-2{
+  border-bottom: 1px solid var(--red-2);
+}
 /* BACKGROUND */
 .bg-grey {
   background: #f9fbfd;
@@ -393,9 +407,7 @@
   z-index: 3;
 }
 
-.shadow {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
-}
+
 .backdrop-blur {
   backdrop-filter: blur(8px);
 }

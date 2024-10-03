@@ -3,15 +3,20 @@
     <RouterLink to="/" class="text-danger text-decoration-none">
       <h1>Crispy lobster</h1>
     </RouterLink>
-    <nav>
-      <ul class="flex gap-2">
+    <nav class="display-mobile">
+      <RouterLink to="/login">
+        <Menu/>
+      </RouterLink>
+    </nav>
+    <nav class="display-desktop">
+      <ul class="flex gap-2 ">
         <li>
           <RouterLink to="/login">
             <button class="secondary">Login</button>
           </RouterLink>
         </li>
         <li>
-          <RouterLink to="/login">
+          <RouterLink to="/signup">
             <button class="danger">Get started</button>
           </RouterLink>
         </li>
@@ -21,7 +26,11 @@
 </template>
 
 <script>
+import { Menu } from 'lucide-vue-next';
 export default {
   name: "NavCompo",
+  components:{
+    Menu
+  }
 };
 </script>

@@ -1,6 +1,10 @@
 <template>
   <NavCompo />
   <main>
+    <div class="background">
+      <div></div>
+      <div></div>
+    </div>
     <SectionCompo class="h-100vh py-32">
       <template v-slot:content>
         <h1 class="mb-6 text-center">Simplify Your Business Management</h1>
@@ -8,12 +12,14 @@
           Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.
         </p>
         <div class="flex gap-2 justify-center">
-          <button class="danger">Get started</button>
+          <RouterLink to="/signup">
+            <button class="danger">Get started</button>
+          </RouterLink>
         </div>
       </template>
     </SectionCompo>
     <!-- begin features -->
-    <SectionCompo class="bg-light">
+    <SectionCompo>
       <template v-slot:content>
         <p class="text-danger text-center text-small mb-4">FEATURES</p>
         <h2 class="mb-4 text-center">
@@ -212,7 +218,9 @@
           READY TO GET STARTED ?
         </p>
         <h2 class="mb-6 text-center">Start your free trial today.</h2>
-        <button class="flex m-auto danger">Get started</button>
+        <RouterLink to="/signup" class="text-decoration-none">
+          <button class="flex m-auto danger">Get started</button>
+        </RouterLink>
       </template>
     </SectionCompo>
     <!-- start free trial -->
@@ -304,21 +312,26 @@
               <!-- Name -->
               <div class="field w-full">
                 <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Name" />
+                <input id="name" type="text" placeholder="Name" required />
               </div>
               <!-- Email -->
               <div class="field w-full">
                 <label for="email">Email</label>
-                <input id="email" type="email" placeholder="mail@example.com" />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="mail@example.com"
+                  required
+                />
               </div>
             </div>
             <!-- Subject -->
             <div class="field">
               <label for="subject">Subject</label>
-              <input id="subject" type="text" placeholder="Subject" />
+              <input id="subject" type="text" placeholder="Subject" required />
             </div>
             <!-- Textarea -->
-            <div class="field">
+            <div class="field mb-2">
               <label for="message">Message</label>
               <textarea
                 name="message"
@@ -326,13 +339,14 @@
                 placeholder="Message"
                 rows="10"
                 style="resize: none"
+                required
               ></textarea>
             </div>
-            <div class="field">
-              <input type="checkbox" name="checkbox" id="checkbox" />
-              <label for="checkbox">I accept the Terms & Conditions.</label>
-            </div>
-            <button>Send your message</button>
+            <p class="text-small text-grey mb-4">
+              By clicking, you agree to our Terms & Conditions, Privacy and Data
+              Protection Policy
+            </p>
+            <button type="submit">Send your message</button>
           </form>
         </div>
       </template>
@@ -594,3 +608,45 @@ export default {
   },
 };
 </script>
+<style scoped>
+.background {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to right, #ffffff, #ffffff);
+  display: flex;
+  flex-grow: 1;
+  z-index: -1;
+}
+
+.background div {
+  position: absolute;
+  border-radius: 100%;
+  height: 0;
+  filter: blur(240vw);
+  opacity: 0.4;
+}
+
+.background div:nth-child(1) {
+  background: linear-gradient(132deg, #e84a6c 0%, #ffffff 100%);
+  width: 75%;
+  padding-top: 75%;
+  left: 4%;
+  top: 28%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.background div:nth-child(2) {
+  background: linear-gradient(132deg, #ffffff 0%, #e84a6c 100%);
+  width: 63%;
+  padding-top: 63%;
+  left: 83%;
+  top: 74%;
+  transform: translateX(-50%) translateY(-50%);
+}
+</style>

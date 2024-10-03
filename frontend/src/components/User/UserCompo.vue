@@ -1,15 +1,14 @@
 <template>
   <div class="p-4">
-
-<ul class="flex gap-4 border-b-grey mb-4">
+    <ul class="flex gap-4 border-b-grey mb-4">
       <li
         v-for="tab in tabs"
         :key="tab.name"
         @click="selectTab(tab.name)"
-        :class="selectedTab === tab.name ? 'border-b-primary' : 'text-grey'"
-        class="cursor-pointer pb-2 px-2"
+        :class="selectedTab === tab.name ? 'border-b-danger' : 'text-grey'"
+        class="cursor-pointer pb-2 px-2 flex gap-2"
       >
-        {{ tab.name }}
+       <User :size="16"/>{{ tab.name }}
       </li>
     </ul>
     <form>
@@ -21,7 +20,7 @@
           <!-- name -->
           <div class="field mb-4">
             <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Name" readonly/>
+            <input id="name" type="text" placeholder="Name" readonly />
           </div>
           <!-- date -->
           <!-- <div class="field mb-4">
@@ -34,7 +33,12 @@
           <!-- email -->
           <div class="field mb-4">
             <label for="email">Email</label>
-            <input id="email" type="email" placeholder="name@example.com" readonly/>
+            <input
+              id="email"
+              type="email"
+              placeholder="name@example.com"
+              readonly
+            />
           </div>
           <!-- password -->
           <!-- <div class="field mb-4">
@@ -132,11 +136,14 @@
 </template>
 
 <script>
+import { User } from 'lucide-vue-next';
 export default {
   name: "UserCompo",
+  components:{
+    User,
+  },
   data() {
     return {
-
       colors: [
         {
           index: 1,
@@ -212,11 +219,11 @@ export default {
 </script>
 
 <style scoped>
-.colors{
-  display:grid;
-  grid-template-columns: repeat(5,1fr);
-  grid-template-rows: repeat(3,1fr);
-  gap:1rem; 
+.colors {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
 }
 .color {
   height: 30px;

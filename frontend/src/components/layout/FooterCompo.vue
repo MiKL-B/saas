@@ -44,7 +44,6 @@
         </ul>
       </nav>
     </div>
-    <hr />
     <div class="flex justify-between text-center md:max-w-7xl lg:mx-auto px-6">
       <span>© 2028 Blocs Master. All rights reserved.</span>
       <div class="flex gap-4">

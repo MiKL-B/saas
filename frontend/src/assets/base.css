@@ -33,6 +33,7 @@
   --grey: #71717a;
   --white: #ffffff;
   --red: #e84a6c;
+  --red-2: #e84a6c25;
   --lagoon: #1d82e1;
   --rose: #f9daff;
   --lila: #ecdaff;
@@ -48,8 +49,12 @@
   --orange: #ffe9e0;
   --saumon: #ffe0e0;
   --homard: #ffdae0;
+
   --beige: #f7f1e0;
+
+  --shadow:  0px 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 .col-span-2 {
   grid-column: span 2 / span 2;
 }

@@ -1,28 +1,24 @@
 <template>
   <div class="container">
     <!-- nav mobile -->
-    <nav class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur">
+    <nav
+      class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur bg-light"
+    >
       <ul>
-        <li
-          class="cursor-pointer flex justify-between items-center"
-          ref="ignoreButton"
-          @click="toggle"
-        >
-          Menu
-          <span class="text-grey">
-            <ChevronDown v-if="!isNavOpened" />
-            <ChevronUp v-else />
-          </span>
+        <span @click="toggle">
+          <Menu class="text-grey cursor-pointer hover:text-primary" ref="ignoreButton" />
+        </span>
+        <li class="cursor-pointer">
           <ul
-            class="absolute top-3rem left-0 right-0 bg-white border-b-grey"
+            class="absolute top-3rem left-0 right-0 bg-white border-b-grey bg-light"
             v-if="isNavOpened"
           >
             <li
               v-for="link in links"
               :class="
                 currentComponent === link.component
-                  ? 'bg-primary'
-                  : 'hover:bg-light'
+                  ? 'bg-danger'
+                  : 'hover:bg-secondary'
               "
               class="m-2 border-radius-375 cursor-pointer"
               @click="handleNavMobile(link.component)"
@@ -52,7 +48,7 @@
             <li
               :class="
                 currentComponent === 'UserCompo'
-                  ? 'bg-primary'
+                  ? 'bg-danger'
                   : 'hover:bg-light'
               "
               @click="currentComponent = 'UserCompo'"
@@ -101,13 +97,15 @@
     </nav>
     <!-- nav desktop -->
     <nav class="display-desktop w-16rem">
-      <ul class="flex flex-col justify-between h-full border-r-grey py-4 gap-2">
+      <ul
+        class="flex flex-col justify-between h-full border-r-grey py-4 gap-2 bg-light"
+      >
         <li
           v-for="link in links"
           :class="
             currentComponent === link.component
-              ? 'bg-primary'
-              : 'hover:bg-light'
+              ? 'bg-danger'
+              : 'hover:bg-secondary'
           "
           class="mx-2 p-2 border-radius-375 cursor-pointer"
           @click="currentComponent = link.component"
@@ -136,8 +134,8 @@
             <li
               :class="
                 currentComponent === 'UserCompo'
-                  ? 'bg-primary'
-                  : 'hover:bg-light'
+                  ? 'bg-danger'
+                  : 'hover:bg-secondary'
               "
               class="mx-2 p-2 border-radius-375 cursor-pointer"
               @click="currentComponent = 'UserCompo'"
@@ -158,7 +156,7 @@
               </span>
             </li>
             <!-- help -->
-            <li class="mx-2 p-2 hover:bg-light border-radius-375">
+            <li class="mx-2 p-2 hover:bg-secondary border-radius-375">
               <RouterLink
                 to="/help"
                 target="_blank"
@@ -171,7 +169,7 @@
               </RouterLink>
             </li>
             <!-- logout -->
-            <li class="mx-2 p-2 hover:bg-light border-radius-375">
+            <li class="mx-2 p-2 hover:bg-secondary border-radius-375">
               <RouterLink to="/" class="text-decoration-none">
                 <span class="flex gap-4">
                   <LogOut :size="16" class="text-grey" />
@@ -314,7 +312,6 @@ export default {
     },
     toggle() {
       this.isNavOpened = !this.isNavOpened;
-      console.log("test");
     },
     handleClick(event) {
       if (event.target !== this.$refs.ignoreButton) {

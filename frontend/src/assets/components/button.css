@@ -11,7 +11,7 @@ button {
   height: 2.25rem;
   font-size: 0.875rem;
   font-weight: 500;
-  box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  box-shadow: var(--shadow);
 }
 button:hover {
   opacity: 0.9;
