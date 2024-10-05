@@ -1,14 +1,13 @@
 blockquote {
-  border-left: 4px solid var(--red);
+  border-left: 4px solid var(--red-200);
   padding: 1.5rem;
-  font-style: italic;
-  background: var(--light);
   border-top-right-radius: 0.375rem;
   border-bottom-right-radius: 0.375rem;
   position: relative;
 }
+
 blockquote:before {
-  color: var(--red);
+  color: var(--red-200);
   content: "\201C";
   font-size: 4rem;
   position: absolute;

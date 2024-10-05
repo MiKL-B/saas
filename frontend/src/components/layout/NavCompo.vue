@@ -1,6 +1,6 @@
 <template>
-  <header class="flex justify-between p-4 items-center md:max-w-7xl lg:mx-auto sticky-top backdrop-blur z-3">
-    <RouterLink to="/" class="text-danger text-decoration-none">
+  <header class="flex justify-between py-4 px-6 items-center md:max-w-7xl lg:mx-auto sticky-top backdrop-blur z-3">
+    <RouterLink to="/" class="text-red-200 text-underline-none">
       <h1>Crispy lobster</h1>
     </RouterLink>
     <nav class="display-mobile">
@@ -17,7 +17,7 @@
         </li>
         <li>
           <RouterLink to="/signup">
-            <button class="danger">Get started</button>
+            <button>Get started</button>
           </RouterLink>
         </li>
       </ul>

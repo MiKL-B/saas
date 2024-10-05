@@ -4,9 +4,9 @@
       class="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:max-w-7xl lg:mx-auto py-20 px-6"
     >
       <div>
-        <h1 class="text-danger items-center mb-6 text-center md:text-left">Crispy lobster</h1>
+        <h1 class="text-red-200 items-center mb-6 text-center md:text-left">Crispy lobster</h1>
         <h2 class="mb-4 text-center md:text-left">The newsletter</h2>
-        <p class="mb-4 text-grey text-center md:text-left">
+        <p class="mb-4 text-grey-200 text-center md:text-left">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
         <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
@@ -58,7 +58,7 @@ ul li {
   margin-bottom: 1rem;
 }
 .link {
-  color: var(--grey);
+  color: var(--grey-200);
   font-weight: normal;
   text-decoration: none;
 }

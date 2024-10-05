@@ -136,7 +136,12 @@
   .md\:flex {
     display: flex;
   }
-  
+  .md\:display-none{
+    display: none;
+  }
+  .md\:display-block{
+    display: block;
+  }
   .md\:flex-col {
     flex-direction: column;
   }
@@ -245,7 +250,9 @@
   .md\:max-w-7xl {
     max-width: 80rem;
   }
-
+  .md\:max-w-full {
+    max-width: 100%;
+  }
   /* BORDER */
   .md\:border-grey {
     border: 1px solid #e2e8f0;

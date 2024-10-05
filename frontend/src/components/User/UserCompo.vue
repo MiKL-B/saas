@@ -5,7 +5,7 @@
         v-for="tab in tabs"
         :key="tab.name"
         @click="selectTab(tab.name)"
-        :class="selectedTab === tab.name ? 'border-b-danger' : 'text-grey'"
+        :class="selectedTab === tab.name ? 'border-b-red-200' : 'text-grey-200'"
         class="cursor-pointer pb-2 px-2 flex gap-2"
       >
        <User :size="16"/>{{ tab.name }}
@@ -16,7 +16,7 @@
         <!-- tab account -->
         <div v-show="selectedTab === 'Account'">
           <h3>Account</h3>
-          <p class="text-small text-grey mb-4">Manage your account.</p>
+          <p class="text-small text-grey-200 mb-4">Manage your account.</p>
           <!-- name -->
           <div class="field mb-4">
             <label for="name">Name</label>
@@ -112,7 +112,7 @@
             </p>
             <div class="flex gap-4 themes mt-2">
               <div class="cursor-pointer"></div>
-              <div class="bg-primary cursor-pointer"></div>
+              <div class=" cursor-pointer"></div>
             </div>
           </div>
 

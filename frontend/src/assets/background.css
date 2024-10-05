@@ -1,39 +1,24 @@
-.bg-primary{
-  background:var(--dark);
-
-}
-.bg-danger {
-  background: var(--red);
-}
-.bg-lobster{
-  background:var(--homard)
-}
-.bg-secondary {
-  background: var(--secondary);
-}
+/* white */
 .bg-white {
   background: var(--white);
 }
-.bg-light{
-  background:var(--light);
+/* grey */
+.bg-grey-50 {
+  background: var(--grey-50);
 }
-.bg-homard{
-  background:var(--homard);
+.hover\:bg-grey-50:hover{
+  background: var(--grey-50);
 }
-.hover\:bg-light:hover{
-  background: var(--light);
-
+.bg-grey-100 {
+  background: var(--grey-100);
 }
-.hover\:bg-danger:hover{
-  background: var(--red);
+.hover\:bg-grey-100:hover{
+  background: var(--grey-100);
 }
-.hover\:bg-red-2:hover{
-  background:var(--red-2)
+/* red */
+.bg-red-100 {
+  background: var(--red-100);
 }
-
-.hover\:bg-secondary:hover{
-  background: var(--secondary);
-}
-.hover\:opacity:hover{
-  opacity: 0.9;
+.bg-red-200 {
+  background: var(--red-200);
 }

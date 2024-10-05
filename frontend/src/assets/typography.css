@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
+
+*,body {
+  font-family: 'Inter';
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Inter';
+  font-weight: 700;
+}
+
+/* FONT SIZE */
+
+h1 {font-size: 4.210rem; /* 67.36px */}
+
+h2 {font-size: 3.158rem; /* 50.56px */}
+
+h3 {font-size: 2.369rem; /* 37.92px */}
+
+h4 {font-size: 1.777rem; /* 28.48px */}
+
+h5 {font-size: 1.333rem; /* 21.28px */}
+
+.text-small {
+  font-size: 0.875rem;
+}
+::placeholder{
+  font-size: var(--base-font-size);
+}
+/* WEIGHT */
+.text-bold {
+  font-weight: bold;
+}
+/* STYLE */
+.text-italic {
+  font-style: italic;
+}
+/* DECORATION */
+.text-underline-none {
+  text-decoration: none;
+}
+.text-underline {
+  text-decoration: underline;
+}
+/* COLOR */
+/* white */
+.text-white {
+  color: var(--white);
+}
+/* grey */
+.text-grey-50 {
+  color: var(--grey-50);
+}
+.text-grey-100 {
+  color: var(--grey-100);
+}
+.text-grey-200 {
+  color: var(--grey-200);
+}
+/* dark */
+.text-dark {
+  color: var(--dark);
+}
+
+/* red */
+.text-red-100 {
+  color: var(--red-100);
+}
+.text-red-200 {
+  color: var(--red-200);
+}
+.text-red-300 {
+  color: var(--red-300);
+}
+
+/* MEDIA QUERY */
+/* SM */
+@media screen and (min-width: 640px) {
+  /* .sm\:m-auto {
+    margin: auto;
+  } */
+}
+/* MD */
+@media screen and (min-width: 768px) {
+}
+/* LG */
+@media screen and (min-width: 1024px) {
+}
+/* XL */
+@media screen and (min-width: 1248px) {
+}

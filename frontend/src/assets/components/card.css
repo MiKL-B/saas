@@ -1,10 +1,10 @@
 div.card {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--grey-100);
   border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
   background:var(--white);
-  box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  filter: drop-shadow(0px 1px 5px #E9E9E9);
   justify-content: space-between;
 }
 .card-header {
@@ -19,7 +19,7 @@ div.card {
   letter-spacing: -0.025em;
 }
 .card-description {
-  color: var(--grey);
+  color: var(--grey-200);
   font-size: 0.875rem;
   line-height: 1.25rem;
 }

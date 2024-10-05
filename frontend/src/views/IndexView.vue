@@ -8,7 +8,7 @@
     <SectionCompo class="h-100vh py-32">
       <template v-slot:content>
         <h1 class="mb-6 text-center">Simplify Your Business Management</h1>
-        <p class="mb-6 text-grey text-center">
+        <p class="mb-6 text-grey-200 text-center">
           Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.
         </p>
         <div class="flex gap-2 justify-center">
@@ -21,12 +21,12 @@
     <!-- begin features -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">FEATURES</p>
+        <p class="text-red-200 text-center text-small mb-4">FEATURES</p>
         <h2 class="mb-4 text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="mb-6 text-grey md:text-center">
+        <p class="mb-6 text-grey-200 md:text-center">
           Revolutionize your invoicing and customer management with our
           all-in-one SaaS solution.<br />
           Effortlessly create invoices, track payments, and enhance client
@@ -39,7 +39,7 @@
           >
             <div class="flex flex-col justify-center m-auto">
               <h3 class="card-title mb-4 text-4xl">{{ feature.title }}</h3>
-              <p class="text-grey">
+              <p class="text-grey-200">
                 {{ feature.description }}
               </p>
             </div>
@@ -59,14 +59,14 @@
     <!-- begin steps -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">HOW TO START ?</p>
+        <p class="text-red-200 text-center text-small mb-4">HOW TO START ?</p>
         <h2 class="mb-4 text-center">Just 5 steps to get started</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-16">
           <div class="flex flex-col justify-between gap-4">
             <div class="card" v-for="step in steps">
               <div class="card-header flex-col">
                 <h3 class="card-title">{{ step.index }} {{ step.title }}</h3>
-                <p class="text-grey">{{ step.text }}</p>
+                <p class="text-grey-200">{{ step.text }}</p>
               </div>
             </div>
           </div>
@@ -85,9 +85,9 @@
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">KEY FIGURES</p>
+        <p class="text-red-200 text-center text-small mb-4">KEY FIGURES</p>
         <h2 class="mb-4 text-center">An all-in-one platform.</h2>
-        <p class="mb-4 text-grey text-center">
+        <p class="mb-4 text-grey-200 text-center">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
@@ -98,11 +98,11 @@
               <component
                 :is="keyfigure.icon"
                 :size="48"
-                style="color: var(--red)"
+                style="color: var(--red-200)"
               />
               <div class="flex flex-col">
                 <h3 class="card-title">{{ keyfigure.figure }}</h3>
-                <p class="text-grey">
+                <p class="text-grey-200">
                   {{ keyfigure.person }}
                 </p>
               </div>
@@ -116,20 +116,20 @@
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">TESTIMONIALS</p>
+        <p class="text-red-200 text-center text-small mb-4">TESTIMONIALS</p>
         <h2 class="mb-4 text-center">We are attentive to our customers!</h2>
         <div class="flex flex-col flex-wrap gap-4 mt-16">
           <blockquote v-for="testimonial in testimonials">
             <div class="card-header flex items-center gap-4">
-              <User :size="48" style="color: var(--red)" />
+              <User :size="48" style="color: var(--red-200)" />
               <div class="flex flex-col">
                 <h3 class="card-title">{{ testimonial.person }}</h3>
-                <p class="text-grey">
+                <p class="text-grey-200">
                   {{ testimonial.job }}
                 </p>
               </div>
             </div>
-            <div class="card-body font-italic">{{ testimonial.text }}</div>
+            <div class="card-body text-italic">{{ testimonial.text }}</div>
           </blockquote>
         </div>
       </template>
@@ -138,29 +138,30 @@
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">PRICING</p>
+        <p class="text-red-200 text-center text-small mb-4">PRICING</p>
         <h2 class="mb-4 text-center">Choose the plan that's right for you</h2>
         <div
-          class="flex flex-col md:flex-row justify-center items-center md:justify-between gap-4 mt-16"
+          class="flex flex-col gap-4 max-w-96 md:max-w-full m-auto md:flex-row md:justify-between mt-16"
         >
           <div
-            class="card max-w-96"
+            class="card"
             v-for="(pricing, index) in pricings"
             :style="{
-              border: index % 2 !== 0 ? '2px solid var(--red)' : '',
+              border: index % 2 !== 0 ? '1px solid var(--red-200)' : '',
+              margin: index % 2 !== 0 ? '' : '2rem 0',
             }"
           >
             <div class="card-header flex-col">
-              <h3 class="card-title text-grey text-center">
+              <h3 class="card-title text-grey-200 text-center">
                 {{ pricing.title }}
               </h3>
-              <p class="text-small text-grey text-center card-description">
+              <p class="text-small text-grey-200 text-center card-description">
                 {{ pricing.description }}
               </p>
             </div>
             <div class="card-body">
               <p class="text-center">
-                <span class="text-3xl font-bold">{{ pricing.price }}€</span>
+                <span class="text-3xl text-bold">{{ pricing.price }}€</span>
                 / month
               </p>
               <ul class="mt-2">
@@ -175,7 +176,7 @@
             <div class="card-footer">
               <button
                 class="w-full"
-                :class="index % 2 !== 0 ? 'danger' : 'secondary'"
+                :class="index % 2 !== 0 ? '' : 'secondary'"
               >
                 Subscribe
               </button>
@@ -188,7 +189,7 @@
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">FAQ</p>
+        <p class="text-red-200 text-center text-small mb-4">FAQ</p>
         <h2 class="mb-4 text-center">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4 mt-16">
           <ul class="flex flex-col gap-2">
@@ -200,7 +201,7 @@
               <div class="card p-2">
                 <details name="question">
                   <summary>{{ question.title }}</summary>
-                  <p class="text-grey text-small">
+                  <p class="text-grey-200 text-small">
                     {{ question.content }}
                   </p>
                 </details>
@@ -212,53 +213,70 @@
     </SectionCompo>
     <!-- end common questions -->
     <!-- start free trial -->
-    <SectionCompo class="bg-homard">
+    <SectionCompo>
       <template v-slot:content>
-        <p class="text-danger text-center text-small mb-4">
-          READY TO GET STARTED ?
-        </p>
-        <h2 class="mb-6 text-center">Start your free trial today.</h2>
-        <RouterLink to="/signup" class="text-decoration-none">
-          <button class="flex m-auto danger">Get started</button>
-        </RouterLink>
+        <div class="py-32 bg-red-100 border-radius-375">
+          <p class="text-red-200 text-center text-small mb-4">
+            READY TO GET STARTED ?
+          </p>
+          <h2 class="mb-6 text-center">Start your free trial today.</h2>
+          <RouterLink to="/signup" class="text-underline-none">
+            <button class="flex m-auto danger">Get started</button>
+          </RouterLink>
+        </div>
       </template>
     </SectionCompo>
     <!-- start free trial -->
     <!-- begin creator -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4 text-center">About us</h2>
-        <p class="mt-16">
-          As a pioneering SaaS developer, we specialize in creating innovative
-          solutions that streamline business operations, particularly in the
-          realms of invoice management and customer relationship management
-          (CRM). Our platform is designed to empower businesses of all sizes to
-          enhance their financial processes, improve client interactions, and
-          drive growth.
-          <br /><br />
-          We understand the challenges companies face when managing invoices,
-          tracking payments, and maintaining customer relationships. That's why
-          our development team utilizes cutting-edge technology to build a
-          user-friendly interface that simplifies these tasks. Features like
-          automated invoicing, real-time payment tracking, and customizable CRM
-          tools allow our users to save time and enhance their efficiency.
-          <br /><br />
-          Our commitment to scalability ensures that as our clients grow, our
-          software evolves with them. By integrating advanced analytics and
-          reporting features, we provide businesses with insights that help them
-          make informed decisions. Also, with robust security measures in place,
-          our users can rest easy knowing their financial data and customer
-          information are protected.
-          <br /><br />
-          At the heart of our development process is a passion for customer
-          satisfaction. We actively gather feedback and continuously improve our
-          platform to meet the changing needs of our users. With our innovative
-          SaaS solution, managing invoices and nurturing customer relationships
-          has never been easier.
-          <br /><br />
-          Partner with us today to leverage technology that transforms your
-          financial operations and CRM strategies into a seamless experience!
-        </p>
+        <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
+          <div>
+            <h2 class="mb-4">About us</h2>
+            <p class="mb-4">
+              As a pioneering SaaS developer, we specialize in creating
+              innovative solutions that streamline business operations,
+              particularly in the realms of invoice management and customer
+              relationship management (CRM). Our platform is designed to empower
+              businesses of all sizes to enhance their financial processes,
+              improve client interactions, and drive growth.
+              <br /><br />
+              We understand the challenges companies face when managing
+              invoices, tracking payments, and maintaining customer
+              relationships. That's why our development team utilizes
+              cutting-edge technology to build a user-friendly interface that
+              simplifies these tasks. Features like automated invoicing,
+              real-time payment tracking, and customizable CRM tools allow our
+              users to save time and enhance their efficiency.
+              <br /><br />
+              Our commitment to scalability ensures that as our clients grow,
+              our software evolves with them. By integrating advanced analytics
+              and reporting features, we provide businesses with insights that
+              help them make informed decisions. Also, with robust security
+              measures in place, our users can rest easy knowing their financial
+              data and customer information are protected.
+              <br /><br />
+              At the heart of our development process is a passion for customer
+              satisfaction. We actively gather feedback and continuously improve
+              our platform to meet the changing needs of our users. With our
+              innovative SaaS solution, managing invoices and nurturing customer
+              relationships has never been easier.
+              <br /><br />
+              Partner with us today to leverage technology that transforms your
+              financial operations and CRM strategies into a seamless
+              experience!
+            </p>
+            <button>Read more</button>
+          </div>
+          <div class="display-none md:display-block">
+            <img
+              src="https://picsum.photos/600"
+              class="w-full"
+              style="object-fit: cover; border-radius: 0.75rem"
+              alt=""
+            />
+          </div>
+        </div>
       </template>
     </SectionCompo>
     <!-- end creator -->
@@ -270,11 +288,11 @@
           <div class="flex flex-col justify-center" v-for="i in 3">
             <User
               :size="100"
-              class="bg-light text-grey p-4 m-auto mb-4"
+              class="bg-red-100 text-red-200 p-4 m-auto mb-4"
               style="border-radius: 50%"
             />
-            <h3 class="font-bold text-center">John Doe</h3>
-            <p class="text-grey text-center mb-4">Job title</p>
+            <h3 class="text-bold text-center">John Doe</h3>
+            <p class="text-grey-200 text-center mb-4">Job title</p>
             <p class="text-center">
               Lorem ipsum dolor amet, consectetuer adipiscing. Aenean commodo
               ligula.
@@ -295,13 +313,13 @@
             </div>
             <ul class="flex flex-col gap-4">
               <li class="flex gap-4 items-center">
-                <Mail class="text-grey" />support@blocsmaster.com
+                <Mail class="text-red-200" />support@blocsmaster.com
               </li>
               <li class="flex gap-4 items-center">
-                <Phone class="text-grey" />+1 (123) 123-1234
+                <Phone class="text-red-200" />+1 (123) 123-1234
               </li>
               <li class="flex gap-4 items-center">
-                <MapPin class="text-grey" />28, Blocs Av., NoCode, 28000
+                <MapPin class="text-red-200" />28, Blocs Av., NoCode, 28000
                 Blocsland
               </li>
             </ul>
@@ -342,7 +360,7 @@
                 required
               ></textarea>
             </div>
-            <p class="text-small text-grey mb-4">
+            <p class="text-small text-grey-200 mb-4">
               By clicking, you agree to our Terms & Conditions, Privacy and Data
               Protection Policy
             </p>

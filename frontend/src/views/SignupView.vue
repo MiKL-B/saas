@@ -20,7 +20,7 @@
                 />
                 <span
                   v-if="formErrors.firstname"
-                  class="flex items-center gap-2 text-small text-danger"
+                  class="flex items-center gap-2 text-small text-red-200"
                 >
                   <CircleAlert :size="16" />{{ formErrors.firstname }}</span
                 >
@@ -37,7 +37,7 @@
                 />
                 <span
                   v-if="formErrors.lastname"
-                  class="flex items-center gap-2 text-small text-danger"
+                  class="flex items-center gap-2 text-small text-red-200"
                 >
                   <CircleAlert :size="16" />{{ formErrors.lastname }}</span
                 >
@@ -56,7 +56,7 @@
               />
               <span
                 v-if="formErrors.email"
-                class="flex items-center gap-2 text-small text-danger"
+                class="flex items-center gap-2 text-small text-red-200"
               >
                 <CircleAlert :size="16" />{{ formErrors.email }}</span
               >
@@ -68,12 +68,12 @@
                 <Eye
                   @click="toggleEye"
                   v-if="isEyeOpen"
-                  class="cursor-pointer text-grey"
+                  class="cursor-pointer text-grey-200"
                 />
                 <EyeOff
                   @click="toggleEye"
                   v-else
-                  class="cursor-pointer text-grey"
+                  class="cursor-pointer text-grey-200"
                 />
               </div>
               <input
@@ -85,7 +85,7 @@
               />
               <span
                 v-if="formErrors.password"
-                class="flex items-center gap-2 text-small text-danger"
+                class="flex items-center gap-2 text-small text-red-200"
               >
                 <CircleAlert :size="16" />{{ formErrors.password }}</span
               >
@@ -102,12 +102,12 @@
               />
               <span
                 v-if="formErrors.confirm"
-                class="flex items-center gap-2 text-small text-danger"
+                class="flex items-center gap-2 text-small text-red-200"
               >
                 <CircleAlert :size="16" />{{ formErrors.confirm }}</span
               >
             </div>
-            <button type="submit" class="w-full my-4 danger" @click="signup">
+            <button type="submit" class="w-full my-4" @click="signup">
               Signup
             </button>
             <p class="flex justify-center p-4 gap-2">

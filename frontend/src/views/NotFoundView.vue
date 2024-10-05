@@ -1,7 +1,7 @@
 <template>
   <SectionCompo>
     <template v-slot:content>
-      <h1 class="text-9xl text-center text-danger">404</h1>
+      <h1 class="text-9xl text-center text-red-200">404</h1>
       <h2 class="text-center mb-4">Lobster not found</h2>
       <p class="text-center">
         "Oups ! On dirait que cette page a filé comme un homard échappé de son

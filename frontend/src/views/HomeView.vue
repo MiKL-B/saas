@@ -2,23 +2,23 @@
   <div class="container">
     <!-- nav mobile -->
     <nav
-      class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur bg-light"
+      class="p-4 display-mobile sticky-top z-3 border-b-grey backdrop-blur bg-white"
     >
       <ul>
         <span @click="toggle">
-          <Menu class="text-grey cursor-pointer hover:text-primary" ref="ignoreButton" />
+          <Menu class="text-grey-200 cursor-pointer hover:text-primary" ref="ignoreButton" />
         </span>
         <li class="cursor-pointer">
           <ul
-            class="absolute top-3rem left-0 right-0 bg-white border-b-grey bg-light"
+            class="absolute top-3rem left-0 right-0 bg-white border-b-grey"
             v-if="isNavOpened"
           >
             <li
               v-for="link in links"
               :class="
                 currentComponent === link.component
-                  ? 'bg-danger'
-                  : 'hover:bg-secondary'
+                  ? 'bg-red-200'
+                  : 'hover:bg-grey-100'
               "
               class="m-2 border-radius-375 cursor-pointer"
               @click="handleNavMobile(link.component)"
@@ -30,7 +30,7 @@
                   :class="
                     currentComponent === link.component
                       ? 'text-white'
-                      : 'text-grey'
+                      : 'text-grey-200'
                   "
                 />
                 <span
@@ -48,8 +48,8 @@
             <li
               :class="
                 currentComponent === 'UserCompo'
-                  ? 'bg-danger'
-                  : 'hover:bg-light'
+                  ? 'bg-red-200'
+                  : 'hover:bg-grey-100'
               "
               @click="currentComponent = 'UserCompo'"
               class="m-2 border-radius-375 cursor-pointer"
@@ -60,7 +60,7 @@
                   :class="
                     currentComponent === 'UserCompo'
                       ? 'text-white'
-                      : 'text-grey'
+                      : 'text-grey-200'
                   "
                 />
                 <span
@@ -70,23 +70,23 @@
               </span>
             </li>
             <!-- help -->
-            <li class="m-2 p-2 hover:bg-light border-radius-375">
+            <li class="m-2 p-2 hover:bg-grey-100 border-radius-375">
               <RouterLink
                 to="/help"
                 target="_blank"
-                class="text-decoration-none"
+                class="text-underline-none"
               >
                 <span class="flex gap-4">
-                  <CircleHelp :size="16" class="text-grey" />
+                  <CircleHelp :size="16" class="text-grey-200" />
                   <span>Help</span>
                 </span>
               </RouterLink>
             </li>
             <!-- logout -->
-            <li class="m-2 p-2 hover:bg-light border-radius-375">
-              <RouterLink to="/" class="text-decoration-none">
+            <li class="m-2 p-2 hover:bg-grey-100 border-radius-375">
+              <RouterLink to="/" class="text-underline-none">
                 <span class="flex gap-4">
-                  <LogOut :size="16" class="text-grey" />
+                  <LogOut :size="16" class="text-grey-200" />
                   <span>Logout</span>
                 </span>
               </RouterLink>
@@ -104,8 +104,8 @@
           v-for="link in links"
           :class="
             currentComponent === link.component
-              ? 'bg-danger'
-              : 'hover:bg-secondary'
+              ? 'bg-red-200'
+              : 'hover:bg-grey-100'
           "
           class="mx-2 p-2 border-radius-375 cursor-pointer"
           @click="currentComponent = link.component"
@@ -115,7 +115,7 @@
               :is="link.icon"
               :size="16"
               :class="
-                currentComponent === link.component ? 'text-white' : 'text-grey'
+                currentComponent === link.component ? 'text-white' : 'text-grey-200'
               "
             />
             <span
@@ -134,8 +134,8 @@
             <li
               :class="
                 currentComponent === 'UserCompo'
-                  ? 'bg-danger'
-                  : 'hover:bg-secondary'
+                  ? 'bg-red-200'
+                  : 'hover:bg-grey-100'
               "
               class="mx-2 p-2 border-radius-375 cursor-pointer"
               @click="currentComponent = 'UserCompo'"
@@ -146,7 +146,7 @@
                   :class="
                     currentComponent === 'UserCompo'
                       ? 'text-white'
-                      : 'text-grey'
+                      : 'text-grey-200'
                   "
                 />
                 <span
@@ -156,23 +156,23 @@
               </span>
             </li>
             <!-- help -->
-            <li class="mx-2 p-2 hover:bg-secondary border-radius-375">
+            <li class="mx-2 p-2 hover:bg-grey-100 border-radius-375">
               <RouterLink
                 to="/help"
                 target="_blank"
-                class="text-decoration-none"
+                class="text-underline-none"
               >
                 <span class="flex gap-4">
-                  <CircleHelp :size="16" class="text-grey" />
+                  <CircleHelp :size="16" class="text-grey-200" />
                   <span>Help</span>
                 </span>
               </RouterLink>
             </li>
             <!-- logout -->
-            <li class="mx-2 p-2 hover:bg-secondary border-radius-375">
-              <RouterLink to="/" class="text-decoration-none">
+            <li class="mx-2 p-2 hover:bg-grey-100 border-radius-375">
+              <RouterLink to="/" class="text-underline-none">
                 <span class="flex gap-4">
-                  <LogOut :size="16" class="text-grey" />
+                  <LogOut :size="16" class="text-grey-200" />
                   <span>Logout</span>
                 </span>
               </RouterLink>
