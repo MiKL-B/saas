@@ -14,7 +14,7 @@
         class="flex m-auto my-4 w-full max-w-96"
         style="object-fit: cover; border-radius: 0.375rem;"
       />
-      <RouterLink to="/">
+      <RouterLink to="/" class="text-underline-none">
         <button class="flex m-auto">Homepage</button>
       </RouterLink>
     </template>

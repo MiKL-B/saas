@@ -12,7 +12,7 @@ input {
   font-size: 0.875rem;
   padding: 0.25rem 0.75rem;
   height: 2.25rem;
-  box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  box-shadow: var(--shadow);
 }
 input:focus {
   outline: 1px solid var(--dark);
@@ -26,8 +26,10 @@ textarea {
   outline: none;
   font-size: 0.875rem;
   padding: 0.25rem 0.75rem;
-  box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  box-shadow: var(--shadow);
+  resize: none;
 }
+
 textarea:focus {
   outline: 1px solid var(--dark);
   border-radius: 0.375rem;
@@ -112,4 +114,7 @@ select {
 select:focus {
   border: var(--border-dark);
   border-radius: 0.375rem;
+}
+.outline-none:focus {
+  outline: none !important;
 }

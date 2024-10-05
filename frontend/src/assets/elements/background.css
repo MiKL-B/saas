@@ -1,0 +1,47 @@
+/* white */
+.bg-white {
+  background: var(--white);
+}
+/* grey */
+.bg-grey-50 {
+  background: var(--grey-50);
+}
+.hover\:bg-grey-50:hover {
+  background: var(--grey-50);
+}
+.bg-grey-100 {
+  background: var(--grey-100);
+}
+.hover\:bg-grey-100:hover {
+  background: var(--grey-100);
+}
+/* red */
+.bg-red-100 {
+  background: var(--red-100);
+}
+.bg-red-200 {
+  background: var(--red-200);
+}
+@media screen and (min-width: 640px) {
+  .sm\:bg-grey {
+    background: #f9fbfd;
+  }
+}
+/* MD */
+@media screen and (min-width: 768px) {
+  .md\:bg-grey {
+    background: #f9fbfd;
+  }
+}
+/* LG */
+@media screen and (min-width: 1024px) {
+  .lg\:bg-grey {
+    background: #f9fbfd;
+  }
+}
+/* XL */
+@media screen and (min-width: 1248px) {
+  .xl\:bg-grey {
+    background: #f9fbfd;
+  }
+}

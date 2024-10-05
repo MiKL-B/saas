@@ -1,5 +1,4 @@
-@import './reset.css';
-@import './base.css';
+@import './elements/base.css';
 @import "qalendar/dist/style.css";
 @import './test.css';
 

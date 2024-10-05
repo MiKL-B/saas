@@ -1,7 +1,3 @@
 .border-test {
   border: 1px solid red;
 }
-/* for responsive */
-.testclasscontainer {
-  width: min(800px, 90%);
-}

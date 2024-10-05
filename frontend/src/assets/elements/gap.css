@@ -1,0 +1,56 @@
+/* GAP */
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+.gap-8 {
+  gap: 2rem;
+}
+/* SM */
+@media screen and (min-width: 640px) {
+  /* GAP */
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .sm\:gap-4 {
+    gap: 1rem;
+  }
+}
+/* MD */
+@media screen and (min-width: 768px) {
+  /* GAP */
+  .md\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .md\:gap-4 {
+    gap: 1rem;
+  }
+}
+/* LG */
+@media screen and (min-width: 1024px) {
+  /* GAP */
+  .lg\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+}
+/* XL */
+@media screen and (min-width: 1248px) {
+  
+  /* GAP */
+  .xl\:gap-2 {
+    gap: 0.5rem;
+  }
+
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+}

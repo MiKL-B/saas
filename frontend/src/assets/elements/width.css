@@ -1,0 +1,104 @@
+/* WIDTH */
+
+.w-12rem {
+  width: 12rem;
+}
+.w-16rem {
+  width: 16rem;
+}
+.w-96 {
+  width: 24rem;
+}
+.max-w-96 {
+  max-width: 24rem;
+}
+.w-75 {
+  width: 75%;
+}
+
+.w-full {
+  width: 100%;
+}
+/* SM */
+@media screen and (min-width: 640px) {
+  /* WIDTH */
+  .sm\:w-96 {
+    width: 24rem;
+  }
+
+  .sm\:w-75 {
+    width: 75%;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:max-w-7xl {
+    max-width: 80rem;
+  }
+}
+/* MD */
+@media screen and (min-width: 768px) {
+  /* WIDTH */
+  .md\:w-96 {
+    width: 24rem;
+  }
+
+  .md\:w-75 {
+    width: 75%;
+  }
+
+  .md\:w-full {
+    width: 100%;
+  }
+
+  .md\:max-w-30rem {
+    max-width: 30rem;
+  }
+
+  .md\:max-w-7xl {
+    max-width: 80rem;
+  }
+  .md\:max-w-full {
+    max-width: 100%;
+  }
+}
+/* LG */
+@media screen and (min-width: 1024px) {
+  /* WIDTH */
+  .lg\:w-96 {
+    width: 24rem;
+  }
+
+  .lg\:w-75 {
+    width: 75%;
+  }
+
+  .lg\:w-full {
+    width: 100%;
+  }
+
+  .lg\:max-w-7xl {
+    max-width: 80rem;
+  }
+}
+/* XL */
+@media screen and (min-width: 1248px) {
+   /* WIDTH */
+   .xl\:w-96 {
+    width: 24rem;
+  }
+
+  .xl\:w-75 {
+    width: 75%;
+  }
+
+  .xl\:w-full {
+    width: 100%;
+  }
+
+  .xl\:max-w-7xl {
+    max-width: 80rem;
+  }
+}

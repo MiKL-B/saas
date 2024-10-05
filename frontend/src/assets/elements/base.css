@@ -1,0 +1,160 @@
+@import "./reset.css";
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* elements */
+@import "./flex.css";
+@import "./border.css";
+@import "./gap.css";
+@import "./grid.css";
+@import "./height.css";
+@import "./width.css";
+@import "./margin.css";
+@import "./padding.css";
+@import "./background.css";
+@import "./typography.css";
+
+
+/* components */
+@import "../components/button.css";
+@import "../components/field.css";
+@import "../components/divider.css";
+@import "../components/card.css";
+@import "../components/accordion.css";
+@import "../components/blockquote.css";
+
+
+:root {
+  /* white */
+  --white: #ffffff;
+
+  /* grey */
+  --grey-50: #f5f5f8;
+  --grey-100: #e4e4e7;
+  --grey-200: #71717a;
+
+  /* dark */
+  --dark: #18181b;
+  /* red */
+  --red-100: #ffdae0; /*lobster*/
+  --red-200: #e84a6c;
+  --red-300: #d42a56;
+  --red-400: #e21d48;
+  --red-500: #b31d49;
+  --red-2: #e84a6c25;
+
+  /* border */
+  /* grey */
+  --border-grey-100: 1px solid var(--grey-100);
+  --border-grey-200: 1px solid var(--grey-200);
+  /* dark */
+  --border-dark: 1px solid var(--dark);
+  /* red */
+  --border-red-200: 1px solid var(--red-200);
+  --border-red-300: 1px solid var(--red-300);
+  --border-red-500: 1px solid var(--red-500);
+  /* shadow */
+  --shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+}
+
+.display-desktop {
+  display: none;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+}
+.absolute {
+  position: absolute;
+}
+.top-3rem {
+  top: 3rem;
+}
+.left-0 {
+  left: 0;
+}
+.right-0 {
+  right: 0;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.z-3 {
+  z-index: 3;
+}
+
+.backdrop-blur {
+  backdrop-filter: blur(8px);
+}
+@media screen and (min-width: 640px) {
+  .sm\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .sm\:sticky-top {
+    position: sticky;
+    top: 0;
+  }
+
+  .sm\:cursor-pointer {
+    cursor: pointer;
+  }
+}
+/* MD */
+@media screen and (min-width: 768px) {
+  .md\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .md\:sticky-top {
+    position: sticky;
+    top: 0;
+  }
+
+  .md\:cursor-pointer {
+    cursor: pointer;
+  }
+}
+/* LG */
+@media screen and (min-width: 1024px) {
+  .display-mobile {
+    display: none;
+  }
+  .display-desktop {
+    display: block;
+  }
+  .lg\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .lg\:sticky-top {
+    position: sticky;
+    top: 0;
+  }
+
+  .lg\:cursor-pointer {
+    cursor: pointer;
+  }
+}
+/* XL */
+@media screen and (min-width: 1248px) {
+  .xl\:overflow-scroll {
+    overflow: scroll;
+  }
+
+  .xl\:sticky-top {
+    position: sticky;
+    top: 0;
+  }
+
+  .xl\:cursor-pointer {
+    cursor: pointer;
+  }
+}
