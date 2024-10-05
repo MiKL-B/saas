@@ -233,8 +233,8 @@ export default {
 }
 .themes div {
   border: 1px solid var(--secondary);
-  border-radius: 0.375rem;
-  box-shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   height: 100px;
   width: 100%;
   max-width: 12rem;

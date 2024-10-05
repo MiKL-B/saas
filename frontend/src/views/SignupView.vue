@@ -15,7 +15,7 @@
                   type="text"
                   placeholder="First name"
                   v-model="formData.firstname"
-                  :class="formErrors.firstname != '' ? 'border-danger' : ''"
+                  :class="formErrors.firstname != '' ? 'border-red-200' : ''"
                   required
                 />
                 <span
@@ -32,7 +32,7 @@
                   type="text"
                   placeholder="Last name"
                   v-model="formData.lastname"
-                  :class="formErrors.lastname != '' ? 'border-danger' : ''"
+                  :class="formErrors.lastname != '' ? 'border-red-200' : ''"
                   required
                 />
                 <span
@@ -51,7 +51,7 @@
                 type="email"
                 placeholder="name@example.com"
                 v-model="formData.email"
-                :class="formErrors.email != '' ? 'border-danger' : ''"
+                :class="formErrors.email != '' ? 'border-red-200' : ''"
                 required
               />
               <span
@@ -80,7 +80,7 @@
                 id="password"
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.password"
-                :class="formErrors.password != '' ? 'border-danger' : ''"
+                :class="formErrors.password != '' ? 'border-red-200' : ''"
                 required
               />
               <span
@@ -97,7 +97,7 @@
                 id="confirm"
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.confirm"
-                :class="formErrors.confirm != '' ? 'border-danger' : ''"
+                :class="formErrors.confirm != '' ? 'border-red-200' : ''"
                 required
               />
               <span

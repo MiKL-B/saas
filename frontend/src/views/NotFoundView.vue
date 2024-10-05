@@ -1,7 +1,7 @@
 <template>
   <SectionCompo>
     <template v-slot:content>
-      <h1 class="text-9xl text-center text-red-200">404</h1>
+      <h1 class="text-center text-red-200">404</h1>
       <h2 class="text-center mb-4">Lobster not found</h2>
       <p class="text-center">
         "Oups ! On dirait que cette page a filé comme un homard échappé de son
@@ -10,9 +10,8 @@
       </p>
       <img
         src="../assets/image.png"
-        alt=""
-        class="flex m-auto my-4 w-full max-w-96"
-        style="object-fit: cover; border-radius: 0.375rem;"
+        alt="A lobster with sunglasses on the beach"
+        class="flex m-auto my-4 w-full max-w-96 border-radius-375 object-fit-cover"
       />
       <RouterLink to="/" class="text-underline-none">
         <button class="flex m-auto">Homepage</button>

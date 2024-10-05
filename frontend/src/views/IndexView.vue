@@ -118,19 +118,25 @@
       <template v-slot:content>
         <p class="text-red-200 text-center text-small mb-4">TESTIMONIALS</p>
         <h2 class="mb-4 text-center">We are attentive to our customers!</h2>
-        <div class="flex flex-col flex-wrap gap-4 mt-16">
-          <blockquote v-for="testimonial in testimonials">
-            <div class="card-header flex items-center gap-4">
-              <User :size="48" style="color: var(--red-200)" />
-              <div class="flex flex-col">
-                <h3 class="card-title">{{ testimonial.person }}</h3>
-                <p class="text-grey-200">
-                  {{ testimonial.job }}
-                </p>
+        <div class="flex flex-col gap-4 md:grid md:grid-cols-2 mt-16">
+          <div class="flex flex-col card" v-for="testimonial in testimonials">
+            <div class="card-header">
+              <p class="mb-4">
+                {{ testimonial.text }}
+              </p>
+            </div>
+            <div class="card-body flex flex-row gap-4">
+              <User
+                :size="48"
+                class="bg-red-100 text-red-200 p-2"
+                style="border-radius: 50%"
+              />
+              <div>
+                <h4 class="text-bold">{{ testimonial.person }}</h4>
+                <p class="text-grey-200 mb-4">{{ testimonial.job }}</p>
               </div>
             </div>
-            <div class="card-body text-italic">{{ testimonial.text }}</div>
-          </blockquote>
+          </div>
         </div>
       </template>
     </SectionCompo>
@@ -149,27 +155,33 @@
             :style="{
               border: index % 2 !== 0 ? '1px solid var(--red-200)' : '',
               margin: index % 2 !== 0 ? '' : '2rem 0',
+              filter: index % 2 !== 0 ? 'drop-shadow(0px 1px 50px var(--red-100))' : ''
             }"
           >
             <div class="card-header flex-col">
-              <h3 class="card-title text-grey-200 text-center">
+              <span class="card-title text-center">
                 {{ pricing.title }}
-              </h3>
+              </span>
               <p class="text-small text-grey-200 text-center card-description">
                 {{ pricing.description }}
               </p>
             </div>
-            <div class="card-body">
+            <div class="card-body flex-col">
               <p class="text-center">
-                <span class="text-3xl text-bold">{{ pricing.price }}€</span>
+                <span class="text-bold" style="font-size: 3rem"
+                  >{{ pricing.price }}€</span
+                >
                 / month
               </p>
+
               <ul class="mt-2">
                 <li
                   v-for="feature in pricing.features"
                   class="flex items-center gap-2 mb-4"
                 >
-                  <Check :size="20" style="color: var(--red)" />{{ feature }}
+                  <Check :size="20" style="color: var(--red-200)" />{{
+                    feature
+                  }}
                 </li>
               </ul>
             </div>

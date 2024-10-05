@@ -1,11 +1,11 @@
 div.card {
-  border: 1px solid var(--grey-100);
-  border-radius: 0.75rem;
   display: flex;
   flex-direction: column;
-  background:var(--white);
-  filter: drop-shadow(0px 1px 5px #E9E9E9);
   justify-content: space-between;
+  background:var(--white);
+  border: 1px solid var(--grey-100);
+  border-radius: 0.75rem;
+  filter: drop-shadow(0px 1px 5px #E9E9E9);
 }
 .card-header {
   padding: 1.5rem;
@@ -24,12 +24,11 @@ div.card {
   line-height: 1.25rem;
 }
 div.card-body {
+  display: flex;
+  gap: 1rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
 }
 div.card-footer {
   padding-left: 1.5rem;

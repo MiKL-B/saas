@@ -24,7 +24,7 @@
                 type="text"
                 placeholder="name@example.com"
                 v-model="formData.email"
-                :class="formErrors.email != '' ? 'border-danger' : ''"
+                :class="formErrors.email != '' ? 'border-red-200' : ''"
               />
               <span
                 v-if="formErrors.email"
@@ -52,7 +52,7 @@
                 id="password"
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.password"
-                :class="formErrors.password != '' ? 'border-danger' : ''"
+                :class="formErrors.password != '' ? 'border-red-200' : ''"
               />
               <a href="#">Forgot your password?</a>
               <span

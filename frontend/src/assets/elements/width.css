@@ -1,5 +1,3 @@
-/* WIDTH */
-
 .w-12rem {
   width: 12rem;
 }
@@ -21,7 +19,6 @@
 }
 /* SM */
 @media screen and (min-width: 640px) {
-  /* WIDTH */
   .sm\:w-96 {
     width: 24rem;
   }
@@ -40,7 +37,6 @@
 }
 /* MD */
 @media screen and (min-width: 768px) {
-  /* WIDTH */
   .md\:w-96 {
     width: 24rem;
   }
@@ -66,7 +62,6 @@
 }
 /* LG */
 @media screen and (min-width: 1024px) {
-  /* WIDTH */
   .lg\:w-96 {
     width: 24rem;
   }
@@ -85,7 +80,6 @@
 }
 /* XL */
 @media screen and (min-width: 1248px) {
-   /* WIDTH */
    .xl\:w-96 {
     width: 24rem;
   }

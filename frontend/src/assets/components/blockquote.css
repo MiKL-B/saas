@@ -1,17 +1,17 @@
 blockquote {
   border-left: 4px solid var(--red-200);
-  padding: 1.5rem;
-  border-top-right-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
+  padding: var(--size-6);
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
   position: relative;
 }
 
 blockquote:before {
   color: var(--red-200);
-  content: "\201C";
+  content: var(--content-quote);
   font-size: 4rem;
   position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
+  top: var(--size-2);
+  left: var(--size-2);
 }
 

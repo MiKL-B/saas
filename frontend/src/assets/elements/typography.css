@@ -16,26 +16,26 @@ h5 {
 }
 
 /* FONT SIZE */
-
 h1 {
-  font-size: 2rem; /* 67.36px */
+  font-size: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem; /* 50.56px */
+  font-size: 1.5rem;
 }
 
 h3 {
-  font-size: 1.2rem; /* 37.92px */
+  font-size: 1.2rem;
 }
 
 h4 {
-  font-size: 1rem; /* 28.48px */
+  font-size: 1rem;
 }
 
 h5 {
-  font-size: 0.9rem; /* 21.28px */
+  font-size: 0.9rem;
 }
+
 
 .text-small {
   font-size: 0.875rem;
@@ -96,7 +96,6 @@ h5 {
   color: var(--red-300);
 }
 
-/* MEDIA QUERY */
 /* SM */
 @media screen and (min-width: 640px) {
   .sm\:text-center {
@@ -131,7 +130,6 @@ h5 {
   }
 }
 /* XL */
-
 @media screen and (min-width: 1248px) {
   .xl\:text-center {
     text-align: center;

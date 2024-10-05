@@ -1,5 +1,5 @@
 details {
-  padding: 1rem 0.5rem;
+  padding: var(--size-4) var(--size-2);
   position: relative;
 }
 summary {
@@ -24,26 +24,24 @@ details[open] summary ~ * {
 }
 
 details[open] summary {
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-4);
 }
 
-
-
 summary::after {
-  content: "\003e";
+  content: var(--content-arrow);
   transform: rotate(90deg);
+  font-size: var(--base-font-size);
+  font-weight: var(--font-semibold);
   position: absolute;
   right: 10px;
-  font-size: 20px;
-  font-weight: 500;
   transition: transform 0.3s ease-in-out;
   color: var(--red-200);
 }
 
 details[open] summary::after {
-  content: "\003e";
+  content: var(--content-arrow);
   transform: rotate(270deg);
-  font-size: 20px;
-  font-weight: 500;
+  font-size: var(--base-font-size);
+  font-weight: var(--font-semibold);
   color: var(--red-200);
 }

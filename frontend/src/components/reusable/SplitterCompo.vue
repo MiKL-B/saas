@@ -80,7 +80,7 @@ export default {
     width: 8px;
     height: 50px;
     background: #e2e8f0;
-    border-radius: 0.375rem;
+    border-radius: var(--radius);
   }
 }
 </style>
