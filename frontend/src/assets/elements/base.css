@@ -21,14 +21,9 @@
 @import "../components/divider.css";
 @import "../components/card.css";
 @import "../components/accordion.css";
-@import "../components/blockquote.css";
 
 
 :root {
-  /* other */
-  --color-1: #E9E9E9;
-  --color-2:#f9fbfd;
-  --color-3: #e2e8f0;
   /* white */
   --white: #ffffff;
 
@@ -39,6 +34,7 @@
 
   /* dark */
   --dark: #18181b;
+
   /* red */
   --red-100: #ffdae0; /*lobster*/
   --red-200: #e84a6c;
@@ -51,21 +47,25 @@
   --size-2:0.5rem;
   --size-4:1rem;
   --size-6:1.5rem;
+  --size-8:2rem;
+
+  /* font size */
+  --font-size-base:16px;
+  --font-size-small: 0.875rem;
+
+  /* font weight */
+  --font-normal:normal;
+  --font-semibold:500;
 
   /* content */
   --content-arrow:"\003e";
   --content-quote:"\201C";
   --content-checked:"\2714";
 
-  /* font size */
-  --base-font-size:16px;
-
-  /* font weight */
-  --font-normal:normal;
-  --font-semibold:500;
   /* border */
   /* radius */
   --radius:0.375rem;
+  --border-transparent:1px solid transparent;
   /* grey */
   --border-grey-100: 1px solid var(--grey-100);
   --border-grey-200: 1px solid var(--grey-200);
@@ -77,6 +77,7 @@
   --border-red-500: 1px solid var(--red-500);
   /* shadow */
   --shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
+  --drop-shadow:drop-shadow(0px 1px 10px var(--grey-50))
 }
 
 .display-desktop {

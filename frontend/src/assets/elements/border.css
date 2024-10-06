@@ -1,20 +1,20 @@
 .border-grey {
-  border: 1px solid #e2e8f0;
+  border: var(--border-grey-100);
 }
 
 .border-t-grey {
-  border-top: 1px solid #e2e8f0;
+  border-top: var(--border-grey-100);
 }
 
 .border-b-grey {
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: var(--border-grey-100);
 }
-.border-b-primary {
-  border-bottom: 2px solid var(--dark);
+.border-b-dark {
+  border-bottom: var(--border-grey-dark);
 }
 
 .border-r-grey {
-  border-right: 1px solid #e2e8f0;
+  border-right: var(--border-grey-100);
 }
 
 .border-b-none {
@@ -27,73 +27,68 @@
   border-radius: var(--radius);
 }
 .border-red-200 {
-  border: 1px solid var(--red-200);
+  border: var(--border-red-200);
 }
 .border-r-red-200 {
-  border-right: 1px solid var(--red-200);
+  border-right: var(--border-red-200);
 }
 .border-b-red-200 {
-  border-bottom: 2px solid var(--red-200);
+  border-bottom: var(--border-red-200);
 }
-.border-r-red-2 {
-  border-right: 1px solid var(--red-2);
-}
-.border-b-red-2 {
-  border-bottom: 1px solid var(--red-2);
-}
+
 /* SM */
 @media screen and (min-width: 640px) {
   .sm\:border-grey {
-    border: 1px solid #e2e8f0;
+    border: var(--border-grey-100);
   }
 
   .sm\:border-b-grey {
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: var(--border-grey-100);
   }
 
   .sm\:border-r-grey {
-    border-right: 1px solid #e2e8f0;
+    border-right: var(--border-grey-100);
   }
 }
 /* MD */
 @media screen and (min-width: 768px) {
   .md\:border-grey {
-    border: 1px solid #e2e8f0;
+    border: var(--border-grey-100);
   }
 
   .md\:border-b-grey {
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: var(--border-grey-100);
   }
 
   .md\:border-r-grey {
-    border-right: 1px solid #e2e8f0;
+    border-right: var(--border-grey-100);
   }
 }
 /* LG */
 @media screen and (min-width: 1024px) {
   .lg\:border-grey {
-    border: 1px solid #e2e8f0;
+    border: var(--border-grey-100);
   }
 
   .lg\:border-b-grey {
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: var(--border-grey-100);
   }
 
   .lg\:border-r-grey {
-    border-right: 1px solid #e2e8f0;
+    border-right: var(--border-grey-100);
   }
 }
 /* XL */
 @media screen and (min-width: 1248px) {
   .xl\:border-grey {
-    border: 1px solid #e2e8f0;
+    border: var(--border-grey-100);
   }
 
   .xl\:border-b-grey {
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: var(--border-grey-100);
   }
 
   .xl\:border-r-grey {
-    border-right: 1px solid #e2e8f0;
+    border-right: var(--border-grey-100);
   }
 }

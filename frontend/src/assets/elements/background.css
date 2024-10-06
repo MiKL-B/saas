@@ -23,25 +23,13 @@
   background: var(--red-200);
 }
 @media screen and (min-width: 640px) {
-  .sm\:bg-grey {
-    background: #f9fbfd;
-  }
 }
 /* MD */
 @media screen and (min-width: 768px) {
-  .md\:bg-grey {
-    background: #f9fbfd;
-  }
 }
 /* LG */
 @media screen and (min-width: 1024px) {
-  .lg\:bg-grey {
-    background: #f9fbfd;
-  }
 }
 /* XL */
 @media screen and (min-width: 1248px) {
-  .xl\:bg-grey {
-    background: #f9fbfd;
-  }
 }

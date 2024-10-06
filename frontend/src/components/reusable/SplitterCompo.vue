@@ -69,7 +69,7 @@ export default {
   .splitter {
     cursor: ew-resize;
     width: 1px;
-    border: 0.5px solid #e2e8f0;
+    border: var(--border-grey-100);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,7 +79,7 @@ export default {
   .splitter-btn {
     width: 8px;
     height: 50px;
-    background: #e2e8f0;
+    background: var(--grey-100);
     border-radius: var(--radius);
   }
 }

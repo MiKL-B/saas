@@ -1,16 +1,16 @@
 button {
   background: var(--red-200);
   color: var(--white);
-  padding: 0.5rem 1rem;
-  border: 1px solid transparent;
+  padding: var(--size-2) var(--size-4);
+  border: var(----border-transparent);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius);
   cursor: pointer;
   height: 2.25rem;
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-semibold);
 }
 button:hover{
   border: var(--border-red-300);
@@ -28,7 +28,7 @@ button.secondary {
   background: var(--white);
   color: var(--red-200);
 }
-/* danger */
+
 button.secondary:hover {
   border: var(--border-red-300);
   background: var(--white);
@@ -46,7 +46,7 @@ a {
   background: none;
   border: none;
   color: var(--dark);
-  font-weight: 500;
+  font-weight: var(--font-semibold);
 }
 button.link:hover,
 a:hover {

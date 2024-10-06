@@ -3,14 +3,14 @@ div.card {
   flex-direction: column;
   justify-content: space-between;
   background:var(--white);
-  border: 1px solid var(--grey-100);
-  border-radius: 0.75rem;
-  filter: drop-shadow(0px 1px 5px #E9E9E9);
+  border: var(--border-grey-100);
+  border-radius: var(--radius);
+  filter: var(--drop-shadow);
 }
 .card-header {
-  padding: 1.5rem;
+  padding: var(--size-6);
   display: flex;
-  gap:0.5rem;
+  gap:var(--size-2);
 }
 
 .card-title {
@@ -25,13 +25,13 @@ div.card {
 }
 div.card-body {
   display: flex;
-  gap: 1rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1.5rem;
+  gap: var(--size-4);
+  padding-left: var(--size-6);
+  padding-right: var(--size-6);
+  padding-bottom: var(--size-6);
 }
 div.card-footer {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-left: var(--size-6);
+  padding-right: var(--size-6);
+  padding-bottom: var(--size-6);
 }

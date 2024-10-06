@@ -2,36 +2,36 @@ div.field {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: var(--size-4);
 }
 input {
   color: var(--dark);
   border-radius: var(--radius);
-  border: 1px solid var(--grey-100);
+  border: var(--border-grey-100);
   outline: none;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   padding: 0.25rem 0.75rem;
   height: 2.25rem;
   box-shadow: var(--shadow);
 }
 input:focus {
-  outline: 1px solid var(--dark);
+  outline: var(--border-dark);
   border-radius: var(--radius);
 }
 
 textarea {
   color: var(--dark);
   border-radius: var(--radius);
-  border: 1px solid var(--grey-100);
+  border: var(--border-grey-100);
   outline: none;
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   padding: 0.25rem 0.75rem;
   box-shadow: var(--shadow);
   resize: none;
 }
 
 textarea:focus {
-  outline: 1px solid var(--dark);
+  outline: var(--border-dark);
   border-radius: var(--radius);
 }
 input[type="checkbox"] {
@@ -44,12 +44,12 @@ input[type="checkbox"] + label {
   display: inline-flex;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  gap: var(--size-2);
 }
 input[type="checkbox"] + label::before {
   content: "";
   border-radius: var(--radius);
-  border: 1px solid var(--grey-100);
+  border: var(--border-grey-100);
   box-shadow: var(--shadow);
   background: var(--white);
   width: 18px;
@@ -62,7 +62,7 @@ input[type="checkbox"] + label::before {
 input[type="checkbox"]:checked + label::before {
   content: var(--content-checked);
   background: var(--red-200);
-  border:1px solid transparent;
+  border:var(--border-transparent);
   color: var(--white);
   display: flex;
   justify-content: center;
@@ -90,9 +90,9 @@ select {
 }
 .select {
   width: 100%;
-  border: 1px solid var(--grey-100);
+  border: var(--border-grey-100);
   border-radius:var(--radius);
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   cursor: pointer;
   line-height: 1.1;
   background-color: var(--white);
@@ -104,11 +104,11 @@ select {
 .select::after {
   content: "";
   width: 0.8em;
-  height: 0.5em;
+  height: var(--size-2);
   background-color: var(--grey-100);
   clip-path: polygon(100% 0%, 0 0%, 50% 100%);
   position: absolute;
-  right: 1rem;
+  right: var(--size-4);
 }
 
 select:focus {
