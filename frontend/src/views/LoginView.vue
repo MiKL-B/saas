@@ -6,16 +6,6 @@
         <form v-on:submit.prevent>
           <fieldset>
             <h2 class="mb-4 text-center">Login to your account</h2>
-            <!-- <section>
-              <p>First name: {{ firstname }}</p>
-              <p>Last name: {{ lastname }}</p>
-              <p>Email: {{ email }}</p>
-              <p>Password: {{ password }}</p>
-              <p>Confirm: {{ confirm }}</p>
-              <p>Remember: {{ remember }}</p>
-              <hr />
-            </section> -->
-
             <!-- Email -->
             <div class="field">
               <label for="email">Email</label>
@@ -65,7 +55,11 @@
 
             <!-- Remember me -->
             <div class="field">
-              <input id="remember" type="checkbox" v-model="formData.remember" />
+              <input
+                id="remember"
+                type="checkbox"
+                v-model="formData.remember"
+              />
               <label for="remember">Remember me</label>
             </div>
             <button type="submit" class="w-full my-4" @click="login">
@@ -98,7 +92,7 @@ export default {
       formData: {
         email: "",
         password: "",
-        remember:false,
+        remember: false,
       },
       formErrors: {
         email: "",
@@ -106,7 +100,9 @@ export default {
       },
     };
   },
-
+  mounted() {
+    this.getData();
+  },
   methods: {
     login() {
       this.formErrors.email = "";
@@ -126,6 +122,20 @@ export default {
     },
     toggleEye() {
       this.isEyeOpen = !this.isEyeOpen;
+    },
+    // test get data from a source
+    async getData() {
+      try {
+        const response = await fetch("./test.json");
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        const data = await response.json();
+        this.users = data.users;
+        console.log(data);
+      } catch (error) {
+        console.error("Il y a eu un problème avec le fetch:", error);
+      }
     },
   },
 };

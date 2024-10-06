@@ -6,9 +6,9 @@
         :key="tab.name"
         @click="selectTab(tab.name)"
         :class="selectedTab === tab.name ? 'border-b-red-200' : 'text-grey-200'"
-        class="cursor-pointer pb-2 px-2 flex gap-2"
+        class="cursor-pointer pb-2 px-2"
       >
-       <User :size="16"/>{{ tab.name }}
+        {{ tab.name }}
       </li>
     </ul>
     <form>
@@ -136,12 +136,9 @@
 </template>
 
 <script>
-import { User } from 'lucide-vue-next';
+
 export default {
   name: "UserCompo",
-  components:{
-    User,
-  },
   data() {
     return {
       colors: [
