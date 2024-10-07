@@ -13,7 +13,7 @@
                 <input
                   id="firstname"
                   type="text"
-                  placeholder="First name"
+                  placeholder="John"
                   v-model="formData.firstname"
                   :class="formErrors.firstname != '' ? 'border-red-200' : ''"
                   required
@@ -30,7 +30,7 @@
                 <input
                   id="lastname"
                   type="text"
-                  placeholder="Last name"
+                  placeholder="Doe"
                   v-model="formData.lastname"
                   :class="formErrors.lastname != '' ? 'border-red-200' : ''"
                   required
@@ -49,7 +49,7 @@
               <input
                 id="email"
                 type="email"
-                placeholder="name@example.com"
+                placeholder="johndoe@example.com"
                 v-model="formData.email"
                 :class="formErrors.email != '' ? 'border-red-200' : ''"
                 required
@@ -65,15 +65,10 @@
             <div class="field">
               <div class="flex justify-between items-center">
                 <label for="password">Password</label>
-                <Eye
+                <component
+                  :is="isEyeOpen ? eyeOpen : eyeClose"
                   @click="toggleEye"
-                  v-if="isEyeOpen"
-                  class="cursor-pointer text-grey-200"
-                />
-                <EyeOff
-                  @click="toggleEye"
-                  v-else
-                  class="cursor-pointer text-grey-200"
+                  class="cursor-pointer text-red-200"
                 />
               </div>
               <input
@@ -81,6 +76,7 @@
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.password"
                 :class="formErrors.password != '' ? 'border-red-200' : ''"
+                placeholder="YourPassword"
                 required
               />
               <span
@@ -98,6 +94,7 @@
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.confirm"
                 :class="formErrors.confirm != '' ? 'border-red-200' : ''"
+                placeholder="ConfirmPassword"
                 required
               />
               <span
@@ -107,7 +104,11 @@
                 <CircleAlert :size="16" />{{ formErrors.confirm }}</span
               >
             </div>
-            <button type="submit" class="w-full my-4" @click="signup">
+            <button
+              type="submit"
+              class="w-full my-4"
+              @click="checkSignupFields"
+            >
               Signup
             </button>
             <p class="flex justify-center p-4 gap-2">
@@ -123,6 +124,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import NavCompo from "@/components/Layout/NavCompo.vue";
 import SectionCompo from "@/components/Reusable/SectionCompo.vue";
 import FooterCompo from "@/components/Layout/FooterCompo.vue";
@@ -139,6 +141,8 @@ export default {
   },
   data() {
     return {
+      eyeOpen: Eye,
+      eyeClose: EyeOff,
       isEyeOpen: false,
       formData: {
         firstname: "",
@@ -157,12 +161,18 @@ export default {
     };
   },
   methods: {
-    signup() {
+    toggleEye() {
+      this.isEyeOpen = !this.isEyeOpen;
+    },
+    resetValueFields() {
       this.formErrors.firstname = "";
       this.formErrors.lastname = "";
       this.formErrors.email = "";
       this.formErrors.password = "";
       this.formErrors.confirm = "";
+    },
+    checkSignupFields() {
+      this.resetValueFields();
 
       if (this.formData.firstname.trim() === "") {
         this.formErrors.firstname = "Empty first name";
@@ -186,7 +196,7 @@ export default {
       }
       if (!this.validPassword(this.formData.password)) {
         this.formErrors.password =
-          "Valid password required (8 characters, 1 uppercase, 1 number)";
+          "Valid password required (8 characters, 1 uppercase, 1 number, 1 special character)";
         return;
       }
       if (this.formData.confirm.trim() === "") {
@@ -204,8 +214,32 @@ export default {
         this.formErrors.password == "" &&
         this.formErrors.confirm == ""
       ) {
-        this.$router.push("/home");
+        this.sendData();
       }
+    },
+    sendData() {
+      axios
+        .post(`http://localhost:3000/api/user/signup`, {
+          email: this.formData.email,
+          password: this.formData.password,
+          firstname: this.formData.firstname,
+          lastname: this.formData.lastname,
+        })
+        .then((response) => {
+          // console.log(response);
+          this.formData.email = "";
+          this.formData.password = "";
+          this.formData.firstname = "";
+          this.formData.lastname = "";
+          this.formData.confirm = "";
+          // modal well registered
+          // setTimeout(window.location.reload(), 2000);
+          this.$router.push("/login")
+        })
+        .catch((err) => {
+          // console.log(err.request.response);
+          // console.log(err.request);
+        });
     },
     validEmail: function (email) {
       var re =
@@ -213,11 +247,8 @@ export default {
       return re.test(email);
     },
     validPassword: function (password) {
-      var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
+      var re = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
       return re.test(password);
-    },
-    toggleEye() {
-      this.isEyeOpen = !this.isEyeOpen;
     },
   },
 };

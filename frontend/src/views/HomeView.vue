@@ -6,7 +6,10 @@
     >
       <ul>
         <span @click="toggle">
-          <Menu class="text-grey-200 cursor-pointer hover:text-primary" ref="ignoreButton" />
+          <Menu
+            class="text-grey-200 cursor-pointer hover:text-primary"
+            ref="ignoreButton"
+          />
         </span>
         <li class="cursor-pointer">
           <ul
@@ -115,7 +118,9 @@
               :is="link.icon"
               :size="16"
               :class="
-                currentComponent === link.component ? 'text-white' : 'text-grey-200'
+                currentComponent === link.component
+                  ? 'text-white'
+                  : 'text-grey-200'
               "
             />
             <span
@@ -169,13 +174,14 @@
               </RouterLink>
             </li>
             <!-- logout -->
-            <li class="mx-2 p-2 hover:bg-grey-100 border-radius-375">
-              <RouterLink to="/" class="text-underline-none">
-                <span class="flex gap-4">
-                  <LogOut :size="16" class="text-grey-200" />
-                  <span>Logout</span>
-                </span>
-              </RouterLink>
+            <li
+              class="mx-2 p-2 hover:bg-grey-100 border-radius-375 cursor-pointer"
+              @click="logout"
+            >
+              <span class="flex gap-4">
+                <LogOut :size="16" class="text-grey-200" />
+                <span>Logout</span>
+              </span>
             </li>
           </ul>
         </div>
@@ -187,6 +193,8 @@
 </template>
 
 <script>
+import { useAuthStore } from "@/stores/authStore";
+import axios from "axios";
 import DashboardCompo from "@/components/Dashboard/DashboardCompo.vue";
 import MailsCompo from "@/components/Mails/MailsCompo.vue";
 import ScheduleCompo from "@/components/Schedule/ScheduleCompo.vue";
@@ -259,6 +267,7 @@ export default {
   },
   data() {
     return {
+      authStore: useAuthStore(),
       isNavOpened: false,
       currentComponent: "DashboardCompo",
       links: [
@@ -317,6 +326,12 @@ export default {
       if (event.target !== this.$refs.ignoreButton) {
         this.isNavOpened = false;
       }
+    },
+    logout() {
+      this.authStore.logout();
+      localStorage.removeItem("jwt");
+      delete axios.defaults.headers.common["Authorization"];
+      window.location.reload();
     },
   },
   mounted() {

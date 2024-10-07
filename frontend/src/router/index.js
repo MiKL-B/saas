@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import IndexView from "../views/IndexView.vue";
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -34,8 +35,8 @@ const router = createRouter({
       component: () => import("../views/TestView.vue"),
     },
     {
-      path: '/:catchAll(.*)',
-      name:"notfound",
+      path: "/:catchAll(.*)",
+      name: "notfound",
       component: () => import("../views/NotFoundView.vue"),
     },
   ],
@@ -45,5 +46,6 @@ const router = createRouter({
     });
   },
 });
+
 
 export default router;

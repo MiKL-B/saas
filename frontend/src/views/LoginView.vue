@@ -12,7 +12,7 @@
               <input
                 id="email"
                 type="text"
-                placeholder="name@example.com"
+                placeholder="johndoe@example.com"
                 v-model="formData.email"
                 :class="formErrors.email != '' ? 'border-red-200' : ''"
               />
@@ -27,15 +27,10 @@
             <div class="field">
               <div class="flex justify-between items-center">
                 <label for="password">Password</label>
-                <Eye
+                <component
+                  :is="isEyeOpen ? eyeOpen : eyeClose"
                   @click="toggleEye"
-                  v-if="isEyeOpen"
-                  class="cursor-pointer text-grey-200"
-                />
-                <EyeOff
-                  @click="toggleEye"
-                  v-else
-                  class="cursor-pointer text-grey-200"
+                  class="cursor-pointer text-red-200"
                 />
               </div>
               <input
@@ -43,6 +38,7 @@
                 :type="isEyeOpen ? 'text' : 'password'"
                 v-model="formData.password"
                 :class="formErrors.password != '' ? 'border-red-200' : ''"
+                placeholder="YourPassword"
               />
               <a href="#">Forgot your password?</a>
               <span
@@ -54,17 +50,18 @@
             </div>
 
             <!-- Remember me -->
-            <div class="field">
+            <!-- <div class="field">
               <input
                 id="remember"
                 type="checkbox"
                 v-model="formData.remember"
               />
               <label for="remember">Remember me</label>
-            </div>
-            <button type="submit" class="w-full my-4" @click="login">
+            </div> -->
+            <button type="submit" class="w-full my-4" @click="checkLoginFields">
               Login
             </button>
+
             <p class="flex justify-center p-4 gap-2">
               <RouterLink to="/signup" class="cursor-pointer"
                 >Create an account here !</RouterLink
@@ -79,6 +76,8 @@
 </template>
 
 <script>
+import { useAuthStore } from "@/stores/authStore";
+import axios from "axios";
 import NavCompo from "@/components/Layout/NavCompo.vue";
 import FooterCompo from "@/components/Layout/FooterCompo.vue";
 import SectionCompo from "@/components/Reusable/SectionCompo.vue";
@@ -88,7 +87,11 @@ export default {
   components: { NavCompo, FooterCompo, SectionCompo, CircleAlert, Eye, EyeOff },
   data() {
     return {
+      authStore: useAuthStore(),
+      eyeOpen: Eye,
+      eyeClose: EyeOff,
       isEyeOpen: false,
+      token: "",
       formData: {
         email: "",
         password: "",
@@ -100,14 +103,16 @@ export default {
       },
     };
   },
-  mounted() {
-    this.getData();
-  },
   methods: {
-    login() {
+    toggleEye() {
+      this.isEyeOpen = !this.isEyeOpen;
+    },
+    resetValueFields() {
       this.formErrors.email = "";
       this.formErrors.password = "";
-
+    },
+    checkLoginFields() {
+      this.resetValueFields();
       if (this.formData.email.trim() === "") {
         this.formErrors.email = "Empty email!";
         return;
@@ -117,25 +122,37 @@ export default {
         return;
       }
       if (this.formErrors.email == "" && this.formErrors.password == "") {
-        this.$router.push("/home");
+        this.sendData();
       }
     },
-    toggleEye() {
-      this.isEyeOpen = !this.isEyeOpen;
-    },
-    // test get data from a source
-    async getData() {
-      try {
-        const response = await fetch("./test.json");
-        if (!response.ok) {
-          throw new Error("Network response was not ok " + response.statusText);
-        }
-        const data = await response.json();
-        this.users = data.users;
-        console.log(data);
-      } catch (error) {
-        console.error("Il y a eu un problème avec le fetch:", error);
-      }
+    sendData() {
+      axios
+        .post(`http://localhost:3000/api/user/login`, {
+          email: this.formData.email,
+          password: this.formData.password,
+        })
+        .then((response) => {
+          // console.log(response);
+          this.token = response.data.token;
+          let jwt = this.token;
+          localStorage.setItem("jwt", jwt);
+
+          axios.defaults.headers.common = {
+            Authorization: `Bearer ${jwt}`,
+          };
+          let userData = {
+            email: this.formData.email,
+            password: this.formData.password,
+          };
+          this.authStore.login(userData);
+          // modal well logged in
+          // setTimeout(window.location.reload(), 2000);
+          this.$router.push("/home");
+        })
+        .catch((err) => {
+          // console.log(err.request);
+          this.formErrors.email = err.request.response;
+        });
     },
   },
 };
