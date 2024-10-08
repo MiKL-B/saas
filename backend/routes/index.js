@@ -4,9 +4,10 @@ const router = express.Router ();
 // const auth = require("../middleware/auth.js");
 
 //user
-const {signup, login, deleteUser} = require ('../controllers/user.js');
+const {signup, login, deleteUser, getUser} = require ('../controllers/user.js');
 router.post ('/user/signup', signup);
 router.post ('/user/login', login);
+router.get("/user/:id",getUser)
 router.delete ('/user/delete/:id', deleteUser);
 
 //product

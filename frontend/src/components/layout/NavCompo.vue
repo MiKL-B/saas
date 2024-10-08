@@ -9,7 +9,7 @@
       </RouterLink>
     </nav>
     <nav class="display-desktop">
-      <ul class="flex gap-2 ">
+      <ul class="flex gap-2">
         <li>
           <RouterLink to="/login">
             <button class="secondary">Login</button>

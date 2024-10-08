@@ -4,45 +4,51 @@
 body {
   font-family: "Inter";
   font-weight: 400;
+  font-size: calc(12px + 0.35vw);
+  line-height: calc(12px + 1.05vw); /* Responsive Vertical Rhythm */
 }
 
+h1, .card-title-pricing {
+  font-size: 1.912em;
+  line-height: calc(18px + 1.8vw); /* Responsive Vertical Rhythm */
+}
+h2 {
+  font-size: 1.616em;
+  line-height: calc(18px + 1vw); /* Responsive Vertical Rhythm */
+}
+h3 {
+  font-size: 1.471em;
+  line-height: calc(18px + 0.7vw); /* Responsive Vertical Rhythm */
+}
+h4 {
+  font-size: 1.3em;
+}
+h5 {
+  font-size: 1.243em;
+}
+h6 {
+  font-size: 1.132em;
+}
+
+h4,
+h5,
+h6 {
+  line-height: calc(18px + 0.2vw); /* Responsive Vertical Rhythm */
+}
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Inter";
+h5,
+h6 {
   font-weight: 700;
 }
 
-/* FONT SIZE */
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.9rem;
-}
-
-
-.text-small {
-  font-size: 0.875rem;
-}
+.text-small,
 ::placeholder {
   font-size: var(--font-size-small);
 }
+
 /* WEIGHT */
 .text-bold {
   font-weight: bold;
@@ -137,23 +143,10 @@ h5 {
   .xl\:text-underline {
     text-decoration: underline;
   }
-  h1 {
-    font-size: 4.21rem; /* 67.36px */
-  }
-
-  h2 {
-    font-size: 3.158rem; /* 50.56px */
-  }
-
-  h3 {
-    font-size: 2.369rem; /* 37.92px */
-  }
-
-  h4 {
-    font-size: 1.777rem; /* 28.48px */
-  }
-
-  h5 {
-    font-size: 1.333rem; /* 21.28px */
-  }
+}
+/* utility classes */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

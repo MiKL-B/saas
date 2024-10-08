@@ -48,21 +48,11 @@
                 <CircleAlert :size="16" />{{ formErrors.password }}</span
               >
             </div>
-
-            <!-- Remember me -->
-            <!-- <div class="field">
-              <input
-                id="remember"
-                type="checkbox"
-                v-model="formData.remember"
-              />
-              <label for="remember">Remember me</label>
-            </div> -->
-            <button type="submit" class="w-full my-4" @click="checkLoginFields">
+            <button type="submit" class="w-full mb-4" @click="checkLoginFields">
               Login
             </button>
 
-            <p class="flex justify-center p-4 gap-2">
+            <p class="flex justify-center gap-2">
               <RouterLink to="/signup" class="cursor-pointer"
                 >Create an account here !</RouterLink
               >
@@ -75,9 +65,10 @@
   <FooterCompo />
 </template>
 
-<script>
+<script>  
 import { useAuthStore } from "@/stores/authStore";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 import NavCompo from "@/components/Layout/NavCompo.vue";
 import FooterCompo from "@/components/Layout/FooterCompo.vue";
 import SectionCompo from "@/components/Reusable/SectionCompo.vue";
@@ -140,11 +131,14 @@ export default {
           axios.defaults.headers.common = {
             Authorization: `Bearer ${jwt}`,
           };
+          let decodedToken = jwtDecode(jwt);
           let userData = {
+            pk_userid:decodedToken.pk_userid,
             email: this.formData.email,
             password: this.formData.password,
           };
           this.authStore.login(userData);
+          console.log("from login",this.authStore)
           // modal well logged in
           // setTimeout(window.location.reload(), 2000);
           this.$router.push("/home");

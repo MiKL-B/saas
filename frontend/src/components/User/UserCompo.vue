@@ -17,10 +17,27 @@
         <div v-show="selectedTab === 'Account'">
           <h3>Account</h3>
           <p class="text-small text-grey-200 mb-4">Manage your account.</p>
-          <!-- name -->
+          <!-- first name -->
           <div class="field mb-4">
-            <label for="name">Name</label>
-            <input id="name" type="text" placeholder="Name" readonly />
+            <label for="firstname">First name</label>
+            <input
+              id="firstname"
+              type="text"
+              placeholder="First name"
+              readonly
+              v-model="user.firstname"
+            />
+          </div>
+          <!-- last name -->
+          <div class="field mb-4">
+            <label for="lastname">Last name</label>
+            <input
+              id="lastname"
+              type="text"
+              placeholder="Last name"
+              readonly
+              v-model="user.lastname"
+            />
           </div>
           <!-- date -->
           <!-- <div class="field mb-4">
@@ -38,6 +55,7 @@
               type="email"
               placeholder="name@example.com"
               readonly
+              v-model="user.email"
             />
           </div>
           <!-- password -->
@@ -136,11 +154,14 @@
 </template>
 
 <script>
-
+import { useAuthStore } from "@/stores/authStore";
+import axios from "axios";
 export default {
   name: "UserCompo",
   data() {
     return {
+      user: {},
+      authStore: useAuthStore(),
       colors: [
         {
           index: 1,
@@ -207,9 +228,41 @@ export default {
       ],
     };
   },
+  created() {
+     this.getUser();
+  },
+  // watch: {
+  //   "authStore.user": {
+  //     immediate: true,
+  //     handler(newValue) {
+  //       if (newValue && newValue.pk_userid) {
+  //         this.getUser();
+  //       }
+  //     },
+  //   },
+  // },
   methods: {
     selectTab(tabName) {
       this.selectedTab = tabName;
+    },
+    getUser() {
+      const PK_UserID = this.authStore.user.pk_userid;
+      console.log(PK_UserID);
+      if (!PK_UserID) {
+        console.error(
+          "PK_UserID est indéfini. L'utilisateur n'est pas connecté."
+        );
+        return;
+      }
+      axios
+        .get(`http://127.0.0.1:3000/api/user/${PK_UserID}`)
+        .then((response) => {
+          this.user = response.data[0];
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error("Erreur lors de la récupération des données:", error);
+        });
     },
   },
 };

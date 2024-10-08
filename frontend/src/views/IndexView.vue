@@ -7,26 +7,27 @@
     </div>
     <SectionCompo class="h-100vh py-32">
       <template v-slot:content>
-        <h1 class="mb-6 text-center">Simplify Your Business Management</h1>
-        <p class="mb-6 text-grey-200 text-center">
+        <h2 class="text-center">Simplify Your Business Management</h2>
+        <p class="text-grey-200 text-center mb-4">
           Effortless Invoicing & Seamless CRM Solutions at Your Fingertips.
         </p>
-        <div class="flex gap-2 justify-center">
-          <RouterLink to="/signup">
-            <button class="danger">Get started</button>
-          </RouterLink>
-        </div>
+        <RouterLink
+          to="/signup"
+          class="flex justify-center text-underline-none"
+        >
+          <button class="danger">Get started</button>
+        </RouterLink>
       </template>
     </SectionCompo>
     <!-- begin features -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">FEATURES</p>
-        <h2 class="mb-4 text-center">
+        <p class="text-red-200 text-center text-small">FEATURES</p>
+        <h2 class="text-center">
           Simplify invoicing and elevate customer relationships with our
           all-in-one SaaS!
         </h2>
-        <p class="mb-6 text-grey-200 md:text-center">
+        <p class="text-grey-200 md:text-center">
           Revolutionize your invoicing and customer management with our
           all-in-one SaaS solution.<br />
           Effortlessly create invoices, track payments, and enhance client
@@ -37,19 +38,20 @@
             class="flex flex-col md:flex-row justify-between gap-8 py-20"
             :class="{ 'md:flex-row-reverse': index % 2 !== 0 }"
           >
-            <div class="flex flex-col justify-center m-auto">
-              <h3 class="card-title mb-4 text-4xl">{{ feature.title }}</h3>
+            <div class="flex flex-col">
+              <h3 class="card-title">{{ feature.title }}</h3>
               <p class="text-grey-200">
                 {{ feature.description }}
               </p>
             </div>
             <div>
               <img
-                src="https://picsum.photos/600"
+                :src=" feature.src != '' ? `/src/assets/images/${feature.src}` : 'https://picsum.photos/600'"
                 class="w-full"
                 style="object-fit: cover; border-radius: 0.75rem"
                 alt=""
               />
+   
             </div>
           </div>
         </div>
@@ -59,8 +61,8 @@
     <!-- begin steps -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">HOW TO START ?</p>
-        <h2 class="mb-4 text-center">Just 5 steps to get started</h2>
+        <p class="text-red-200 text-center text-small">HOW TO START ?</p>
+        <h2 class="text-center">Just 5 steps to get started</h2>
         <div class="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-16">
           <div class="flex flex-col justify-between gap-4">
             <div class="card" v-for="step in steps">
@@ -85,9 +87,9 @@
     <!-- begin keyfigures -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">KEY FIGURES</p>
-        <h2 class="mb-4 text-center">An all-in-one platform.</h2>
-        <p class="mb-4 text-grey-200 text-center">
+        <p class="text-red-200 text-center text-small">KEY FIGURES</p>
+        <h2 class="text-center">An all-in-one platform.</h2>
+        <p class="text-grey-200 text-center">
           Simplify your invoice management and optimize your customer
           relationships with our integrated CRM, to manage your business in
           complete serenity!
@@ -116,16 +118,11 @@
     <!-- begin testimonials -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">TESTIMONIALS</p>
-        <h2 class="mb-4 text-center">We are attentive to our customers!</h2>
+        <p class="text-red-200 text-center text-small">TESTIMONIALS</p>
+        <h2 class="text-center">We are attentive to our customers!</h2>
         <div class="flex flex-col gap-4 md:grid md:grid-cols-2 mt-16">
-          <div class="flex flex-col card" v-for="testimonial in testimonials">
+          <div class="card" v-for="testimonial in testimonials">
             <div class="card-header">
-              <p class="mb-4">
-                {{ testimonial.text }}
-              </p>
-            </div>
-            <div class="card-body flex flex-row gap-4">
               <User
                 :size="48"
                 class="bg-red-100 text-red-200 p-2"
@@ -133,8 +130,13 @@
               />
               <div>
                 <h4 class="text-bold">{{ testimonial.person }}</h4>
-                <p class="text-grey-200 mb-4">{{ testimonial.job }}</p>
+                <p class="text-grey-200">{{ testimonial.job }}</p>
               </div>
+            </div>
+            <div class="card-body">
+              <p>
+                {{ testimonial.text }}
+              </p>
             </div>
           </div>
         </div>
@@ -144,8 +146,8 @@
     <!-- begin pricing -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">PRICING</p>
-        <h2 class="mb-4 text-center">Choose the plan that's right for you</h2>
+        <p class="text-red-200 text-center text-small">PRICING</p>
+        <h2 class="text-center">Choose the plan that's right for you</h2>
         <div
           class="flex flex-col gap-4 max-w-96 md:max-w-full m-auto md:flex-row md:justify-between mt-16"
         >
@@ -155,31 +157,37 @@
             :style="{
               border: index % 2 !== 0 ? '1px solid var(--red-200)' : '',
               margin: index % 2 !== 0 ? '' : '2rem 0',
-              filter: index % 2 !== 0 ? 'drop-shadow(0px 1px 50px var(--red-100))' : ''
+              filter:
+                index % 2 !== 0
+                  ? 'drop-shadow(0px 1px 50px var(--red-100))'
+                  : '',
             }"
           >
             <div class="card-header flex-col">
-              <span class="card-title text-center">
+              <span
+                class="text-center"
+                :class="index % 2 !== 0 ? 'text-red-200' : ''"
+              >
                 {{ pricing.title }}
               </span>
-              <p class="text-small text-grey-200 text-center card-description">
+              <p class="text-grey-200 text-center">
                 {{ pricing.description }}
               </p>
             </div>
             <div class="card-body flex-col">
-              <p class="text-center">
-                <span class="text-bold" style="font-size: 3rem"
+              <p class="text-center flex justify-center items-center gap-2">
+                <span class="card-title-pricing text-bold"
                   >{{ pricing.price }}€</span
                 >
-                / month
+                <span>/ month</span>
               </p>
 
               <ul class="mt-2">
                 <li
                   v-for="feature in pricing.features"
-                  class="flex items-center gap-2 mb-4"
+                  class="flex gap-2 mb-4 items-center"
                 >
-                  <Check :size="20" style="color: var(--red-200)" />{{
+                  <Check :size="24" style="color: var(--red-200)" />{{
                     feature
                   }}
                 </li>
@@ -201,8 +209,8 @@
     <!-- begin common questions -->
     <SectionCompo>
       <template v-slot:content>
-        <p class="text-red-200 text-center text-small mb-4">FAQ</p>
-        <h2 class="mb-4 text-center">Common Questions</h2>
+        <p class="text-red-200 text-center text-small">FAQ</p>
+        <h2 class="text-center">Common Questions</h2>
         <div class="flex flex-col flex-wrap gap-4 mt-16">
           <ul class="flex flex-col gap-2">
             <li
@@ -213,7 +221,7 @@
               <div class="card p-2">
                 <details name="question">
                   <summary>{{ question.title }}</summary>
-                  <p class="text-grey-200 text-small">
+                  <p class="text-grey-200">
                     {{ question.content }}
                   </p>
                 </details>
@@ -228,10 +236,10 @@
     <SectionCompo>
       <template v-slot:content>
         <div class="py-32 bg-red-100 border-radius-375">
-          <p class="text-red-200 text-center text-small mb-4">
+          <p class="text-red-200 text-center text-small">
             READY TO GET STARTED ?
           </p>
-          <h2 class="mb-6 text-center">Start your free trial today.</h2>
+          <h2 class="mb-4 text-center">Start your free trial today.</h2>
           <RouterLink to="/signup" class="text-underline-none">
             <button class="flex m-auto danger">Get started</button>
           </RouterLink>
@@ -244,7 +252,7 @@
       <template v-slot:content>
         <div class="flex flex-col gap-4 md:grid md:grid-cols-2">
           <div>
-            <h2 class="mb-4">About us</h2>
+            <h2 class="text-center md:text-left mb-4">About us</h2>
             <p class="mb-4">
               As a pioneering SaaS developer, we specialize in creating
               innovative solutions that streamline business operations,
@@ -295,7 +303,7 @@
     <!-- begin our team -->
     <SectionCompo>
       <template v-slot:content>
-        <h2 class="mb-4 text-center">Our team</h2>
+        <h2 class="text-center">Our team</h2>
         <div class="flex flex-col gap-4 md:flex-row md:justify-between mt-16">
           <div class="flex flex-col justify-center" v-for="i in 3">
             <User
@@ -304,7 +312,7 @@
               style="border-radius: 50%"
             />
             <h3 class="text-bold text-center">John Doe</h3>
-            <p class="text-grey-200 text-center mb-4">Job title</p>
+            <p class="text-grey-200 text-center">Job title</p>
             <p class="text-center">
               Lorem ipsum dolor amet, consectetuer adipiscing. Aenean commodo
               ligula.
@@ -320,19 +328,21 @@
         <div class="flex flex-col md:flex-row md:justify-between gap-4">
           <div class="flex flex-col gap-4">
             <div>
-              <h2 class="mb-4">Contact us</h2>
-              <p class="mb-6 text-grey">Get in touch and ask us anything</p>
+              <h2>Contact us</h2>
+              <p class="text-grey-200">Get in touch and ask us anything</p>
             </div>
-            <ul class="flex flex-col gap-4">
+            <ul class="flex flex-col gap-2">
               <li class="flex gap-4 items-center">
-                <Mail class="text-red-200" />support@blocsmaster.com
+                <Mail class="text-red-200" />
+                <span>support@blocsmaster.com</span>
               </li>
               <li class="flex gap-4 items-center">
-                <Phone class="text-red-200" />+1 (123) 123-1234
+                <Phone class="text-red-200" />
+                <span>+1 (123) 123-1234 </span>
               </li>
               <li class="flex gap-4 items-center">
-                <MapPin class="text-red-200" />28, Blocs Av., NoCode, 28000
-                Blocsland
+                <MapPin class="text-red-200" />
+                <span>28, Blocs Av., NoCode, 28000 Blocsland </span>
               </li>
             </ul>
           </div>
@@ -342,7 +352,7 @@
               <!-- Name -->
               <div class="field w-full">
                 <label for="name">Name</label>
-                <input id="name" type="text" placeholder="Name" required />
+                <input id="name" type="text" placeholder="John Doe" required />
               </div>
               <!-- Email -->
               <div class="field w-full">
@@ -350,7 +360,7 @@
                 <input
                   id="email"
                   type="email"
-                  placeholder="mail@example.com"
+                  placeholder="johndoe@example.com"
                   required
                 />
               </div>
@@ -358,21 +368,26 @@
             <!-- Subject -->
             <div class="field">
               <label for="subject">Subject</label>
-              <input id="subject" type="text" placeholder="Subject" required />
+              <input
+                id="subject"
+                type="text"
+                placeholder="My subject"
+                required
+              />
             </div>
             <!-- Textarea -->
-            <div class="field mb-2">
+            <div class="field">
               <label for="message">Message</label>
               <textarea
                 name="message"
                 id="message"
-                placeholder="Message"
+                placeholder="My message..."
                 rows="10"
                 style="resize: none"
                 required
               ></textarea>
             </div>
-            <p class="text-small text-grey-200 mb-4">
+            <p class="text-grey-200 mb-4">
               By clicking, you agree to our Terms & Conditions, Privacy and Data
               Protection Policy
             </p>
@@ -602,36 +617,43 @@ export default {
           title: "Capture opportunities like a lobster",
           description:
             "Capture opportunities like a lobster: Our CRM catches your leads as effectively as a lobster in its net, helping you never let go of a sale.",
+            src:"mails.png",
         },
         {
           title: "Follow-up that’s a real treat",
           description:
             "Follow-up that’s a real treat: Enjoy a dashboard that gives you a tasty overview of your customers and your bills, like a lobster on a seafood platter.",
+          src: "dashboard.png",
         },
         {
           title: "Hassle-free invoices",
           description:
             "Eliminate payment stress with our automated invoice generation, for a process as smooth as a stroll by the sea.",
+            src:"schedule.png",
         },
         {
           title: "Grow at the speed of a lobster",
           description:
             "Our solution allows you to quickly adapt your CRM strategy and invoice management, just like a lobster that moulds to grow.",
+            src:"",
         },
         {
           title: "Lobster-style customer satisfaction",
           description:
             "Build strong relationships with your customers through our personalized follow-up, for an experience as delicious as a lobster dish.",
+            src:"",
         },
         {
           title: "Crisp performance analytics",
           description:
             "Discover detailed reports that break down your data, allowing you to seize every opportunity accurately.",
+            src:"",
         },
         {
           title: "No-pinch payment reminders",
           description:
             "Receive automatic alerts for your due payments, so your cash flow remains as dynamic as a swimming lobster.",
+            src:"",
         },
       ],
     };

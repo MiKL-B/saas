@@ -106,12 +106,12 @@
             </div>
             <button
               type="submit"
-              class="w-full my-4"
+              class="w-full mb-4"
               @click="checkSignupFields"
             >
               Signup
             </button>
-            <p class="flex justify-center p-4 gap-2">
+            <p class="flex justify-center gap-2">
               Already have an account ?
               <RouterLink to="/login" class="cursor-pointer">Login</RouterLink>
             </p>

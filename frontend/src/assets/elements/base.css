@@ -1,6 +1,7 @@
 @import "./reset.css";
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import './root.css';
 
 /* elements */
 @import "./flex.css";
@@ -23,62 +24,7 @@
 @import "../components/accordion.css";
 
 
-:root {
-  /* white */
-  --white: #ffffff;
 
-  /* grey */
-  --grey-50: #f5f5f8;
-  --grey-100: #e4e4e7;
-  --grey-200: #71717a;
-
-  /* dark */
-  --dark: #18181b;
-
-  /* red */
-  --red-100: #ffdae0; /*lobster*/
-  --red-200: #e84a6c;
-  --red-300: #d42a56;
-  --red-400: #e21d48;
-  --red-500: #b31d49;
-  --red-2: #e84a6c25;
-
-  /* size */
-  --size-2:0.5rem;
-  --size-4:1rem;
-  --size-6:1.5rem;
-  --size-8:2rem;
-
-  /* font size */
-  --font-size-base:16px;
-  --font-size-small: 0.875rem;
-
-  /* font weight */
-  --font-normal:normal;
-  --font-semibold:500;
-
-  /* content */
-  --content-arrow:"\003e";
-  --content-quote:"\201C";
-  --content-checked:"\2714";
-
-  /* border */
-  /* radius */
-  --radius:0.375rem;
-  --border-transparent:1px solid transparent;
-  /* grey */
-  --border-grey-100: 1px solid var(--grey-100);
-  --border-grey-200: 1px solid var(--grey-200);
-  /* dark */
-  --border-dark: 1px solid var(--dark);
-  /* red */
-  --border-red-200: 1px solid var(--red-200);
-  --border-red-300: 1px solid var(--red-300);
-  --border-red-500: 1px solid var(--red-500);
-  /* shadow */
-  --shadow: 0px 1px 1px rgba(83, 83, 83, 0.1);
-  --drop-shadow:drop-shadow(0px 1px 10px var(--grey-50))
-}
 
 .display-desktop {
   display: none;
@@ -114,7 +60,9 @@
 .z-3 {
   z-index: 3;
 }
-
+img{
+  filter: drop-shadow(0px 1px 10px var(--grey-100));
+}
 .backdrop-blur {
   backdrop-filter: blur(8px);
 }

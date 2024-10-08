@@ -22,6 +22,8 @@ if (jwt) {
   let userData = { pk_userid: token.pk_userid, email: token.email };
   const authStore = useAuthStore();
   authStore.login(userData);
+  console.log("from main",authStore)
+
   // get role, id...
 }
 

@@ -23,10 +23,10 @@
                   ? 'bg-red-200'
                   : 'hover:bg-grey-100'
               "
-              class="m-2 border-radius-375 cursor-pointer"
+              class="m-2 p-2 border-radius-375 cursor-pointer"
               @click="handleNavMobile(link.component)"
             >
-              <span class="flex gap-4 p-2">
+              <span class="flex gap-4 items-center">
                 <component
                   :is="link.icon"
                   :size="16"
@@ -55,9 +55,9 @@
                   : 'hover:bg-grey-100'
               "
               @click="currentComponent = 'UserCompo'"
-              class="m-2 border-radius-375 cursor-pointer"
+              class="m-2 p-2 border-radius-375 cursor-pointer"
             >
-              <span class="flex gap-4 p-2">
+              <span class="flex gap-4 items-center">
                 <Settings
                   :size="16"
                   :class="
@@ -79,7 +79,7 @@
                 target="_blank"
                 class="text-underline-none"
               >
-                <span class="flex gap-4">
+                <span class="flex gap-4 items-center">
                   <CircleHelp :size="16" class="text-grey-200" />
                   <span>Help</span>
                 </span>
@@ -88,7 +88,7 @@
             <!-- logout -->
             <li class="m-2 p-2 hover:bg-grey-100 border-radius-375">
               <RouterLink to="/" class="text-underline-none">
-                <span class="flex gap-4">
+                <span class="flex gap-4 items-center">
                   <LogOut :size="16" class="text-grey-200" />
                   <span>Logout</span>
                 </span>
@@ -101,7 +101,7 @@
     <!-- nav desktop -->
     <nav class="display-desktop w-16rem">
       <ul
-        class="flex flex-col justify-between h-full border-r-grey py-4 gap-2 bg-light"
+        class="flex flex-col  h-full border-r-grey py-4 gap-2 bg-light"
       >
         <li
           v-for="link in links"
@@ -110,13 +110,13 @@
               ? 'bg-red-200'
               : 'hover:bg-grey-100'
           "
-          class="mx-2 p-2 border-radius-375 cursor-pointer"
+          class="mx-2 p-2 border-radius-375 cursor-pointer "
           @click="currentComponent = link.component"
         >
-          <span class="flex gap-4">
+          <span class="flex gap-4 items-center">
             <component
               :is="link.icon"
-              :size="16"
+              :size="24"
               :class="
                 currentComponent === link.component
                   ? 'text-white'
@@ -145,9 +145,9 @@
               class="mx-2 p-2 border-radius-375 cursor-pointer"
               @click="currentComponent = 'UserCompo'"
             >
-              <span class="flex gap-4">
+              <span class="flex gap-4 items-center">
                 <Settings
-                  :size="16"
+                  :size="24"
                   :class="
                     currentComponent === 'UserCompo'
                       ? 'text-white'
@@ -167,8 +167,8 @@
                 target="_blank"
                 class="text-underline-none"
               >
-                <span class="flex gap-4">
-                  <CircleHelp :size="16" class="text-grey-200" />
+                <span class="flex gap-4 items-center">
+                  <CircleHelp :size="24" class="text-grey-200" />
                   <span>Help</span>
                 </span>
               </RouterLink>
@@ -178,8 +178,8 @@
               class="mx-2 p-2 hover:bg-grey-100 border-radius-375 cursor-pointer"
               @click="logout"
             >
-              <span class="flex gap-4">
-                <LogOut :size="16" class="text-grey-200" />
+              <span class="flex gap-4 items-center">
+                <LogOut :size="24" class="text-grey-200" />
                 <span>Logout</span>
               </span>
             </li>
@@ -282,14 +282,14 @@ export default {
           component: "MailsCompo",
         },
         {
-          label: "Schedule",
-          icon: CalendarCheck,
-          component: "ScheduleCompo",
-        },
-        {
           label: "Tasks",
           icon: ListTodo,
           component: "TasksCompo",
+        },
+        {
+          label: "Schedule",
+          icon: CalendarCheck,
+          component: "ScheduleCompo",
         },
         {
           label: "Contacts",

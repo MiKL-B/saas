@@ -1,7 +1,7 @@
 // import { ref, computed } from 'vue'
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useAuthStore = defineStore('auth', {
+export const useAuthStore = defineStore("auth", {
   state: () => ({
     isLoggedIn: false,
     user: null,
@@ -10,11 +10,12 @@ export const useAuthStore = defineStore('auth', {
     login(userData) {
       this.isLoggedIn = true;
       this.user = userData;
-  
     },
+
     logout() {
       this.isLoggedIn = false;
       this.user = null;
     },
+
   },
 });

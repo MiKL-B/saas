@@ -73,6 +73,22 @@ const login = async (request, response) => {
     response.status(401).json({ error: error.message });
   }
 };
+const getUser = (request, response) => {
+  const id = request.params.id;
+  const value = [id];
+
+  let sql =
+    "SELECT * FROM useraccount WHERE pk_userid = " +
+    `${value}`;
+
+  pool.query(sql, (error, results) => {
+    if (error) {
+      throw error;
+    }
+    response.status(200).json(results.rows);
+  });
+};
+
 //delete user
 const deleteUser = (request, response) => {
   const id = parseInt(request.params.id);
@@ -87,5 +103,6 @@ const deleteUser = (request, response) => {
 module.exports = {
   signup,
   login,
+  getUser,
   deleteUser,
 };

@@ -1,5 +1,5 @@
 <template>
-  <div v-if="1==0" class="p-4">
+  <div v-if="1!=0" class="p-4">
     <div class="h-full flex flex-col justify-between">
       <div class="flex flex-col gap-2">
         <!-- <SearchCompo /> -->

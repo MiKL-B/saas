@@ -1,15 +1,15 @@
 <template>
   <footer class="bg-grey-50 py-20">
     <div
-      class="flex flex-col gap-4 md:grid md:grid-cols-2 md:items-center md:max-w-7xl lg:mx-auto py-20 px-6"
+      class="flex flex-col gap-4 md:grid md:grid-cols-2  md:max-w-7xl lg:mx-auto py-20 px-6"
     >
       <div>
-        <h1 class="text-red-200 items-center mb-6 text-center md:text-left">Crispy lobster</h1>
-        <h2 class="mb-4 text-center md:text-left">The newsletter</h2>
-        <p class="mb-4 text-grey-200 text-center md:text-left">
+        <h1 class="text-red-200">Crispy lobster</h1>
+        <h2>The newsletter</h2>
+        <p class="mb-4 text-grey-200">
           Sign up for tips about working in Saas, news about our apps, and more.
         </p>
-        <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
+        <div class="flex flex-wrap justify-start gap-4">
           <input
             type="email"
             placeholder="Your email address"

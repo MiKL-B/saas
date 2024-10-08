@@ -1,5 +1,5 @@
 <template>
-  <div v-if="1==0">
+  <div v-if="1!=0">
     <SplitterCompo>
       <template v-slot:left>
         <div class="flex flex-col gap-4 p-4 lg:h-full lg:max-h-full-vh">
