@@ -12,7 +12,7 @@ const signup = async (request, response) => {
     const data = await pool.query(sql, values);
     const arr = data.rows;
     if (arr.length != 0) {
-      return response.status(400).send("email deja existant");
+      return response.status(400).send("1");
     } else {
       bcrypt.hash(request.body.password, 10).then((hash) => {
         const values = [email, hash, firstname, lastname];
@@ -41,14 +41,14 @@ const login = async (request, response) => {
     //verify email
     const users = await pool.query(sql, [email]);
     if (users.rows.length === 0)
-      return response.status(401).send("Aucun compte associé à cette adresse e-mail. Veuillez créer un compte pour vous connecter.");
+      return response.status(401).send("1"); // Aucun compte associé à cette adresse email...
 
     //verify password
     await bcrypt
       .compare(password, users.rows[0].password)
       .then((valid) => {
         if (!valid) {
-          return response.status(401).send("Mot de passe incorrect");
+          return response.status(401).send("2"); // Mot de passe incorrect
         }
 
         //Logged && JWT

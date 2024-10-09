@@ -48,6 +48,19 @@
                 <CircleAlert :size="16" />{{ formErrors.password }}</span
               >
             </div>
+            <!-- extra field -->
+            <div class="field nickname">
+              <label class="nickname" for="nickname"></label>
+              <input
+                v-model="nickname"
+                class="nickname"
+                autocomplete="off"
+                type="text"
+                id="nickname"
+                name="nickname"
+                placeholder="Your nickname here"
+              />
+            </div>
             <button type="submit" class="w-full mb-4" @click="checkLoginFields">
               Login
             </button>
@@ -65,7 +78,7 @@
   <FooterCompo />
 </template>
 
-<script>  
+<script>
 import { useAuthStore } from "@/stores/authStore";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
@@ -92,6 +105,8 @@ export default {
         email: "",
         password: "",
       },
+      // extra field
+      nickname: "",
     };
   },
   methods: {
@@ -110,6 +125,9 @@ export default {
       }
       if (this.formData.password.trim() === "") {
         this.formErrors.password = "Empty password";
+        return;
+      }
+      if (this.nickname.trim() !== "") {
         return;
       }
       if (this.formErrors.email == "" && this.formErrors.password == "") {
@@ -133,19 +151,25 @@ export default {
           };
           let decodedToken = jwtDecode(jwt);
           let userData = {
-            pk_userid:decodedToken.pk_userid,
+            pk_userid: decodedToken.pk_userid,
             email: this.formData.email,
             password: this.formData.password,
           };
           this.authStore.login(userData);
-          console.log("from login",this.authStore)
+          console.log("from login", this.authStore);
           // modal well logged in
           // setTimeout(window.location.reload(), 2000);
           this.$router.push("/home");
         })
         .catch((err) => {
-          // console.log(err.request);
-          this.formErrors.email = err.request.response;
+          let error = err.request.response;
+          if (error == "1") {
+            this.formErrors.email =
+              "Aucun compte associé à cette adresse e-mail. Veuillez créer un compte pour vous connecter.";
+          }
+          if (error == "2") {
+            this.formErrors.password = "Mot de passe incorrect";
+          }
         });
     },
   },

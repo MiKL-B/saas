@@ -104,6 +104,19 @@
                 <CircleAlert :size="16" />{{ formErrors.confirm }}</span
               >
             </div>
+            <!-- extra field -->
+            <div class="field nickname">
+              <label class="nickname" for="nickname"></label>
+              <input
+                v-model="nickname"
+                class="nickname"
+                autocomplete="off"
+                type="text"
+                id="nickname"
+                name="nickname"
+                placeholder="Your nickname here"
+              />
+            </div>
             <button
               type="submit"
               class="w-full mb-4"
@@ -158,6 +171,8 @@ export default {
         password: "",
         confirm: "",
       },
+      // extra field
+      nickname: "",
     };
   },
   methods: {
@@ -207,6 +222,9 @@ export default {
         this.formErrors.confirm = "Password not equal to confirm";
         return;
       }
+      if (this.nickname.trim() !== "") {
+        return;
+      }
       if (
         this.formErrors.firstname == "" &&
         this.formErrors.lastname == "" &&
@@ -234,11 +252,13 @@ export default {
           this.formData.confirm = "";
           // modal well registered
           // setTimeout(window.location.reload(), 2000);
-          this.$router.push("/login")
+          this.$router.push("/login");
         })
         .catch((err) => {
-          // console.log(err.request.response);
-          // console.log(err.request);
+          let error = err.request.response;
+          if (error == "1") {
+            this.formErrors.email = "Email deja existant";
+          }
         });
     },
     validEmail: function (email) {
