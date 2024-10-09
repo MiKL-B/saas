@@ -179,7 +179,7 @@ export default {
     toggleEye() {
       this.isEyeOpen = !this.isEyeOpen;
     },
-    resetValueFields() {
+    resetFormErrorsFields() {
       this.formErrors.firstname = "";
       this.formErrors.lastname = "";
       this.formErrors.email = "";
@@ -187,7 +187,7 @@ export default {
       this.formErrors.confirm = "";
     },
     checkSignupFields() {
-      this.resetValueFields();
+      this.resetFormErrorsFields();
 
       if (this.formData.firstname.trim() === "") {
         this.formErrors.firstname = "Empty first name";

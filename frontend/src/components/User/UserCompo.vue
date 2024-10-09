@@ -71,8 +71,23 @@
         </div>
         <!-- tab preferences -->
         <div v-show="selectedTab === 'Preferences'">
+          <h3>Preferences</h3>
+          <p class="text-small text-grey-200 mb-4">Manage your preferences.</p>
+          <div class="field mb-4">
+            <label for="language">Language</label>
+            <div class="select">
+              <select
+                name="select"
+                id="select"
+                v-model="currentLocale"
+                @change="changeLanguage"
+              >
+                <option value="fr">{{ $t("french") }}</option>
+                <option value="en">{{ $t("english") }}</option>
+              </select>
+            </div>
+          </div>
           <!-- <h3>Preferences</h3>
-          <p class="text-small text-grey mb-4">Manage your preferences.</p>
           <div class="mb-4">
             <div class="field">
               <label for="url">Urls</label>
@@ -99,7 +114,6 @@
             <input type="checkbox" id="check1" />
             <label for="check1"> Remember me </label>
           </div> -->
-          <p>Coming soon...</p>
         </div>
         <!-- tab appearance -->
         <div v-show="selectedTab === 'Appearance'">
@@ -160,66 +174,9 @@ export default {
   name: "UserCompo",
   data() {
     return {
+      currentLocale: this.$i18n.locale,
       user: {},
       authStore: useAuthStore(),
-      colors: [
-        {
-          index: 1,
-          text: "#f9daff",
-        },
-        {
-          index: 2,
-          text: "#ecdaff",
-        },
-        {
-          index: 3,
-          text: "#dae3ff",
-        },
-        {
-          index: 4,
-          text: "#e0daff",
-        },
-        {
-          index: 5,
-          text: "#daeeff",
-        },
-        {
-          index: 6,
-          text: "#dafafe",
-        },
-        {
-          index: 7,
-          text: "#dafff7",
-        },
-        {
-          index: 8,
-          text: "#daffec",
-        },
-        {
-          index: 9,
-          text: "#ecffda",
-        },
-        {
-          index: 10,
-          text: "#fff8de",
-        },
-        {
-          index: 11,
-          text: "#ffe9e0",
-        },
-        {
-          index: 12,
-          text: "#ffe0e0",
-        },
-        {
-          index: 13,
-          text: "#ffdae0",
-        },
-        {
-          index: 14,
-          text: "#f7f1e0",
-        },
-      ],
       selectedTab: "Account",
       tabs: [
         { name: "Account" },
@@ -229,19 +186,12 @@ export default {
     };
   },
   created() {
-     this.getUser();
+    this.getUser();
   },
-  // watch: {
-  //   "authStore.user": {
-  //     immediate: true,
-  //     handler(newValue) {
-  //       if (newValue && newValue.pk_userid) {
-  //         this.getUser();
-  //       }
-  //     },
-  //   },
-  // },
   methods: {
+    changeLanguage() {
+      this.$i18n.locale = this.currentLocale;
+    },
     selectTab(tabName) {
       this.selectedTab = tabName;
     },

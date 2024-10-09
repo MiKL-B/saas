@@ -113,12 +113,12 @@ export default {
     toggleEye() {
       this.isEyeOpen = !this.isEyeOpen;
     },
-    resetValueFields() {
+    resetFormErrorsFields() {
       this.formErrors.email = "";
       this.formErrors.password = "";
     },
     checkLoginFields() {
-      this.resetValueFields();
+      this.resetFormErrorsFields();
       if (this.formData.email.trim() === "") {
         this.formErrors.email = "Empty email!";
         return;

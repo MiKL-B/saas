@@ -156,7 +156,7 @@
                 />
                 <span
                   :class="currentComponent === 'UserCompo' ? 'text-white' : ''"
-                  >Settings</span
+                  >{{ $t("settings") }}</span
                 >
               </span>
             </li>

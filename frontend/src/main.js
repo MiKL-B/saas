@@ -6,13 +6,21 @@ import { createPinia } from 'pinia'
 import router from './router'
 import { jwtDecode } from "jwt-decode";
 import { useAuthStore } from "@/stores/authStore";
+import { createI18n } from 'vue-i18n';
+import messages from './locales';
 
 
 const app = createApp(App)
 const pinia = createPinia();
 
-app.use(pinia)
-app.use(router)
+const i18n = createI18n({
+  locale: 'en', 
+  messages,
+});
+
+app.use(pinia);
+app.use(router);
+app.use(i18n);
 
 app.mount('#app')
 

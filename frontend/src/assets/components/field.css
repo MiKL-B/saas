@@ -75,14 +75,11 @@ select {
   appearance: none;
   background-color: transparent;
   border: none;
-  padding: 0.75rem 0.75rem;
+  padding: 0 0.75rem;
   height: 2.25rem;
   margin: 0;
   width: 100%;
-  font-family: inherit;
-  font-size: inherit;
   cursor: inherit;
-  line-height: inherit;
   outline: none;
 }
 .select {
@@ -90,8 +87,8 @@ select {
   border: var(--border-grey-100);
   border-radius:var(--radius);
   cursor: pointer;
-  /* line-height: 1.1;
-  font-size: var(--font-size-small); */
+  line-height: 1.1;
+  font-size: var(--font-size-small);
   background-color: var(--white);
   display: grid;
   grid-template-areas: "select";
