@@ -74,7 +74,7 @@
           </div>
           <div class="display-desktop">
             <img
-              src="https://picsum.photos/600"
+              src="../assets/image.png"
               class="w-full"
               style="object-fit: cover; border-radius: 0.75rem"
               alt=""
@@ -290,7 +290,7 @@
           </div>
           <div class="display-none md:display-block">
             <img
-              src="https://picsum.photos/600"
+              src="../assets/image.png"
               class="w-full"
               style="object-fit: cover; border-radius: 0.75rem"
               alt=""
@@ -635,25 +635,25 @@ export default {
           title: "Grow at the speed of a lobster",
           description:
             "Our solution allows you to quickly adapt your CRM strategy and invoice management, just like a lobster that moulds to grow.",
-            src:"",
+            src:"financial.png",
         },
         {
           title: "Lobster-style customer satisfaction",
           description:
             "Build strong relationships with your customers through our personalized follow-up, for an experience as delicious as a lobster dish.",
-            src:"",
+            src:"financial.png",
         },
         {
           title: "Crisp performance analytics",
           description:
             "Discover detailed reports that break down your data, allowing you to seize every opportunity accurately.",
-            src:"",
+            src:"financial.png",
         },
         {
           title: "No-pinch payment reminders",
           description:
             "Receive automatic alerts for your due payments, so your cash flow remains as dynamic as a swimming lobster.",
-            src:"",
+            src:"financial.png",
         },
       ],
     };

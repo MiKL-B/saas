@@ -1,6 +1,6 @@
 <template>
-  <div class="p-4" v-if="1!=0">
-    <div class="h-full flex flex-col justify-between">
+  <div class="p-4">
+    <div class="flex flex-col justify-between">
       <div class="flex flex-col gap-2">
         <!-- <SearchCompo /> -->
         <div class="flex justify-between">
@@ -45,9 +45,6 @@
       </table>
       <!-- <PaginationCompo /> -->
     </div>
-  </div>
-  <div v-else class="p-4">
-    <p>Coming soon...</p>
   </div>
 </template>
 

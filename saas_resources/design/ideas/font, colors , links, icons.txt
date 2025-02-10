@@ -1,0 +1,36 @@
+https://www.untitledui.com/blog/best-free-fonts
+https://fontawesome.com/
+https://icones.js.org/
+
+https://franken-ui.dev/
+https://lucide.dev/
+https://tomosterlund.github.io/qalendar/guide.html
+https://ui.jln.dev/
+https://phosphoricons.com/
+
+font:
+text base 16px
+line height: 1.5 or 24px
+
+headings: 60px
+line height: 1.2 or 72px
+
+bold:
+light, regular, medium, semibold, bold (+ italic)
+
+Inter
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+color:
+Dark: #020420
+
+good example for inspiration: https://stripe.com/fr 

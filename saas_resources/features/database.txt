@@ -1,0 +1,45 @@
+USER:
+PK_UserID int
+Firstname string
+Lastname string
+Email string
+Password string
+
+-- next feature
+Postal code string
+City string
+Country string
+
+
+CUSTOMER:
+PK_CustomerID
+Firstname
+Lastname
+
+-- next feature
+Postal code
+City
+Country
+
+
+TASK:
+PK_TaskID int
+Name string
+Description string
+Created_date date
+Updated_date date
+Priority (low=0, medium=1, high=2)
+Tags ({TAG})
+Responsible string
+Author string
+State (todo=0, inprogress=1, finished=2)
+Scheduled boolean
+Planned_date_begin date
+Planned_date_end date
+
+
+TAG:
+PK_TagID
+Name
+Color
+Icon

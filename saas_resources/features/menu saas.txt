@@ -1,0 +1,30 @@
+Mails
+- Inbox
+- Drafts
+- Sent
+- Personalized folders
+- Junk
+- Trash
+
+Productivity
+- Dashboard
+- Project management
+- - View: Kanban / Tasks / Schedule
+- Notes (click on it, display the note list)
+- - Todo
+- - Today
+- - Trash
+Contacts
+Financial
+- Quotations
+- Invoices
+- Payment
+
+Statistics
+
+Settings (App)
+- User role
+- Help (support client)
+
+User
+- Settings user (profile)

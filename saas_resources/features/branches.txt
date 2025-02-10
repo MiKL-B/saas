@@ -1,0 +1,14 @@
+Branch main (ou master) :
+
+    Cette branche contient la version stable de votre projet prête à être déployée pour les clients. Toute nouvelle publication (release) est généralement effectuée à partir de cette branche.
+
+Branch develop :
+
+    Cette branche est destinée au développement des nouvelles fonctionnalités. Elle sert de base pour intégrer des changements avant qu'ils ne soient fusionnés dans la branche principale.
+    Lorsque vous avez terminé une fonctionnalité, vous fusionnez (merge) la branche feature dans develop plutôt que directement dans main.
+
+Branch hotfix :
+
+    Utilisée pour corriger des bogues critiques trouvés dans la version en production. Si un bug est urgent et doit être corrigé rapidement, vous créez une branche hotfix à partir de main.
+    Une fois le correctif appliqué, la branche hotfix est fusionnée dans main et develop pour garantir que la correction est également présente dans la future version de développement.
+

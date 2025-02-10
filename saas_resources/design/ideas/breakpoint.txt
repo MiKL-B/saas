@@ -1,0 +1,5 @@
+mobile 340px flex col max-width full
+small 640px flex row max width full
+medium 768px flex row max width full
+large 1024px flex row max width 80%
+full 1248px flex row max width 80%
