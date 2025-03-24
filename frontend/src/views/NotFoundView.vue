@@ -4,9 +4,9 @@
       <h1 class="text-center text-red-200">404</h1>
       <h2 class="text-center mb-4">Lobster not found</h2>
       <p class="text-center">
-        "Oups ! On dirait que cette page a filé comme un homard échappé de son
-        seau ! Retournez à la plage des informations avant qu’il ne vous pince
-        !"
+        "Oops! It seems as if this page has flown like a lobster that has
+        escaped from its bucket! Go back to the information range before he
+        pinches you !"
       </p>
       <img
         src="../assets/image.png"

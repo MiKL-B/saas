@@ -61,7 +61,7 @@
                 placeholder="Your nickname here"
               />
             </div>
-            <button type="submit" class="w-full mb-4" @click="checkLoginFields">
+            <button class="w-full mb-4">
               Login
             </button>
 

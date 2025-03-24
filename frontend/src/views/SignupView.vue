@@ -118,9 +118,7 @@
               />
             </div>
             <button
-              type="submit"
               class="w-full mb-4"
-              @click="checkSignupFields"
             >
               Signup
             </button>
