@@ -95,17 +95,17 @@
 </template>
 
 <script>
-import SearchCompo from "../Reusable/SearchCompo.vue";
+// import SearchCompo from "../Reusable/SearchCompo.vue";
 import { User, Inbox } from "lucide-vue-next";
-import SplitterCompo from "../Reusable/SplitterCompo.vue";
+// import SplitterCompo from "../Reusable/SplitterCompo.vue";
 
 export default {
   name: "MailsCompo",
   components: {
-    SearchCompo,
+    // SearchCompo,
     User,
     Inbox,
-    SplitterCompo,
+    // SplitterCompo,
   },
   data() {
     return {

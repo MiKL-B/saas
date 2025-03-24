@@ -52,16 +52,16 @@
 </template>
 
 <script>
-import SearchCompo from "../Reusable/SearchCompo.vue";
-import ModalCompo from "../Reusable/ModalCompo.vue";
-import PaginationCompo from "../Reusable/PaginationCompo.vue";
+// import SearchCompo from "../Reusable/SearchCompo.vue";
+// import ModalCompo from "../Reusable/ModalCompo.vue";
+// import PaginationCompo from "../Reusable/PaginationCompo.vue";
 import { Filter } from "lucide-vue-next";
 export default {
   name: "ContactsCompo",
   components: {
-    SearchCompo,
-    ModalCompo,
-    PaginationCompo,
+    // SearchCompo,
+    // ModalCompo,
+    // PaginationCompo,
     Filter,
   },
 };

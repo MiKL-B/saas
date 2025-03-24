@@ -1,7 +1,0 @@
-homepage / landing page
-auth
-pricing
-rgpd / mentions légales
-terms / privacy / legal 
-
-centre d'aide avec tuto et FAQ
