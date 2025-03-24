@@ -401,7 +401,7 @@
   <FooterCompo />
 </template>
 <script>
-import NavCompo from "@/components/Layout/NavCompo.vue";
+import NavCompo from "../components/Layout/NavCompo.vue";
 import SectionCompo from "@/components/Reusable/SectionCompo.vue";
 import FooterCompo from "@/components/Layout/FooterCompo.vue";
 import {
