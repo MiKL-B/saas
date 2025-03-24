@@ -617,43 +617,43 @@ export default {
           title: "Capture opportunities like a lobster",
           description:
             "Capture opportunities like a lobster: Our CRM catches your leads as effectively as a lobster in its net, helping you never let go of a sale.",
-            src:"mails.png",
+            src:"",
         },
         {
           title: "Follow-up that’s a real treat",
           description:
             "Follow-up that’s a real treat: Enjoy a dashboard that gives you a tasty overview of your customers and your bills, like a lobster on a seafood platter.",
-          src: "dashboard.png",
+          src: "",
         },
         {
           title: "Hassle-free invoices",
           description:
             "Eliminate payment stress with our automated invoice generation, for a process as smooth as a stroll by the sea.",
-            src:"schedule.png",
+            src:"",
         },
         {
           title: "Grow at the speed of a lobster",
           description:
             "Our solution allows you to quickly adapt your CRM strategy and invoice management, just like a lobster that moulds to grow.",
-            src:"financial.png",
+            src:"",
         },
         {
           title: "Lobster-style customer satisfaction",
           description:
             "Build strong relationships with your customers through our personalized follow-up, for an experience as delicious as a lobster dish.",
-            src:"financial.png",
+            src:"",
         },
         {
           title: "Crisp performance analytics",
           description:
             "Discover detailed reports that break down your data, allowing you to seize every opportunity accurately.",
-            src:"financial.png",
+            src:"",
         },
         {
           title: "No-pinch payment reminders",
           description:
             "Receive automatic alerts for your due payments, so your cash flow remains as dynamic as a swimming lobster.",
-            src:"financial.png",
+            src:"",
         },
       ],
     };
